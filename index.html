@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" media="(max-width: 500px)" href="CSS/mobile.css">
+  <!-- <link rel="stylesheet" media="(max-width: 400px)" href="CSS/mobilepetit.css"> -->
+  <link rel="stylesheet" media="(max-width: 1234px)" href="CSS/tablet.css">
+  <!-- <link rel="stylesheet" media="(max-width: 1560px)" href="CSS/portable.css"> -->
+  <!-- <link rel="stylesheet" media="(max-width: 500px)" href="CSS/Mobile/mobile_cine1_resume.css"> -->
+  <!-- <link rel="stylesheet" media="(min-width: 768px) and (max-width: 991px)" href="CSS/tablette.css"> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Grape+Nuts&family=Parisienne&family=Raleway:wght@200&family=Rubik+Microbe&display=swap"
+    rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/343a754b43.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header_main">
+
+            <ul id="burg">
+
+                <li class="burger" onclick="openNav()"><a href="#"><i class="fas fa-solid fa-bars fa-2x"></i></a></li>
+                <!-- <button type="submit" class="btn btn-block btn-primary">Submit</button> -->
+                <li id="btnCompte"><a href="compte.html" id="compte"><img src="icones/compte.png" width="30px"
+                      height="30px"></img></a></li>
+              </ul>
+          
+              <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+          
+          
+                  <li><a href="index.html">Accueil</a></li>
+                  <li><a href="#">Cinéma</a></li>
+                  <li><a href="#">Séries</a></li>
+                  <li><a href="#">Streaming</a></li>
+                  <li><a href="favoris.html">Favoris</a></li>
+          
+                </div>
+          
+              </div>
+            <img src="image/Cinestars.png" width="200" height="40" alt="logo" id="logo"></img>
+
+            <div class="menu">
+                <form id="form">
+                    <input type="text" placeholder="Search" id="search" class="search">
+                  </form>
+            
+                  <div class="dropdown">
+            
+                    <a href="compte.html"><button id="myBtn" class="dropbtn">Compte </button></a>
+            
+                  </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="sidebar">
+                <ul>
+            
+                  <li id="menu"><a href="index.html">Accueil</a></li>
+                  <li id="menu"><a href="#">Cinéma</a></li>
+                  <li id="menu"><a href="#">Séries</a></li>
+                  <li id="menu"><a href="#">Streaming</a></li>
+                  <li id="menu"><a href="favoris.html">Favoris</a></li>
+            
+                  <!-- <li id="btnCompte"><a href="" id="compte"><img src="icones/compte.png" width="20px"
+                                                  height="20px"></img></a></li> -->
+            
+                </ul>
+              </div>
+            <div class="mainContent">
+                <div class="mainBody">
+
+
+                </div>
+                <div class="row" id="slider-text">
+                    <div class="col-md-6">
+                      <h2>LES PLUS POPULAIRES</h2>
+                    </div>
+                  </div>
+                  <button id="prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
+                      <path fill="none" d="M0 0h24v24H0V0z" />
+                      <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+                    </svg>
+                  </button>
+                  <button id="next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
+                      <path fill="none" d="M0 0h24v24H0V0z" />
+                      <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+                    </svg>
+                  </button>
+            
+                  <div id="wrapper">
+            
+                    <div id="carousel">
+            
+                      <div id="content">
+            
+            
+            
+                      </div>
+                    </div>
+                  </div>
+            
+            
+                  <div class="row" id="slider-text">
+                    <div class="col-md-6">
+                      <h2>ACTUELLEMENT AU CINEMA</h2>
+                    </div>
+                  </div>
+                  <button id="prev2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
+                      <path fill="none" d="M0 0h24v24H0V0z" />
+                      <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+                    </svg>
+                  </button>
+                  <button id="next2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
+                      <path fill="none" d="M0 0h24v24H0V0z" />
+                      <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+                    </svg>
+                  </button>
+            
+            
+                  <div id="wrapper2">
+            
+                    <div id="carousel2">
+            
+                      <div id="content2">
+            
+            
+            
+                      </div>
+                    </div>
+                  </div>
+            
+                  <div class="row" id="slider-text">
+                    <div class="col-md-6">
+                      <h2>LES MIEUX NOTÉS</h2>
+                    </div>
+                  </div>
+                  <button id="prev3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
+                      <path fill="none" d="M0 0h24v24H0V0z" />
+                      <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+                    </svg>
+                  </button>
+                  <button id="next3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
+                      <path fill="none" d="M0 0h24v24H0V0z" />
+                      <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+                    </svg>
+                  </button>
+            
+            
+                  <div id="wrapper3">
+            
+                    <div id="carousel3">
+            
+                      <div id="content3">
+            
+            
+            
+                      </div>
+                    </div>
+                  </div>
+            
+                  <div class="row" id="slider-text">
+                    <div class="col-md-6">
+                      <h2>A VENIR</h2>
+                    </div>
+                  </div>
+                  <button id="prev4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
+                      <path fill="none" d="M0 0h24v24H0V0z" />
+                      <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+                    </svg>
+                  </button>
+                  <button id="next4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
+                      <path fill="none" d="M0 0h24v24H0V0z" />
+                      <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+                    </svg>
+                  </button>
+            
+            
+                  <div id="wrapper4">
+            
+                    <div id="carousel4">
+            
+                      <div id="content4">
+            
+            
+            
+                      </div>
+                    </div>
+                  </div>
+            
+            
+                  <div class="row" id="slider-text">
+                    <div class="col-md-6">
+                      <h2></h2>
+                    </div>
+                  </div>
+                  <button id="prev5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
+                      <path fill="none" d="M0 0h24v24H0V0z" />
+                      <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+                    </svg>
+                  </button>
+                  <button id="next5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
+                      <path fill="none" d="M0 0h24v24H0V0z" />
+                      <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+                    </svg>
+                  </button>
+            
+            
+                  <div id="wrapper5">
+            
+                    <div id="carousel5">
+            
+                      <div id="content5">
+            
+            
+            
+                      </div>
+                    </div>
+                  </div>
+            
+                  <div class="row" id="slider-text">
+                    <div class="col-md-6">
+                      <h2></h2>
+                    </div>
+                  </div>
+                  <button id="prev6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
+                      <path fill="none" d="M0 0h24v24H0V0z" />
+                      <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+                    </svg>
+                  </button>
+                  <button id="next6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
+                      <path fill="none" d="M0 0h24v24H0V0z" />
+                      <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+                    </svg>
+                  </button>
+            
+            
+                  <div id="wrapper6">
+            
+                    <div id="carousel6">
+            
+                      <div id="content6">
+            
+            
+            
+                      </div>
+                    </div>
+                  </div>
+            
+            </div>
+        </div>
+        <div class="footer">Copyright ©</div>
+  <script src="JS/index.js" type="module"> </script>
+
+
+  <script>
+    //Menu Burger
+    //Menu Burger
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+
+//Fin menu burger  
+
+  </script>
+</body>
+</body>
+
+</html>

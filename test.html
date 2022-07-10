@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+
+    * {
+        box-sizing: border-box;
+    }
+
+    :root {
+        --primary-color: #22254b;
+        --secondary-color: #373b69;
+    }
+
+    body {
+        background-color: var(--primary-color);
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+
+    }
+
+    header {
+        padding: 1rem;
+        display: flex;
+        justify-content: flex-end;
+        background-color: var(--secondary-color);
+    }
+
+    .search {
+        background-color: transparent;
+        border: 2px solid var(--primary-color);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 1rem;
+        color: #fff;
+        font-family: inherit;
+    }
+
+    .search:focus {
+        outline: 0;
+        background-color: var(--primary-color);
+
+    }
+
+    .search::placeholder {
+        color: #7378c5;
+
+    }
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    .movie {
+        width: 300px;
+        margin: 1rem;
+        border-radius: 3px;
+        box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+        background-color: var(--secondary-color);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .movie img {
+        width: 100%;
+    }
+
+    .movie-info {
+        color: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 1rem 1rem;
+        letter-spacing: 0.5px;
+    }
+
+    .movie-info h3 {
+        margin-top: 0;
+    }
+
+    .movie-info span {
+        background-color: var(--primary-color);
+        padding: 0.25rem;
+        border-radius: 3px;
+        font-weight: bold;
+    }
+
+    .movie-info span.green {
+        color: lightgreen;
+    }
+
+    .movie-info span.orange {
+        color: orange;
+    }
+
+    .movie-info span.red {
+        color: red;
+    }
+
+    .overview {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        padding: 1rem;
+        max-height: 100%;
+        transform: translateY(101%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .movie:hover .overview {
+        transform: translateY(0);
+    }
+</style>
+
+<body>
+    <header>
+        <form id="form">
+            <input type="text" placeholder="Search" id="search" class="search">
+        </form>
+    </header>
+
+    <main id="main">
+        <div class="movie">
+            <img src="https://imgv3.fotor.com/images/homepage-feature-card/Fotor-AI-photo-enhancement-tool-fr.jpg"
+                alt="">
+
+            <div class="movie-info">
+                <h3>Movie Title</h3>
+                <span class="green">9.8</span>
+            </div>
+            <div class="overview">
+
+                <h3>Overview</h3>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae non corrupti eveniet reiciendis? Labore
+                earum maiores est inventore. Corporis cumque tenetur sequi mollitia, nemo sunt magnam impedit in odio
+                aliquam.
+                Beatae quia ab in dolor obcaecati optio delectus facilis nemo, unde ipsam similique maiores quisquam
+                omnis atque quaerat, laboriosam suscipit? Expedita non nemo magnam aliquam laboriosam explicabo ullam
+                quasi aliquid.
+               
+            </div>
+        </div>
+     
+       
+
+    </main>
+
+</body>
+
+
+<script>
+    const API_KEY = "api_key=e0e252f245f519ae01af7682ea83a642";
+    const BASE_URL = "https://api.themoviedb.org/3";
+    const API_URL = BASE_URL + "/discover/movie?sort_by=popularity.desc&" + API_KEY;
+    const IMG_URL = "https://image.tmdb.org/t/p/w500"
+
+    const main = document.getElementById('main')
+    const form = document.getElementById('form')
+    const search = document.getElementById('search')
+
+    getMovies(API_URL);
+
+    function getMovies(url) {
+        fetch(url).then(res => res.json()).then(data => {
+            console.log(data.results)
+            showMovies(data.results)
+        })
+    }
+
+    function showMovies(data) {
+        
+        main.innerHTML = "";
+        data.forEach(movie => {
+            const {title,poster_path,vote_average,overview} = movie;
+      
+            const movieEl = document.createElement('div');
+            movieEl.classList.add('movie')
+            movieEl.innerText = `
+<img src="${IMG_URL + poster_path}" alt="${title}">
+
+<div class="movie-info">
+<h3>${title}</h3>
+<span class="${getColor(vote_average)}">${getColor(vote_average)}</span>
+</div>
+
+<div class="overview">
+<h3>overview</h3>
+${overview}
+</div>
+`
+
+            main.appendChild(movieEl)
+        })
+    }
+
+
+    function getColor(vote) {
+    if (vote >= 8) {
+        return "green"
+    } else if (vote >= 5) {
+        return "orange"
+    } else {
+        return "red"
+    }
+}
+</script>
+
+</html>

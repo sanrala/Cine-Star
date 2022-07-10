@@ -1,0 +1,551 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+a {
+  text-decoration: none;
+  color: rgb(28, 26, 26);
+}
+.sidebar{
+  display: none;
+}
+
+.buttonHeader{
+  display: none;
+}
+
+#logo {
+  display: none;
+}
+
+.mainBody {
+  width: 100%;
+}
+
+.mainBody img {
+  width: 100%;
+  
+}
+/* HEADER */
+
+
+.header img {
+
+  display: none;
+}
+
+.menu_lien {
+  display: none;
+}
+
+
+/* menu burger  */
+
+#burg {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#compte {
+  display: block;
+}
+
+#compte img {
+  margin: 5px auto;
+  margin-right: 15px;
+}
+
+.burger {
+  display: block;
+}
+
+#burg img {
+  display: block;
+}
+
+#burg input {
+  display: none;
+}
+
+i {
+  margin: 5px auto;
+  margin-left: 15px;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgba(90, 122, 140, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  display: block;
+
+}
+
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #100202;
+  display: block;
+  transition: 0.3s;
+  color: white;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 45px;
+  font-size: 60px;
+  color: white;
+}
+
+.overlay {
+  display: block;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* // fin du menu burger */
+
+/* SIDEBAR */
+
+#list li {
+  color: red;
+  list-style-type: none;
+  margin: 2px;
+  /* margin-right: 55px; */
+  font-size: 1rem;
+}
+
+
+.BA span {
+  margin: 30px 0px 30px 550px;
+
+}
+
+
+
+.BA video {
+  width: 100%;
+}
+
+
+
+.carousel {
+  bottom: 40px;
+  width: 100%;
+  height: 100%;
+
+}
+
+
+.main {
+
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.main2 {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.mainContainer {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.flex {
+
+  margin: 0;
+  width: 100%;
+}
+
+.content span {
+  /* width: 100%; */
+  /* margin: 30px 0px; */
+  font-size: 1.2rem;
+
+}
+
+
+
+.content div .dnone {
+  display: none;
+}
+
+.content span {
+  margin-left: -5px;
+}
+
+.content img {
+  margin-right: 20px;
+  width: 130px;
+  height: 170px;
+}
+
+.content .series img {
+  margin-right: 1px;
+  width: 130px;
+  height: 170px;
+}
+
+.content .avantpremieres img {
+  margin-right: 1px;
+  width: 130px;
+  height: 170px;
+}
+
+.content .films img {
+  margin-right: 1px;
+  width: 130px;
+  height: 170px;
+}
+
+
+
+
+.footer {
+  display: none;
+}
+
+
+@keyframes bandesAnnonces {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-370px);
+  }
+
+  50% {
+    transform: translateX(-740px);
+  }
+
+  75% {
+    transform: translateX(-1110px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+
+}
+
+
+
+
+
+/*  BOUTON FILTRE FILMS */
+.filter {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.dropbtnFilter {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px;
+  font-size: 9px;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px 0 0px;
+
+}
+
+.dropdownFilter {
+  position: relative;
+  display: inline-block;
+
+}
+
+
+
+.dropdown-contentFilms {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropbtnFilter span {
+  font-size: 10px;
+}
+
+.dropbtnFilter li {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.dropdown-contentFilms a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 10px;
+}
+
+.dropdown-contentFilms span {
+
+  margin-top: 12px;
+
+  font-size: 10px;
+
+}
+
+.dropdown-contentFilms li {
+
+  list-style-type: none;
+}
+
+.dropdown-contentFilms a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdownFilter:hover .dropdown-contentFilms {
+  display: block;
+}
+
+.dropdown-contentSeries {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-contentSeries a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 10px;
+}
+
+.dropdown-contentSeries span {
+
+  margin-top: 12px;
+
+  font-size: 10px;
+
+}
+
+.dropdown-contentSeries li {
+
+  list-style-type: none;
+}
+
+.dropdown-contentSeries a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdownFilter:hover .dropdown-contentSeries {
+  display: block;
+}
+
+.dropdown-contentAP {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-contentAP a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  list-style-type: none;
+  font-size: 10px;
+}
+
+.dropdown-contentAP span {
+
+  margin-top: 12px;
+
+  font-size: 10px;
+
+}
+
+.dropdown-contentAP li {
+
+  list-style-type: none;
+}
+
+.dropdown-contentAP a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdownFilter:hover .dropdown-contentAP {
+  display: block;
+}
+
+.dropdown-contentAnnee {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-contentAnnee a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 10px;
+
+}
+
+.dropdown-contentAnnee span {
+
+  margin-top: 12px;
+
+  font-size: 10px;
+
+}
+
+.dropdown-contentAnnee li {
+
+  list-style-type: none;
+}
+
+.dropdown-contentAnnee a:hover {
+  background-color: #f1f1f1
+}
+
+.dropdownFilter:hover .dropdown-contentAnnee {
+  display: block;
+}
+
+.dropdown-contentTOUT {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+}
+
+.dropdown-contentTOUT a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+
+}
+
+
+
+
+
+
+
+
+/* FIN BOUTON FILTRE FILMS */
+
+
+#wrapper, 
+#wrapper2, 
+#wrapper3, 
+#wrapper4, 
+#wrapper5,
+#wrapper6,
+#wrapper7 {
+  width: 100%;
+  max-width: 290px;
+  position: relative;
+}
+
+
+#carousel,
+#carousel2,
+#carousel3,
+#carousel4,
+#carousel5,
+#carousel6,
+#carousel7
+ {
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  margin-left: 25px;
+  width: 100%;
+}
+
+#prev,
+#next,
+#prev2,
+#next2,
+#prev3,
+#next3,
+#prev4,
+#next4,
+#prev5,
+#next5,
+#prev6,
+#next6,
+#prev7,
+#next7
+
+ {
+ display: none;
+}
+
+
+
+#slider-text h2::after {
+ display: none;
+}
+
+.footer {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+     background-color: rgb(20, 20, 24);
+color:#00FFCB;
+
+     width: 100%;
+    height: 12vh;
+     z-index: 2000;
+}
