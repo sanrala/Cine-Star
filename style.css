@@ -213,13 +213,28 @@ button.dropbtn:focus::after {
   
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
     background-color: rgb(34, 34, 37);
 /* 
-    position: fixed;
+    ;
    height: 100%; */
     /* width: 140px; */
 }
+.sidebar li {
+   margin: 30px;
+  
+}
+.sidebar ul {
+    position: fixed;
+    margin-top:  200px;
+}
 
+.sidebar a {
+    color: white;
+    text-decoration: none;
+
+}
 
 
 .sidebar span {
