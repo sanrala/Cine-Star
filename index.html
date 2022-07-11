@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" media="(max-width: 500px)" href="CSS/mobile.css">
   <!-- <link rel="stylesheet" media="(max-width: 400px)" href="CSS/mobilepetit.css"> -->
@@ -20,7 +20,8 @@
     href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Grape+Nuts&family=Parisienne&family=Raleway:wght@200&family=Rubik+Microbe&display=swap"
     rel="stylesheet">
 
-  <script src="https://kit.fontawesome.com/343a754b43.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/343a754b43.js" crossorigin="anonymous"></script>  
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <title>Document</title>
 </head>
 
@@ -31,9 +32,9 @@
             <ul id="burg">
 
                 <li class="burger" onclick="openNav()"><a href="#"><i class="fas fa-solid fa-bars fa-2x"></i></a></li>
-                <!-- <button type="submit" class="btn btn-block btn-primary">Submit</button> -->
-                <li id="btnCompte"><a href="compte.html" id="compte"><img src="icones/compte.png" width="30px"
-                      height="30px"></img></a></li>
+             
+                <li ><a href="compte.html" id="compte"><img src="icones/compte.png" width="30px"
+                      height="30px" id="btnCompte"></img></a></li>
               </ul>
           
               <div id="myNav" class="overlay">
@@ -41,11 +42,10 @@
                 <div class="overlay-content">
           
           
-                  <li><a href="index.html">Accueil</a></li>
-                  <li><a href="#">Cinéma</a></li>
-                  <li><a href="#">Séries</a></li>
-                  <li><a href="#">Streaming</a></li>
-                  <li><a href="favoris.html">Favoris</a></li>
+                  <a href="index.html"><li id="menu"><i class="fas fa-light fa-house-user"></i>Accueil</li></a>
+                  <a href="#"><li id="menu"><i class='bx bxs-film'></i>Cinéma</li></a>
+                  <a href="#"><li id="menu"><i class='bx bx-tv' ></i>Séries</li></a>
+                  <a href="favoris.html"><li id="menu"><i class="fas fa-solid fa-heart"></i>Favoris</li></a>
           
                 </div>
           
@@ -68,11 +68,10 @@
             <div class="sidebar">
                 <ul>
             
-                  <li id="menu"><a href="index.html">Accueil</a></li>
-                  <li id="menu"><a href="#">Cinéma</a></li>
-                  <li id="menu"><a href="#">Séries</a></li>
-                  <li id="menu"><a href="#">Streaming</a></li>
-                  <li id="menu"><a href="favoris.html">Favoris</a></li>
+                  <a href="index.html"><li id="menu"><i class="fas fa-light fa-house-user"></i>Accueil</li></a>
+                  <a href="#"><li id="menu"><i class='bx bxs-film'></i>Cinéma</li></a>
+                  <a href="#"><li id="menu"><i class='bx bx-tv' ></i>Séries</li></a>
+                  <a href="favoris.html"><li id="menu"><i class="fas fa-solid fa-heart"></i>Favoris</li></a>
             
                   <!-- <li id="btnCompte"><a href="" id="compte"><img src="icones/compte.png" width="20px"
                                                   height="20px"></img></a></li> -->
@@ -82,27 +81,57 @@
             <div class="mainContent">
               
                 <div class="mainBody">
+                  <div class="header">
 
+                    <!-- <ul id="burg">
+        
+                        <li class="burger" onclick="openNav()"><a href="#"><i class="fas fa-solid fa-bars fa-2x"></i></a></li>
+            
+                        <li id="btnCompte"><a href="compte.html" id="compte"><img src="icones/compte.png" width="30px"
+                              height="30px"></img></a></li>
+                      </ul>
+                  
+                      <div id="myNav" class="overlay">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <div class="overlay-content">
+                  
+                  
+                          <li><a href="index.html">Accueil</a></li>
+                          <li><a href="#">Cinéma</a></li>
+                          <li><a href="#">Séries</a></li>
+                          <li><a href="#">Streaming</a></li>
+                          <li><a href="favoris.html">Favoris</a></li>
+                  
+                        </div>
+                  
+                      </div> -->
+                    <img src="image/Cinestars.png" width="200" height="40" alt="logo" id="logo"></img>
+        
+                    <div class="menu">
+                        <form id="form">
+                            <input type="text" placeholder="Search" id="search" class="search">
+                          </form>
+                    
+                          <div class="dropdown">
+                    
+                            <a href="compte.html"><button id="myBtn" class="dropbtn">Compte </button></a>
+                    
+                          </div>
+                    </div>
+                </div>
 
                 </div>
                 <div class="row" id="slider-text">
-                    <div class="col-md-6">
-                      <h2>LES PLUS POPULAIRES</h2>
+                    <div class="swiper">
+                      <h2 class="titleSwiper">LES PLUS POPULAIRES
+                        <div class="swipeButton">
+                        <i class="fa-solid fa-angle-left"id="prev"></i>
+                        <i class="fa-solid fa-angle-right"id="next"></i>
+                      </div>
+                      </h2> 
                     </div>
                   </div>
-                  <button id="prev">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
-                      <path fill="none" d="M0 0h24v24H0V0z" />
-                      <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
-                    </svg>
-                  </button>
-                  <button id="next">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
-                      <path fill="none" d="M0 0h24v24H0V0z" />
-                      <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
-                    </svg>
-                  </button>
-            
+ 
                   <div id="wrapper">
             
                     <div id="carousel">
@@ -117,22 +146,15 @@
             
             
                   <div class="row" id="slider-text">
-                    <div class="col-md-6">
-                      <h2>ACTUELLEMENT AU CINEMA</h2>
+                    <div class="swiper">
+                      <h2 class="titleSwiper">ACTUELLEMENT AU CINEMA
+                        <div class="swipeButton">
+                        <i class="fa-solid fa-angle-left"id="prev2"></i>
+                        <i class="fa-solid fa-angle-right"id="next2"></i>
+                      </div>
+                      </h2>
                     </div>
                   </div>
-                  <button id="prev2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
-                      <path fill="none" d="M0 0h24v24H0V0z" />
-                      <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
-                    </svg>
-                  </button>
-                  <button id="next2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
-                      <path fill="none" d="M0 0h24v24H0V0z" />
-                      <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
-                    </svg>
-                  </button>
             
             
                   <div id="wrapper2">
@@ -146,25 +168,18 @@
                       </div>
                     </div>
                   </div>
-            
-                  <div class="row" id="slider-text">
-                    <div class="col-md-6">
-                      <h2>LES MIEUX NOTÉS</h2>
+                  
+          
+                    <div class="row" id="slider-text">
+                      <div class="swiper">
+                        <h2 class="titleSwiper">LES MIEUX NOTÉS
+                          <div class="swipeButton">
+                          <i class="fa-solid fa-angle-left"id="prev3"></i>
+                          <i class="fa-solid fa-angle-right"id="next3"></i>
+                        </div>
+                        </h2>
+                      </div>
                     </div>
-                  </div>
-                  <button id="prev3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
-                      <path fill="none" d="M0 0h24v24H0V0z" />
-                      <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
-                    </svg>
-                  </button>
-                  <button id="next3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
-                      <path fill="none" d="M0 0h24v24H0V0z" />
-                      <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
-                    </svg>
-                  </button>
-            
             
                   <div id="wrapper3">
             
@@ -179,22 +194,15 @@
                   </div>
             
                   <div class="row" id="slider-text">
-                    <div class="col-md-6">
-                      <h2>A VENIR</h2>
+                    <div class="swiper">
+                      <h2 class="titleSwiper">A VENIR
+                        <div class="swipeButton">
+                        <i class="fa-solid fa-angle-left"id="prev4"></i>
+                        <i class="fa-solid fa-angle-right"id="next4"></i>
+                      </div>
+                      </h2>
                     </div>
                   </div>
-                  <button id="prev4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
-                      <path fill="none" d="M0 0h24v24H0V0z" />
-                      <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
-                    </svg>
-                  </button>
-                  <button id="next4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
-                      <path fill="none" d="M0 0h24v24H0V0z" />
-                      <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
-                    </svg>
-                  </button>
             
             
                   <div id="wrapper4">
@@ -210,67 +218,7 @@
                   </div>
             
             
-                  <div class="row" id="slider-text">
-                    <div class="col-md-6">
-                      <h2></h2>
-                    </div>
-                  </div>
-                  <button id="prev5">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
-                      <path fill="none" d="M0 0h24v24H0V0z" />
-                      <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
-                    </svg>
-                  </button>
-                  <button id="next5">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
-                      <path fill="none" d="M0 0h24v24H0V0z" />
-                      <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
-                    </svg>
-                  </button>
-            
-            
-                  <div id="wrapper5">
-            
-                    <div id="carousel5">
-            
-                      <div id="content5">
-            
-            
-            
-                      </div>
-                    </div>
-                  </div>
-            
-                  <div class="row" id="slider-text">
-                    <div class="col-md-6">
-                      <h2></h2>
-                    </div>
-                  </div>
-                  <button id="prev6">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
-                      <path fill="none" d="M0 0h24v24H0V0z" />
-                      <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
-                    </svg>
-                  </button>
-                  <button id="next6">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 24 24">
-                      <path fill="none" d="M0 0h24v24H0V0z" />
-                      <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
-                    </svg>
-                  </button>
-            
-            
-                  <div id="wrapper6">
-            
-                    <div id="carousel6">
-            
-                      <div id="content6">
-            
-            
-            
-                      </div>
-                    </div>
-                  </div>
+                
             
             </div>
         </div>

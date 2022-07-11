@@ -31,7 +31,22 @@ a {
 }
 /* HEADER */
 
+.header_main {
+  display: block;
+      background-color: rgb(34, 34, 37);
+      width: 100%;
+      position: fixed;
+  z-index: 100;
+  height: auto;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
 
+  .header {
+    display: none;
+  }
 .header img {
 
   display: none;
@@ -43,32 +58,46 @@ a {
 
 
 /* menu burger  */
+.burger i {
+  color: white;
+
+}
+.overlay i {
+  color: white;
+ margin: 0 auto;
+}
 
 #burg {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 #compte {
   display: block;
+ 
 }
 
 #compte img {
   margin: 5px auto;
-  margin-right: 15px;
+  margin-right: 35px;
 }
 
 .burger {
   display: block;
+ 
 }
+
 
 #burg img {
   display: block;
+
 }
 
-#burg input {
-  display: none;
+#btnCompte {
+  margin-right: 20px;
 }
 
 i {
@@ -96,6 +125,12 @@ i {
   display: block;
 
 }
+.overlay-content li {
+  display: flex;
+  flex-direction: column;
+
+}
+
 
 
 .overlay a {
@@ -149,9 +184,6 @@ li {
 
 
 
-.BA video {
-  width: 100%;
-}
 
 
 
@@ -163,25 +195,13 @@ li {
 }
 
 
-.main {
 
+
+
+.mainContent{
   margin-left: 0;
   margin-right: 0;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.main2 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.mainContainer {
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   width: 100%;
 }
 
@@ -267,222 +287,6 @@ li {
 
 
 
-/*  BOUTON FILTRE FILMS */
-.filter {
-  display: flex;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.dropbtnFilter {
-  background-color: #4CAF50;
-  color: white;
-  padding: 8px;
-  font-size: 9px;
-  border: none;
-  cursor: pointer;
-  margin: 0 5px 0 0px;
-
-}
-
-.dropdownFilter {
-  position: relative;
-  display: inline-block;
-
-}
-
-
-
-.dropdown-contentFilms {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropbtnFilter span {
-  font-size: 10px;
-}
-
-.dropbtnFilter li {
-  display: flex;
-  flex-wrap: wrap;
-
-}
-
-.dropdown-contentFilms a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-size: 10px;
-}
-
-.dropdown-contentFilms span {
-
-  margin-top: 12px;
-
-  font-size: 10px;
-
-}
-
-.dropdown-contentFilms li {
-
-  list-style-type: none;
-}
-
-.dropdown-contentFilms a:hover {
-  background-color: #f1f1f1
-}
-
-.dropdownFilter:hover .dropdown-contentFilms {
-  display: block;
-}
-
-.dropdown-contentSeries {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-contentSeries a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-size: 10px;
-}
-
-.dropdown-contentSeries span {
-
-  margin-top: 12px;
-
-  font-size: 10px;
-
-}
-
-.dropdown-contentSeries li {
-
-  list-style-type: none;
-}
-
-.dropdown-contentSeries a:hover {
-  background-color: #f1f1f1
-}
-
-.dropdownFilter:hover .dropdown-contentSeries {
-  display: block;
-}
-
-.dropdown-contentAP {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-contentAP a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  list-style-type: none;
-  font-size: 10px;
-}
-
-.dropdown-contentAP span {
-
-  margin-top: 12px;
-
-  font-size: 10px;
-
-}
-
-.dropdown-contentAP li {
-
-  list-style-type: none;
-}
-
-.dropdown-contentAP a:hover {
-  background-color: #f1f1f1
-}
-
-.dropdownFilter:hover .dropdown-contentAP {
-  display: block;
-}
-
-.dropdown-contentAnnee {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-contentAnnee a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-size: 10px;
-
-}
-
-.dropdown-contentAnnee span {
-
-  margin-top: 12px;
-
-  font-size: 10px;
-
-}
-
-.dropdown-contentAnnee li {
-
-  list-style-type: none;
-}
-
-.dropdown-contentAnnee a:hover {
-  background-color: #f1f1f1
-}
-
-.dropdownFilter:hover .dropdown-contentAnnee {
-  display: block;
-}
-
-.dropdown-contentTOUT {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-
-}
-
-.dropdown-contentTOUT a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-
-}
-
-
-
-
-
-
-
-
-/* FIN BOUTON FILTRE FILMS */
 
 
 #wrapper, 
@@ -493,7 +297,7 @@ li {
 #wrapper6,
 #wrapper7 {
   width: 100%;
-  max-width: 290px;
+  /* max-width: 280px; */
   position: relative;
 }
 
@@ -509,8 +313,28 @@ li {
   overflow: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  margin-left: 25px;
+  /* margin-left: 25%; */
+ 
   width: 100%;
+}
+#content,
+#content2,
+#content3,
+#content4,
+#content5,
+#content6,
+#content7 {
+  
+    width: 100%;
+
+
+}
+
+#slider-text h2 {
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
+
 }
 
 #prev,
@@ -531,7 +355,22 @@ li {
  {
  display: none;
 }
+.box {
+  width: 150px;
 
+}
+
+
+
+.slide-img {
+  height: 250px;
+  position: relative;
+
+}
+
+.type {
+  display: none;
+}
 
 
 #slider-text h2::after {

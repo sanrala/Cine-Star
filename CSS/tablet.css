@@ -8,9 +8,26 @@
 .menu {
     display: none;
 }
-.header {
+.header_main {
+  display: block;
+      background-color: rgb(34, 34, 37);
+      width: 100%;
+      position: fixed;
+  z-index: 100;
+  height: auto;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
+
+  .header {
     display: none;
-}
+  }
+
+  #logo {
+    display: none;
+  }
 i {
     color: black;
 }
@@ -37,11 +54,23 @@ i {
     border-radius: 20px;
    }
 
+
+.burger i {
+  color: white;
+
+}
+.overlay i {
+  color: white;
+ margin: 0 auto;
+}
+
 #burg {
-    display: flex;
-    flex-wrap: wrap;
-   justify-content:space-between;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 
 
   #compte {
@@ -64,7 +93,7 @@ i {
 }
   i{
     margin: 5px auto;
-  margin-left :15px ;
+ 
   }
   
   .overlay {
@@ -88,6 +117,11 @@ i {
   
   }
   
+  #slider-text h2 {
+
+    width: 100%; 
+   
+}
   
   .overlay a {
     padding: 8px;
@@ -126,11 +160,22 @@ i {
     
 }
 
-/* #wrapper {
+.mainBody {
   width: 100%;
-  max-width: 764px;
-  position: relative;
-} */
+}
+
+#wrapper,
+#wrapper2,
+#wrapper3,
+#wrapper4,
+#wrapper5,
+#wrapper6,
+#wrapper7 {
+    width: 100%;
+    /* max-width: 1364px; */
+    position: relative;
+
+}
 
 #carousel {
   overflow: auto;
@@ -144,6 +189,12 @@ i {
 #next {
 
  display: none;
- 
 
+}
+.sidebar {
+  display: none;
+}
+.mainContent {
+
+   width: 100%;
 }
