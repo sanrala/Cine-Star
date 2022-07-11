@@ -332,9 +332,12 @@ li {
 
 #slider-text h2 {
   font-size: 1.2rem;
-  text-align: center;
-  width: 100%;
 
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
 }
 
 #prev,
