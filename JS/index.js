@@ -39,6 +39,33 @@ function myFunction() {
 
 // FIN BOUTON CONNEXION
 
+
+ // ---------------------------CAROUSEL AFFICHE---------------------------
+ const gapAffiche = 29;
+
+ const carouselAffiche = document.getElementById("carouselAffiche"),
+   contentAffiche = document.getElementById("contentAffiche"),
+   nextAffiche = document.getElementById("nextAffiche"),
+   prevAffiche = document.getElementById("prevAffiche");
+//    setInterval(() => {
+//     carouselAffiche.scrollBy(widthAffiche + gapAffiche, 0);
+// }, 2000);
+//  nextAffiche.addEventListener("click", e => {
+//    carouselAffiche.scrollBy(widthAffiche + gapAffiche, 0);
+
+//  });
+ prevAffiche.addEventListener("click", e => {
+   carouselAffiche.scrollBy(-(widthAffiche + gapAffiche), 0);
+
+ });
+
+ let widthAffiche = carouselAffiche.offsetWidth;
+ window.addEventListener("resize", e => (widthAffiche = carouselAffiche.offsetWidth));
+
+ // ---------------------------FIN CAROUSEL---------------------------
+
+
+
  // ---------------------------CAROUSEL---------------------------
  const gap = 16;
 
@@ -214,8 +241,8 @@ const aps = [
 
 
 
-// -------------------------------------------------------------------------
-const newCarouselAffiche = document.querySelector('#content2')
+// -----------------------------CAROUSEL AFFICHE------------------
+const newCarouselAffiche = document.querySelector('#contentAffiche')
 
 let movieAffiche =fetch('https://api.themoviedb.org/3/trending/all/day?api_key=e0e252f245f519ae01af7682ea83a642');
 movieAffiche.then(async response => {
@@ -227,25 +254,78 @@ movieAffiche.then(async response => {
         const movieAfficheNode = recentMovieAffiche.map(movieAffiche => {
             return createMovieAffiche(movieAffiche)
         })
-        newCarousel2.append(...movieAfficheNode);
+        newCarouselAffiche.append(...movieAfficheNode);
     } catch (error) {
         console.log(error);
     }
 })
 
-const mainBody = document.querySelector('.mainBody')
+
 
 const createMovieAffiche = (movieAffiche)=>{
-const imgAffiche = document.createElement('img')
-imgAffiche.src ="https://image.tmdb.org/t/p/w500/" + movieAffiche.backdrop_path;
- mainBody.append(imgAffiche).length
+    const li = document.createElement('li')
+    li.classList.add('item-a')
+
+    const box = document.createElement('div')
+    box.classList.add('boxAffiche')
+
+    const slide = document.createElement('div')
+    slide.classList.add('slideAffiche-img')
+
+    const imgScreen1 = document.createElement('img')
+    imgScreen1.classList.add('itemAffiche')
+    imgScreen1.src="https://image.tmdb.org/t/p/w500/" + movieAffiche.backdrop_path;
+
+
+
+    const overlay = document.createElement('div')
+    overlay.classList.add('overlaySlider')
+
+    // const a = document.createElement('a')
+    // a.classList.add('love-btn')
+    // a.innerText = "J'aime"
+
    
 
+    const type = document.createElement('div')
+    type.classList.add('type')
+
+    const aType = document.createElement('a')
+    aType.innerText = movieAffiche.title;
+    aType.style.fontSize= ('0.7rem')
+    aType.href= `cine1_resume.html?id=${movieAffiche.id}`
+
+    // const spanGenre = document.createElement('span')
+    // spanGenre= movie.genre_ids;
+
+    // const aVote = document.createElement('a')
+    // aVote.innerText = "Date de sortie : " + movieAffiche.release_date
+    // aVote.style.fontSize=('0.8rem')
+    // aVote.style.color='#878484'
+
+   
+
+    
+    slide.append(imgScreen1, overlay)
+    box.append(slide)
+  
+    type.append(aType)
+    li.append(box)
+    // return aType
     return li;
+
+
+
+
+   
+
+    return slide;
 
 
 }
 
+
+// -----------------------------FIN CAROUSEL AFFICHE------------------
 
 
 
@@ -338,7 +418,7 @@ const createTop = (movie)=>{
 // ------------------FIN CAROUSEL FILMS POULAIRES---------------
 
 
-// ------------------CAROUSEL 2 FILMS NOW PLAYING---------------
+// ------------------CAROUSEL 2 FILMS TV POPULARE---------------
 
 const newCarousel2 = document.querySelector('#content2')
 

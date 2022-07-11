@@ -166,36 +166,10 @@ li {
 
 /* // fin du menu burger */
 
-/* SIDEBAR */
 
-#list li {
-  color: red;
-  list-style-type: none;
-  margin: 2px;
-  /* margin-right: 55px; */
-  font-size: 1rem;
+.swiperAffiche {
+  display: none;
 }
-
-
-.BA span {
-  margin: 30px 0px 30px 550px;
-
-}
-
-
-
-
-
-
-.carousel {
-  bottom: 40px;
-  width: 100%;
-  height: 100%;
-
-}
-
-
-
 
 
 .mainContent{
@@ -205,52 +179,6 @@ li {
   width: 100%;
 }
 
-.flex {
-
-  margin: 0;
-  width: 100%;
-}
-
-.content span {
-  /* width: 100%; */
-  /* margin: 30px 0px; */
-  font-size: 1.2rem;
-
-}
-
-
-
-.content div .dnone {
-  display: none;
-}
-
-.content span {
-  margin-left: -5px;
-}
-
-.content img {
-  margin-right: 20px;
-  width: 130px;
-  height: 170px;
-}
-
-.content .series img {
-  margin-right: 1px;
-  width: 130px;
-  height: 170px;
-}
-
-.content .avantpremieres img {
-  margin-right: 1px;
-  width: 130px;
-  height: 170px;
-}
-
-.content .films img {
-  margin-right: 1px;
-  width: 130px;
-  height: 170px;
-}
 
 
 
@@ -283,10 +211,46 @@ li {
 
 }
 
+.mainBody {
+  width: 100%;
+  height: auto;
+display: flex;
+
+  
+}
+
+
+#wrapperAffiche {
+  width: 100%;
+  max-width: 644px;
+  position: relative;
+
+}
+.boxAffiche {
+  width: 82%;
+
+
+  overflow: hidden;
+
+  margin-right:0px;
+
+}
 
 
 
+.slideAffiche-img {
 
+  position: relative;
+
+}
+
+.slideAffiche-img img {
+  width: 500px;
+  height: 100%;
+  object-fit: cover;
+  box-sizing: border-box;
+
+}
 
 
 #wrapper, 

@@ -22,7 +22,7 @@ li {
     width: 30px;
 }
 .header_main {
-display: none;
+
     background-color: rgb(34, 34, 37);
     width: 100%;
     position: fixed;
@@ -30,13 +30,13 @@ display: none;
 z-index: 100;
 flex-basis: 70px;
 
-/* display: flex; */
+display: flex;
 align-items: center;
 justify-content: space-between;
 }
 .header {
 
-    /* background-color: transparent; */
+    
     width: 90%;
     position: fixed;
     height: 10vh;
@@ -52,15 +52,105 @@ i {
     width: 50px;
     text-align: center;
 }
+
+/* ----------------CAROUSEL AFFICHE---------------- */
 .mainBody {
-    width: 90%;
+    width: 88%;
     height: auto;
+display: flex;
+
+    
 }
 
-.mainBody img {
-    width: 100%;
-    height: 90%;
+
+
+#wrapperAffiche {
+    width: 90%;
+    /* max-width: 64px; */
+    position: relative;
+
 }
+
+
+
+#carouselAffiche {
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* margin-left: 100px; */
+    width: 100%;
+
+}
+
+
+#carouselAffiche::-webkit-scrollbar
+ {
+    height: 0;
+}
+
+
+
+
+
+#contentAffiche{
+    display: flex;
+    align-items: center;
+    /* display: grid; */
+    grid-gap: 5px;
+    grid-auto-flow: column;
+    /* margin: auto; */
+    box-sizing: border-box;
+    width: 90%;
+    height: 100%;
+
+}
+
+
+.boxAffiche {
+    width: 100%;
+
+
+    overflow: hidden;
+
+    /* margin: 10px; */
+
+}
+
+#autoWidth.cs-hidden {
+    display: flex;
+    width: 100%;
+    /* display: grid;
+    
+    grid-gap: 5px;
+    grid-auto-flow: column; */
+    margin: auto;
+    box-sizing: border-box;
+
+    height: 100%;
+
+
+}
+
+.slideAffiche-img {
+    /* height: 550px; */
+    position: relative;
+
+}
+
+.slideAffiche-img img {
+    /* width: 100%;
+    height: 100%; */
+    object-fit: cover;
+    box-sizing: border-box;
+
+}
+
+
+
+
+/* ----------------FIN CAROUSEL AFFICHE---------------- */
+
+
 
 /*  menu burger  */
 
@@ -579,7 +669,7 @@ text-align: center;
     animation: fade 0.5s;
 }
 
-/* .swiper{
+.swiper{
     display: flex;
    
 }
@@ -593,10 +683,10 @@ text-align: center;
    color: white;
    font-size: 18 px !important;
    font-weight: 700;
-} */
+}
 
 .swipeButton {
-    display: none;
+    /* display: none; */
 }
 
 
