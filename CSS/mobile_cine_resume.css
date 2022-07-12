@@ -40,6 +40,10 @@ a {
   width: 100%;
 }
 
+.sidebar {
+  display: none;
+}
+
 .player {
   position: absolute;
   z-index: 2;
@@ -51,10 +55,22 @@ a {
 
 /* menu burger  */
 
+.burger .fas {
+  color: orange;
+
+}
+
+.overlay i {
+  color: white;
+  margin: 0 auto;
+}
+
 #burg {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 #compte {
@@ -104,6 +120,11 @@ i {
 
 }
 
+.overlay-content li {
+  display: flex;
+  flex-direction: column;
+
+}
 
 .overlay a {
   padding: 8px;
@@ -138,26 +159,17 @@ li {
 
 /* HEADER */
 
-.header {
-
-  display: flex;
-  margin: 0;
-  padding: 0;
-  width: 100%;
 
 
+
+
+.buttonHeader {
+  display: none;
 }
 
-
-
-
-#menu a,
-.logo {
-
-  padding: 15px;
+#logo {
+  display: none;
 }
-
-
 
 
 
@@ -730,4 +742,16 @@ iframe {
 
 #listAll {
   width: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(20, 20, 24);
+  color: #00FFCB;
+
+  width: 100%;
+  height: 12vh;
+  z-index: 2000;
 }

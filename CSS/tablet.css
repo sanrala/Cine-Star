@@ -51,13 +51,7 @@ i {
     display: none;
    } */
 
-.header_main input {
 
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-right: 80px;
-  border-radius: 20px;
-}
 
 .burger .fas {
   color: orange;
