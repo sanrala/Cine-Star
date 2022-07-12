@@ -2,80 +2,108 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
 
-body {
-  display: flex;
-  flex-wrap: wrap;
-  /* flex-direction: column; */
 }
 
 a {
   text-decoration: none;
-  color: white;
+  color: rgb(28, 26, 26);
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-
-  /* flex-direction: column; */
-  min-height: 100vh;
-  background-color: rgb(229, 233, 233);
+.sidebar {
+  display: none;
 }
 
-.main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: white;
-  margin: 0 auto;
-  margin-top: 130px;
-  max-width: 100%;
+.buttonHeader {
+  display: none;
+}
 
+#logo {
+  display: none;
+}
+
+.mainBody {
   width: 100%;
 }
 
-.mainContent {
+.mainBody img {
   width: 100%;
+
 }
 
-.player {
-  position: absolute;
-  z-index: 2;
-  /* background: transparent; */
-  right: 200px;
-  bottom: 150px;
-  color: white;
+
+
+/* HEADER */
+
+.header_main {
+  display: block;
+  background-color: rgb(34, 34, 37);
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.header {
+  display: none;
+}
+
+.header img {
+
+  display: none;
+}
+
+.menu_lien {
+  display: none;
+}
+
 
 /* menu burger  */
+.burger .fas {
+  color: orange;
+
+}
+
+.overlay i {
+  color: orange;
+  margin: 0 auto;
+}
 
 #burg {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 #compte {
   display: block;
+
 }
 
 #compte img {
   margin: 5px auto;
-  margin-right: 15px;
+  margin-right: 35px;
 }
 
 .burger {
   display: block;
+
 }
+
 
 #burg img {
   display: block;
+
 }
 
-#burg input {
-  display: none;
+#btnCompte {
+  margin-right: 20px;
 }
 
 i {
@@ -103,6 +131,13 @@ i {
   display: block;
 
 }
+
+.overlay-content li {
+  display: flex;
+  flex-direction: column;
+
+}
+
 
 
 .overlay a {
@@ -135,6 +170,8 @@ i {
 li {
   list-style-type: none;
 }
+
+/* // fin du menu burger */
 
 /* HEADER */
 
@@ -238,6 +275,7 @@ li {
 }
 
 /* FIN HEADER */
+
 
 /* BOUTON COMPTE */
 
