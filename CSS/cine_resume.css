@@ -424,8 +424,11 @@ button.dropbtn:focus::after {
   height: 200px;
   display: flex;
   flex-wrap: wrap;
+  position: relative;
 
 }
+
+
 
 /* TOP 10 */
 
@@ -475,7 +478,7 @@ flex-wrap: wrap;
 
 
 .box {
-  width: 90%;
+  width: 85%;
 
   box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -484,6 +487,10 @@ flex-wrap: wrap;
   margin: 10px;
 
 }
+
+
+
+
 
 #autoWidth.cs-hidden {
   display: flex;
@@ -502,7 +509,7 @@ flex-wrap: wrap;
 
 .slide-img {
   height: 100%;
-  position: relative;
+  /* position: relative; */
 
 }
 
@@ -635,7 +642,7 @@ flex-wrap: wrap;
 
 /* FIN TOP 10 */
 #resume {
-  width: 90%;
+  width: 85%;
 }
 
 @media (max-width=500px) {

@@ -170,7 +170,21 @@ li {
 }
 
 /* // fin du menu burger */
+.overview {
+  color: white;
+  transform: translateY(-101%);
+  transition: transform 0.3s ease-in;
+}
 
+.overlaySlider:hover .overview {
+  transform: translateY(0);
+}
+
+.love-btn {
+  width: 80px;
+  height: 40px;
+
+}
 
 .swiperAffiche {
   display: none;

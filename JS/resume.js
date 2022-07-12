@@ -102,9 +102,18 @@ window.onload = () => {
 
       const div = document.querySelector('.slide-img')
       const img = document.createElement('img')
+      img.classList.add('item')
       img.src = "https://image.tmdb.org/t/p/w500" + popularMovie.backdrop_path
 
+
+
+      const title = document.querySelector('h2')
+
+      const span = document.createElement('span')
+      span.classList.add('title')
+      span.innerText = popularMovie.title
       div.append(img)
+      title.append(span)
 
       const sypnosis = document.querySelector('#resume')
       const p = document.createElement('p')

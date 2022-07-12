@@ -389,8 +389,10 @@ const createTop = (movie) => {
     aType.style.fontSize = ('0.7rem')
     aType.href = `cine1_resume.html?id=${movie.id}`
 
-    // const spanGenre = document.createElement('span')
-    // spanGenre= movie.genre_ids;
+    const seeDetail = document.createElement('a')
+    seeDetail.classList.add('overview')
+    seeDetail.href = `cine1_resume.html?id=${movie.id}`
+    seeDetail.innerText = " Plus...";
 
     const aVote = document.createElement('a')
     aVote.innerText = "Date de sortie : " + movie.release_date
@@ -399,15 +401,15 @@ const createTop = (movie) => {
 
 
 
-    overlay.append(a);
+    overlay.append(a, seeDetail);
     slide.append(imgScreen1, overlay)
     box.append(slide,
         detailsBox
     )
     detailsBox.append(type)
     type.append(aType
-        // , spanGenre
         , aVote
+
     )
     li.append(box)
     // return aType

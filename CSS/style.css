@@ -448,6 +448,7 @@ button.dropbtn:focus::after {
     /* max-width: 1364px; */
     position: relative;
 
+
 }
 
 
@@ -607,14 +608,27 @@ button.dropbtn:focus::after {
 
 
 
+
 }
 
 .type {
+    /* position: absolute; */
     display: flex;
     flex-direction: column;
     background-color: #d2d1d1;
+    /* transform: translateY(101%);
+    transition: transform 0.3s ease-in; */
+
 
 }
+
+
+
+
+/* .item-a:hover .type {
+    transform: translateY(0);
+
+} */
 
 .type a {
     color: #222222;
@@ -649,6 +663,12 @@ button.dropbtn:focus::after {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: column;
+}
+
+.overview {
+    color: white;
+    transform: translate(250%, 750%);
 }
 
 .love-btn {
