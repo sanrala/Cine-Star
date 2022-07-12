@@ -9,11 +9,12 @@ a {
   text-decoration: none;
   color: rgb(28, 26, 26);
 }
-.sidebar{
+
+.sidebar {
   display: none;
 }
 
-.buttonHeader{
+.buttonHeader {
   display: none;
 }
 
@@ -27,26 +28,28 @@ a {
 
 .mainBody img {
   width: 100%;
-  
+
 }
+
 /* HEADER */
 
 .header_main {
   display: block;
-      background-color: rgb(34, 34, 37);
-      width: 100%;
-      position: fixed;
+  background-color: rgb(34, 34, 37);
+  width: 100%;
+  position: fixed;
   z-index: 100;
   height: auto;
-  
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  }
+}
 
-  .header {
-    display: none;
-  }
+.header {
+  display: none;
+}
+
 .header img {
 
   display: none;
@@ -58,13 +61,14 @@ a {
 
 
 /* menu burger  */
-.burger i {
-  color: white;
+.burger .fas {
+  color: orange;
 
 }
+
 .overlay i {
-  color: white;
- margin: 0 auto;
+  color: orange;
+  margin: 0 auto;
 }
 
 #burg {
@@ -77,7 +81,7 @@ a {
 
 #compte {
   display: block;
- 
+
 }
 
 #compte img {
@@ -87,7 +91,7 @@ a {
 
 .burger {
   display: block;
- 
+
 }
 
 
@@ -125,6 +129,7 @@ i {
   display: block;
 
 }
+
 .overlay-content li {
   display: flex;
   flex-direction: column;
@@ -172,7 +177,7 @@ li {
 }
 
 
-.mainContent{
+.mainContent {
   margin-left: 0;
   margin-right: 0;
   /* margin-bottom: 20px; */
@@ -214,9 +219,9 @@ li {
 .mainBody {
   width: 100%;
   height: auto;
-display: flex;
+  display: flex;
 
-  
+
 }
 
 
@@ -226,13 +231,14 @@ display: flex;
   position: relative;
 
 }
+
 .boxAffiche {
   width: 82%;
 
 
   overflow: hidden;
 
-  margin-right:0px;
+  margin-right: 0px;
 
 }
 
@@ -253,10 +259,10 @@ display: flex;
 }
 
 
-#wrapper, 
-#wrapper2, 
-#wrapper3, 
-#wrapper4, 
+#wrapper,
+#wrapper2,
+#wrapper3,
+#wrapper4,
 #wrapper5,
 #wrapper6,
 #wrapper7 {
@@ -272,15 +278,15 @@ display: flex;
 #carousel4,
 #carousel5,
 #carousel6,
-#carousel7
- {
+#carousel7 {
   overflow: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
   /* margin-left: 25%; */
- 
+
   width: 100%;
 }
+
 #content,
 #content2,
 #content3,
@@ -288,8 +294,8 @@ display: flex;
 #content5,
 #content6,
 #content7 {
-  
-    width: 100%;
+
+  width: 100%;
 
 
 }
@@ -317,11 +323,10 @@ h2 {
 #prev6,
 #next6,
 #prev7,
-#next7
-
- {
- display: none;
+#next7 {
+  display: none;
 }
+
 .box {
   width: 150px;
 
@@ -341,17 +346,17 @@ h2 {
 
 
 #slider-text h2::after {
- display: none;
+  display: none;
 }
 
 .footer {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-     background-color: rgb(20, 20, 24);
-color:#00FFCB;
+  background-color: rgb(20, 20, 24);
+  color: #00FFCB;
 
-     width: 100%;
-    height: 12vh;
-     z-index: 2000;
+  width: 100%;
+  height: 12vh;
+  z-index: 2000;
 }

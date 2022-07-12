@@ -6,35 +6,39 @@
 }
 
 .menu {
-    display: none;
+  display: none;
 }
+
 .header_main {
   display: block;
-      background-color: rgb(34, 34, 37);
-      width: 100%;
-      position: fixed;
+  background-color: rgb(34, 34, 37);
+  width: 100%;
+  position: fixed;
   z-index: 100;
   height: auto;
-  
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  }
-
-  .header {
-    display: none;
-  }
-
-  #logo {
-    display: none;
-  }
-i {
-    color: black;
 }
+
+.header {
+  display: none;
+}
+
+#logo {
+  display: none;
+}
+
+i {
+  color: black;
+}
+
 #btnCompte {
   display: block;
 
 }
+
 .main {
 
   margin-left: 0;
@@ -42,26 +46,32 @@ i {
   margin-top: 20px;
   width: 100%;
 }
-  /* .sidebar {
+
+/* .sidebar {
     display: none;
    } */
 
-   .header_main input{
-   
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-right: 80px;
-    border-radius: 20px;
-   }
+.header_main input {
 
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right: 80px;
+  border-radius: 20px;
+}
+
+.burger .fas {
+  color: orange;
+
+}
 
 .burger i {
   color: white;
 
 }
+
 .overlay i {
   color: white;
- margin: 0 auto;
+  margin: 0 auto;
 }
 
 #burg {
@@ -73,97 +83,108 @@ i {
 }
 
 
-  #compte {
-    display: block;
-  }
-  #compte img {
-    margin: 5px auto;
-    margin-right: 15px;
-  }
-  
-  .burger {
-
-    display: block;
-  }
-  #burg img {
-    display: block;
-  }
-  #burg input {
-    display: block;
+#compte {
+  display: block;
 }
-  i{
-    margin: 5px auto;
- 
-  }
-  
-  .overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    background-color: rgba(90 , 122, 140, 0.9);
-    overflow-x: hidden;
-    transition: 0.5s;
-  }
-  
-  .overlay-content {
-    position: relative;
-    top: 30%;
-    width: 100%;
-    text-align: center;
-    display: block;
-  
-  }
-  
-  #slider-text h2 {
 
-    width: 100%; 
-   
+#compte img {
+  margin: 5px auto;
+  margin-right: 15px;
 }
-  
-  .overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #100202;
-    display: block;
-    transition: 0.3s;
-    color: white;
-  }
-  
-  .overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
-  }
-  
-  .overlay .closebtn {
-    position: absolute;
-    top: 10px;
-    right: 45px;
-    font-size: 60px;
-    color: white;
-  }
-  
-  .overlay {
-    display: block;
-  }
-  
-  li {
-    list-style-type: none;
-  }
-  /* // fin du menu burger */
-  .carousel .carousel-inner .carousel-item img {
-      
-    width:100%;
-    height:100%;
-    
+
+.burger {
+
+  display: block;
+}
+
+#burg img {
+  display: block;
+}
+
+#burg input {
+  display: block;
+}
+
+i {
+  margin: 5px auto;
+
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgba(90, 122, 140, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  display: block;
+
+}
+
+#slider-text h2 {
+
+  width: 100%;
+
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #100202;
+  display: block;
+  transition: 0.3s;
+  color: white;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 45px;
+  font-size: 60px;
+  color: white;
+}
+
+.overlay {
+  display: block;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* // fin du menu burger */
+.carousel .carousel-inner .carousel-item img {
+
+  width: 100%;
+  height: 100%;
+
 }
 
 .mainBody {
   width: 100%;
 }
 
+.titleSwiperAffiche {
+  display: none;
+}
+
+#wrapperAffiche,
 #wrapper,
 #wrapper2,
 #wrapper3,
@@ -171,9 +192,9 @@ i {
 #wrapper5,
 #wrapper6,
 #wrapper7 {
-    width: 100%;
-    /* max-width: 1364px; */
-    position: relative;
+  width: 100%;
+  /* max-width: 1364px; */
+  position: relative;
 
 }
 
@@ -185,16 +206,32 @@ i {
   width: 100%;
 }
 
-#prev,
-#next {
 
- display: none;
+
+#prev,
+#next,
+#prev2,
+#next2,
+#prev3,
+#next3,
+#prev4,
+#next4,
+#prev5,
+#next5,
+#prev6,
+#next6,
+#prev7,
+#next7 {
+
+  display: none;
 
 }
+
 .sidebar {
   display: none;
 }
+
 .mainContent {
 
-   width: 100%;
+  width: 100%;
 }

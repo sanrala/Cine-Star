@@ -56,34 +56,65 @@ window.addEventListener("resize", e => (width = carousel.offsetWidth));
 
 
 // ---------------------------CAROUSEL2---------------------------
-// const gap2 = 16;
+const gap2 = 16;
 
-// const carousel2 = document.getElementById("carousel2"),
-//   content2 = document.getElementById("content2"),
-//   next2 = document.getElementById("next2"),
-//   prev2 = document.getElementById("prev2");
+const carousel2 = document.getElementById("carousel2"),
+  content2 = document.getElementById("content2"),
+  next2 = document.getElementById("next2"),
+  prev2 = document.getElementById("prev2");
 
-// next2.addEventListener("click", e => {
-//   carousel2.scrollBy(width + gap2, 0);
+next2.addEventListener("click", e => {
+  carousel2.scrollBy(width + gap2, 0);
 
-//   if (content2.scrollWidth - width - gap2 <= carousel2.scrollLeft + width) {
-//     next2.style.color = "red";
-//   }
-// });
-// prev2.addEventListener("click", e => {
-//   carousel2.scrollBy(-(width + gap2), 0);
-//   if (carousel2.scrollLeft - width - gap2 <= 0) {
-//     prev2.style.color = "red";
-//   }
+  if (content2.scrollWidth - width - gap2 <= carousel2.scrollLeft + width) {
+    next2.style.color = "red";
+  }
+});
+prev2.addEventListener("click", e => {
+  carousel2.scrollBy(-(width + gap2), 0);
+  if (carousel2.scrollLeft - width - gap2 <= 0) {
+    prev2.style.color = "red";
+  }
 
-// });
+});
 
-// let width2 = carousel2.offsetWidth;
-// window.addEventListener("resize", e => (width2 = carousel2.offsetWidth));
+let width2 = carousel2.offsetWidth;
+window.addEventListener("resize", e => (width2 = carousel2.offsetWidth));
 
 // ---------------------------FIN CAROUSEL---------------------------
 
 
+
+
+
+
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDopEBR4bbjewi6lvSlirK49p59JMcGTec",
+//   authDomain: "cinestars-aa75e.firebaseapp.com",
+//   projectId: "cinestars-aa75e",
+//   storageBucket: "cinestars-aa75e.appspot.com",
+//   messagingSenderId: "580492067329",
+//   appId: "1:580492067329:web:4b257ed89a531cfdf03600"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+
+
+// import {getDatabase,get, ref, set, child, update, remove}
+// from "https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js"
+
+// const db = getDatabase();
+
+
+
+let ourFilm;
 
 window.onload = () => {
   console.log(window);
@@ -91,7 +122,20 @@ window.onload = () => {
   const params = Object.fromEntries(urlSearchParams.entries())
   console.log(params);
 
-  const newCarouselAffiche = document.querySelector('#contentAffiche')
+
+
+  // const dbref = ref(db)
+
+  // get(child(dbref,"films/" + params.id ))
+  // .then((snapshot) => {
+  //   if (snapshot.exists()) {
+  //     ourFilm = snapshot.val();
+  // console.log(ourFilm);
+  // createDetail(ourFilm)
+  //   }
+  // })
+  // .catch ((e)=> console.log(e))
+  // }
 
   let movies = fetch('https://api.themoviedb.org/3/movie/' + params.id + '?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR');
   movies.then(async response => {
@@ -102,14 +146,8 @@ window.onload = () => {
 
       const div = document.querySelector('.slide-img')
       const img = document.createElement('img')
-      img.src = "https://image.tmdb.org/t/p/w500" + popularMovie.backdrop_path
-
+      img.src = "https://image.tmdb.org/t/p/w500" + popularMovie.poster_path
       div.append(img)
-
-      const sypnosis = document.querySelector('#resume')
-      const p = document.createElement('p')
-      p.innerText = popularMovie.overview
-      sypnosis.append(p)
 
     } catch (error) {
       console.log(error);

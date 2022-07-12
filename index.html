@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="CSS/style.css">
   <link rel="stylesheet" media="(max-width: 500px)" href="CSS/mobile.css">
   <!-- <link rel="stylesheet" media="(max-width: 400px)" href="CSS/mobilepetit.css"> -->
   <link rel="stylesheet" media="(max-width: 1234px)" href="CSS/tablet.css">
@@ -24,97 +24,8 @@
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <title>Document</title>
 </head>
-<style>
-  .mySlides {display: none}
-img {vertical-align: middle;}
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-  display: flex;
-}
 
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
-</style>
 <body>
   <div class="container">
     <div class="header_main">
@@ -182,30 +93,30 @@ img {vertical-align: middle;}
         <!-- <div class="mainBody">
         
         </div> -->
-          <div class="row" id="slider-text">
-            <div class="swiperAffiche">
-              <h2 class="titleSwiperAffiche">sdfsdfsdfqsdqsdqsdqsdqsd
+        <div class="row" id="slider-text">
+          <div class="swiperAffiche">
+            <h2 class="titleSwiperAffiche">sdfsdfsdfqsdqsdqsdqsdqsd
 
-                <div class="swipeButtonAffiche">
-                  <i class="fa-solid fa-angle-left" id="prevAffiche"></i>
-                  <i class="fa-solid fa-angle-right" id="nextAffiche"></i>
-                </div>
-              </h2>
-            </div>
-          </div>
-
-          <div id="wrapperAffiche">
-
-            <div id="carouselAffiche">
-  
-              <div id="contentAffiche">
-  
+              <div class="swipeButtonAffiche">
+                <i class="fa-solid fa-angle-left" id="prevAffiche"></i>
+                <i class="fa-solid fa-angle-right" id="nextAffiche"></i>
               </div>
+            </h2>
+          </div>
+        </div>
+
+        <div id="wrapperAffiche">
+
+          <div id="carouselAffiche">
+
+            <div id="contentAffiche">
+
             </div>
           </div>
-         
+        </div>
 
-       
+
+
         <div class="row" id="slider-text">
           <div class="swiper">
             <h2 class="titleSwiper">LES FILMS LES PLUS POPULAIRES
@@ -322,35 +233,35 @@ img {vertical-align: middle;}
         document.getElementById("myNav").style.width = "0%";
       }
 
-//Fin menu burger  
+      //Fin menu burger  
 
 
-let slideIndex = 1;
-showSlides(slideIndex);
+      // let slideIndex = 1;
+      // showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+      // function plusSlides(n) {
+      //   showSlides(slideIndex += n);
+      // }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+      // function currentSlide(n) {
+      //   showSlides(slideIndex = n);
+      // }
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
+      // function showSlides(n) {
+      //   let i;
+      //   let slides = document.getElementsByClassName("mySlides");
+      //   let dots = document.getElementsByClassName("dot");
+      //   if (n > slides.length) { slideIndex = 1 }
+      //   if (n < 1) { slideIndex = slides.length }
+      //   for (i = 0; i < slides.length; i++) {
+      //     slides[i].style.display = "none";
+      //   }
+      //   for (i = 0; i < dots.length; i++) {
+      //     dots[i].className = dots[i].className.replace(" active", "");
+      //   }
+      //   slides[slideIndex - 1].style.display = "block";
+      //   dots[slideIndex - 1].className += " active";
+      // }
     </script>
 </body>
 </body>
