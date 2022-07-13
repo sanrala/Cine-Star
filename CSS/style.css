@@ -30,7 +30,7 @@ li {
     width: 100%;
     position: fixed;
     height: 10vh;
-    z-index: 100;
+    z-index: 10000;
     flex-basis: 70px;
 
     display: flex;
@@ -229,7 +229,7 @@ i {
 }
 
 .search::placeholder {
-    color: #7378c5;
+    color: #adafd1;
 
 }
 
@@ -568,6 +568,8 @@ button.dropbtn:focus::after {
     margin: 10px;
 
 }
+
+
 
 #autoWidth.cs-hidden {
     display: flex;

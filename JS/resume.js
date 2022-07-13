@@ -104,7 +104,9 @@ window.onload = () => {
       const img = document.createElement('img')
       img.classList.add('item')
       img.src = "https://image.tmdb.org/t/p/w500" + popularMovie.backdrop_path
+      img.alt = popularMovie.title
 
+      const box = document.querySelector('.item-a')
 
 
       const title = document.querySelector('h2')
@@ -112,8 +114,46 @@ window.onload = () => {
       const span = document.createElement('span')
       span.classList.add('title')
       span.innerText = popularMovie.title
+
+
+      const voteAverage = document.createElement('span')
+      voteAverage.classList.add('voteAverageImdb')
+      voteAverage.innerText = popularMovie.vote_average + "/10 "
+
+
+      const logoAverage = document.createElement('img')
+      logoAverage.classList.add('logoAverage')
+      logoAverage.src = "icones/imdb.png"
+      logoAverage.alt = "imdb"
+
+
+      const genreID = document.createElement('span')
+      genreID.classList.add('genreID')
+      genreID.innerText = popularMovie.genre_ids
+      genreID.style.color = "orange"
+
+      const btnTrailer = document.createElement('img')
+      btnTrailer.classList.add('btnTrailer')
+      btnTrailer.style.backgroundColor = "orange"
+      btnTrailer.src = "icones/play-circle-regular-24.png"
+      btnTrailer.alt = "play circle"
+
+
+
+      const aBA = document.createElement('a')
+      aBA.href = "popularMovie.video"
+
+      const BA = document.createElement('span')
+      BA.classList.add('BA')
+      BA.innerText = " Regarder la bande-annonce "
+
+      voteAverage.append(logoAverage)
       div.append(img)
-      title.append(span)
+      box.append(span, voteAverage, genreID, btnTrailer)
+      btnTrailer.append(BA)
+
+
+
 
       const sypnosis = document.querySelector('#resume')
       const p = document.createElement('p')

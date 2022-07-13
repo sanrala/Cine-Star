@@ -42,7 +42,7 @@ div {
   width: 100%;
   position: fixed;
   height: 10vh;
-  z-index: 100;
+  z-index: 10000;
   flex-basis: 70px;
 
   display: flex;
@@ -335,7 +335,7 @@ button.dropbtn:focus::after {
   /* flex-wrap: wrap; */
   align-content: flex-start;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
 }
 
 /* .content div {
@@ -507,10 +507,78 @@ flex-wrap: wrap;
 
 }
 
+
+
 .slide-img {
   height: 100%;
   /* position: relative; */
 
+}
+
+.item-a {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.title {
+  color: white;
+  position: relative;
+  bottom: 250px;
+  left: 30px;
+  font-size: 1.6rem;
+  z-index: 1000;
+  width: 100%;
+}
+
+.voteAverageImdb {
+  color: white;
+  position: relative;
+  bottom: 240px;
+  left: 100px;
+  font-size: 1rem;
+  z-index: 1000;
+  width: 100%;
+}
+
+.logoAverage {
+  position: relative;
+  width: 100%;
+  top: 5px;
+  right: 115px;
+  z-index: 2000;
+  width: 50px;
+}
+
+.genreID {
+  width: 100%;
+  position: relative;
+  bottom: 200px;
+  left: 30px;
+  font-size: 1.2rem;
+  z-index: 1000;
+}
+
+.btnTrailer {
+  position: relative;
+  bottom: 170px;
+  left: 30px;
+  font-size: 1.2rem;
+  z-index: 2000;
+  border: 1px solid orange;
+  border-radius: 50px;
+  width: 50px;
+}
+
+.BA {
+  position: relative;
+  /* bottom: 170px;
+  left: 30px; */
+  font-size: 1.2rem;
+  z-index: 3000;
+  border: 1px solid orange;
+  border-radius: 50px;
+  width: 100%;
 }
 
 .slide-img img {
@@ -642,7 +710,7 @@ flex-wrap: wrap;
 
 /* FIN TOP 10 */
 #resume {
-  width: 85%;
+  width: 50%;
 }
 
 @media (max-width=500px) {
@@ -935,7 +1003,7 @@ svg #main-circ {
 }
 
 form {
-  margin-bottom: 20px;
+
   display: flex;
   flex-direction: column;
 }
