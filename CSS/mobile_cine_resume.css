@@ -564,18 +564,17 @@ svg #main-circ {
 
 .title {
   color: white;
-  position: relative;
-  bottom: 150px;
+  top: 10px;
   left: 15px;
-  font-size: 1rem;
-  z-index: 3;
+
   width: 90%;
+  text-align: center;
 }
 
 .voteAverageImdb {
   color: white;
   position: relative;
-  bottom: 140px;
+  bottom: 280px;
   left: 55px;
   font-size: 0.9rem;
   z-index: 3;
@@ -594,20 +593,19 @@ svg #main-circ {
 .genreID {
 
   position: relative;
-  bottom: 130px;
+  bottom: 5px;
   left: 15px;
   font-size: 1rem;
-  z-index: 3;
+  text-align: center;
   width: 90%;
 }
 
 .btnTrailer {
   position: relative;
-  bottom: 120px;
+  bottom: 5px;
   left: 15px;
-  width: 30px;
-  font-size: 1.2rem;
-  z-index: 3;
+  width: 50px;
+
   border: 1px solid orange;
   border-radius: 50px;
 
@@ -627,9 +625,11 @@ svg #main-circ {
 
 
 
-.content .films a {
-  display: flex;
-  align-items: flex-end;
+.notes {
+
+  top: 5px;
+
+
 
 }
 
@@ -655,9 +655,9 @@ svg #main-circ {
 }
 
 #resume {
-  position: relative;
+  /* position: relative; */
   width: 100%;
-  bottom: 90px;
+  top: 20px;
 }
 
 #resume p {
@@ -707,11 +707,7 @@ iframe {
 }
 
 
-.content .films .actually {
 
-  justify-content: center;
-
-}
 
 /* CAROUSEL */
 .photos {

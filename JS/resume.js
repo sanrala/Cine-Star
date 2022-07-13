@@ -1,3 +1,81 @@
+const genres = [
+  {
+    id: 28,
+    name: "Action",
+  },
+  {
+    id: 12,
+    name: "Aventure",
+  },
+  {
+    id: 16,
+    name: "Animation",
+  },
+  {
+    id: 35,
+    name: "Comédie"
+  },
+  {
+    id: 80,
+    name: "Crime"
+  },
+  {
+    id: 99,
+    name: "Documentaire"
+  },
+  {
+    id: 18,
+    name: "Drame"
+  },
+  {
+    id: 10751,
+    name: "Familial"
+  },
+  {
+    id: 14,
+    name: "Fantastique"
+  },
+  {
+    id: 36,
+    name: "Histoire"
+  },
+  {
+    id: 27,
+    name: "Horreur"
+  },
+  {
+    id: 10402,
+    name: "Musique"
+  },
+  {
+    id: 9648,
+    name: "Mystère"
+  },
+  {
+    id: 10749,
+    name: "Romance"
+  },
+  {
+    id: 878,
+    name: "Science-Fiction"
+  },
+  {
+    id: 10770,
+    name: "Téléfilm"
+  },
+  {
+    id: 53,
+    name: "Thriller"
+  },
+  {
+    id: 10752,
+    name: "Guerre"
+  },
+  {
+    id: 37,
+    name: "Western"
+  }
+]
 
 
 document.getElementById("myBtn").onmouseover = function () { myFunction() };
@@ -93,12 +171,32 @@ window.onload = () => {
 
   const newCarouselAffiche = document.querySelector('#contentAffiche')
 
-  let movies = fetch('https://api.themoviedb.org/3/movie/' + params.id + '?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR');
+  let movies = fetch('https://api.themoviedb.org/3/movie/' + params.id + '?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&' + params.with_genres);
   movies.then(async response => {
     try {
       let popularMovie = await response.json();
 
       console.log(popularMovie);
+      const b = document.querySelector('#star1')
+
+      let genre = fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR');
+      genre.then(async response => {
+        try {
+          let genreMovie = await response.json();
+
+
+          let RegenreMovie = genreMovie.genres;
+          console.log(RegenreMovie);
+
+
+          const c = document.createElement('span')
+          c.innerText = RegenreMovie.name
+          b.append(c);
+
+        } catch (error) {
+          console.log(error);
+        }
+      })
 
       const div = document.querySelector('.slide-img')
       const img = document.createElement('img')
@@ -160,30 +258,18 @@ window.onload = () => {
       p.innerText = popularMovie.overview
       sypnosis.append(p)
 
+
+
     } catch (error) {
       console.log(error);
     }
   })
 }
-const createDetail = (movie) => {
-  const title = document.querySelector('h2')
 
-  const span = document.createElement('span')
-  span.innerText = movie.title
 
-  title.append(span)
-  const infos = document.querySelector('.info_film')
-  const sypnosis = document.querySelector('#resume')
-  const p = document.createElement('p')
-  p.classList.add('sypnosis')
-  p.innerText = movie.overview
-  sypnosis.append(p)
 
-  const BA = document.querySelector('.BA')
-  const iframe = document.createElement('iframe')
-  iframe.src = movie.video
 
-}
+
 
 // -------------------VOTE-------------------------------------
 

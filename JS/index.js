@@ -387,11 +387,11 @@ const createTop = (movie) => {
     const aType = document.createElement('a')
     aType.innerText = movie.title;
     aType.style.fontSize = ('0.7rem')
-    aType.href = `cine1_resume.html?id=${movie.id}`
+    aType.href = `cine1_resume.html?id=${movie.id}&with_genres=${movie.genre_ids}`
 
     const seeDetail = document.createElement('a')
     seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.html?id=${movie.id}`
+    seeDetail.href = `cine1_resume.html?id=${movie.id}&with_genres=${movie.genre_ids}`
     seeDetail.innerText = " Plus...";
 
     const aVote = document.createElement('a')
