@@ -382,6 +382,8 @@ button.dropbtn:focus::after {
   transform: translate(-50%, -50%)
 }
 
+
+
 svg {
   cursor: pointer;
   overflow: visible;
@@ -555,7 +557,7 @@ svg #main-circ {
 
 
 .box {
-  width: 90%;
+  width: 100%;
 
 }
 
@@ -563,59 +565,64 @@ svg #main-circ {
 .title {
   color: white;
   position: relative;
-  bottom: 120px;
-  left: 30px;
+  bottom: 150px;
+  left: 15px;
   font-size: 1rem;
-  z-index: 1000;
+  z-index: 3;
+  width: 90%;
 }
 
 .voteAverageImdb {
   color: white;
   position: relative;
-  bottom: 110px;
-  left: 65px;
+  bottom: 140px;
+  left: 55px;
   font-size: 0.9rem;
-  z-index: 1000;
+  z-index: 3;
+  width: 20%;
 }
 
 .logoAverage {
   position: relative;
 
   top: 2px;
-  right: 75px;
-  z-index: 2000;
+  right: 80px;
+  z-index: 3;
   width: 30px;
 }
 
 .genreID {
 
   position: relative;
-  bottom: 200px;
-  left: 30px;
+  bottom: 130px;
+  left: 15px;
   font-size: 1rem;
-  z-index: 1000;
+  z-index: 3;
   width: 90%;
 }
 
 .btnTrailer {
   position: relative;
   bottom: 120px;
-  left: 30px;
+  left: 15px;
   width: 30px;
   font-size: 1.2rem;
-  z-index: 2000;
+  z-index: 3;
   border: 1px solid orange;
   border-radius: 50px;
+
 }
 
 .BA {
+  display: none;
   position: relative;
   /* bottom: 170px;
   left: 30px; */
   font-size: 1.2rem;
-  z-index: 3000;
+  z-index: 3;
   border: 1px solid orange;
   border-radius: 50px;
+
 }
 
 
@@ -648,8 +655,16 @@ svg #main-circ {
 }
 
 #resume {
-  width: 85%;
+  position: relative;
+  width: 100%;
+  bottom: 90px;
 }
+
+#resume p {
+  width: 80%;
+
+}
+
 
 iframe {
   width:
@@ -684,16 +699,11 @@ iframe {
   font-size: 0.9rem;
 }
 
-/* .content iframe {
-  display: flex;
-  justify-content: left;
-  margin-top: 30px;
-  font-size: 1.5rem;
-} */
+
 
 .item-a {
   margin-left: -25px;
-
+  width: 100%;
 }
 
 
@@ -762,7 +772,15 @@ iframe {
 }
 
 
+.vote {
+  width: 390px;
+}
 
+.comment {
+  width: 390px;
+
+
+}
 
 
 

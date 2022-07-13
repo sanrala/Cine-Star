@@ -51,7 +51,10 @@ i {
     display: none;
    } */
 
+.box {
+  width: 100%;
 
+}
 
 .burger .fas {
   color: orange;
