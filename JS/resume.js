@@ -1,3 +1,7 @@
+
+
+
+
 const genres = [
   {
     id: 28,
@@ -171,15 +175,15 @@ window.onload = () => {
 
   const newCarouselAffiche = document.querySelector('#contentAffiche')
 
-  let movies = fetch('https://api.themoviedb.org/3/movie/' + params.id + '?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&' + params.with_genres);
+  let movies = fetch('https://api.themoviedb.org/3/movie/' + params.id + '?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR');
   movies.then(async response => {
     try {
       let popularMovie = await response.json();
 
-      console.log(popularMovie);
       const b = document.querySelector('#star1')
 
-      let genre = fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR');
+
+      let genre = fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=e0e252f245f519ae01af7682ea83a642&' + params.with_genres);
       genre.then(async response => {
         try {
           let genreMovie = await response.json();
@@ -187,11 +191,65 @@ window.onload = () => {
 
           let RegenreMovie = genreMovie.genres;
           console.log(RegenreMovie);
+          const title = document.querySelector('h2')
+
+          const span = document.createElement('span')
+          span.classList.add('title')
+          span.innerText = popularMovie.title
 
 
-          const c = document.createElement('span')
-          c.innerText = RegenreMovie.name
-          b.append(c);
+          const voteAverage = document.createElement('span')
+          voteAverage.classList.add('voteAverageImdb')
+          voteAverage.innerText = popularMovie.vote_average + "/10 "
+
+
+          const logoAverage = document.createElement('img')
+          logoAverage.classList.add('logoAverage')
+          logoAverage.src = "icones/imdb.png"
+          logoAverage.alt = "imdb"
+
+
+          const genreID = document.createElement('span')
+          genreID.classList.add('genreID')
+
+          for (i = 0; i < (popularMovie.genres).length; i++) {
+            genreID.innerText += popularMovie.genres[i].name + " ";
+          }
+          // genreID.innerText = popularMovie.genres[0].name + " " + popularMovie.genres[1].name
+          genreID.style.color = "orange"
+
+
+
+          const overlayVideo = document.querySelector('.video')
+
+
+          const lienBA = document.createElement('span')
+          lienBA.classList.add('lienBA')
+          lienBA.innerHTML = " Regarder la bande-annonce "
+          lienBA.style.color = "white"
+          lienBA.href = openNav()
+
+          voteAverage.append(logoAverage)
+          div.append(img)
+          box.append(span, voteAverage, genreID)
+          overlayVideo.append(lienBA)
+
+        } catch (error) {
+          console.log(error);
+        }
+      })
+
+      let video = fetch('https://api.themoviedb.org/3/movie/' + params.id + '/videos?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR');
+      video.then(async response => {
+        try {
+          let genreVideo = await response.json();
+
+
+          let videoMovie = genreVideo.genres;
+          console.log(genreVideo);
+
+
+
 
         } catch (error) {
           console.log(error);
@@ -207,48 +265,45 @@ window.onload = () => {
       const box = document.querySelector('.item-a')
 
 
-      const title = document.querySelector('h2')
+      // const title = document.querySelector('h2')
 
-      const span = document.createElement('span')
-      span.classList.add('title')
-      span.innerText = popularMovie.title
-
-
-      const voteAverage = document.createElement('span')
-      voteAverage.classList.add('voteAverageImdb')
-      voteAverage.innerText = popularMovie.vote_average + "/10 "
+      // const span = document.createElement('span')
+      // span.classList.add('title')
+      // span.innerText = popularMovie.title
 
 
-      const logoAverage = document.createElement('img')
-      logoAverage.classList.add('logoAverage')
-      logoAverage.src = "icones/imdb.png"
-      logoAverage.alt = "imdb"
+      // const voteAverage = document.createElement('span')
+      // voteAverage.classList.add('voteAverageImdb')
+      // voteAverage.innerText = popularMovie.vote_average + "/10 "
 
 
-      const genreID = document.createElement('span')
-      genreID.classList.add('genreID')
-      genreID.innerText = popularMovie.genre_ids
-      genreID.style.color = "orange"
+      // const logoAverage = document.createElement('img')
+      // logoAverage.classList.add('logoAverage')
+      // logoAverage.src = "icones/imdb.png"
+      // logoAverage.alt = "imdb"
 
-      const btnTrailer = document.createElement('img')
-      btnTrailer.classList.add('btnTrailer')
-      btnTrailer.style.backgroundColor = "orange"
-      btnTrailer.src = "icones/play-circle-regular-24.png"
-      btnTrailer.alt = "play circle"
+
+      // const genreID = document.createElement('span')
+      // genreID.classList.add('genreID')
+      // genreID.innerText = popularMovie.genre_ids
+      // genreID.style.color = "orange"
 
 
 
-      const aBA = document.createElement('a')
-      aBA.href = "popularMovie.video"
+      // const overlayVideo = document.querySelector('.video')
 
-      const BA = document.createElement('span')
-      BA.classList.add('BA')
-      BA.innerText = " Regarder la bande-annonce "
 
-      voteAverage.append(logoAverage)
-      div.append(img)
-      box.append(span, voteAverage, genreID, btnTrailer)
-      btnTrailer.append(BA)
+      // const lienBA = document.createElement('span')
+      // lienBA.classList.add('lienBA')
+      // lienBA.innerHTML = " Regarder la bande-annonce "
+      // lienBA.style.color = "white"
+      // lienBA.href = openNav()
+
+      // voteAverage.append(logoAverage)
+      // div.append(img)
+      // box.append(span, voteAverage, genreID)
+      // overlayVideo.append(lienBA)
+
 
 
 

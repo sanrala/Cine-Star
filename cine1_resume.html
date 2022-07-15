@@ -19,7 +19,6 @@
 </head>
 <style>
 
-
 </style>
 
 <body>
@@ -90,6 +89,7 @@
         </ul>
       </div>
       <div class="mainContent">
+
         <div class="row" id="slider-text">
           <div class="swiper">
             <h2 class="titleSwiper">
@@ -152,6 +152,27 @@
 
         </div>
 
+
+        <div class="BA">
+
+
+          <div class="video" onclick="openNavVideo()"><a href="#"><i class='bx bx-play-circle'></i></a></div>
+
+
+          <div id="myNavVideo" class="overlayVideo">
+            <a href="javascript:void(0)" class="closebtnVideo" onclick="closeNavVideo()">&times;</a>
+            <div class="overlayVideo-content">
+              <!-- <div id='blogvision'> <iframe src='https://player.allocine.fr/19584586.html'
+                  style='width:960px; height:540px'> </iframe> <br /> <a href="" target="_blank"
+                  rel="noopener noreferrer">The Boys</a> <br /> <a href="">The Boys - saison 1 Bande-annonce VF</a>
+              </div> -->
+            </div>
+
+          </div>
+
+        </div>
+
+
         <div id="resume">
           <h3>SYPNOSIS</h3>
 
@@ -159,7 +180,7 @@
 
 
 
-        <span class="notes">NOTER :
+        <span class="notes">NOTE :
 
           <span id="star1" class="fa fa-star "></span>
           <span id="star2" class="fa fa-star"></span>
@@ -640,6 +661,7 @@
 
 
     //Menu Burger
+
     function openNav() {
       document.getElementById("myNav").style.width = "100%";
     }
@@ -648,13 +670,23 @@
       document.getElementById("myNav").style.width = "0%";
     }
 
+    //overlay video
+
+    function openNavVideo() {
+      document.getElementById("myNavVideo").style.width = "100%";
+    }
+
+    function closeNavVideo() {
+      document.getElementById("myNavVideo").style.width = "0%";
+    }
+
 
   </script>
 
 
 
   <!-- <script src="JS/story.js"></script> -->
-  <script src="JS/resume.js" type="module"></script>
+  <script src="JS/resume.js"></script>
 </body>
 
 </html>
