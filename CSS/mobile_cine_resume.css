@@ -574,7 +574,7 @@ svg #main-circ {
 .voteAverageImdb {
   color: white;
   position: relative;
-  bottom: 280px;
+  /* bottom: 280px;*/
   left: 55px;
   font-size: 0.9rem;
   z-index: 3;
@@ -611,15 +611,25 @@ svg #main-circ {
 
 }
 
-.BA {
+
+.lienBA {
   display: none;
+
+}
+
+
+.BA {
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   position: relative;
-  /* bottom: 170px;
-  left: 30px; */
+  top: -215px;
+  left: 160px;
   font-size: 1.2rem;
-  z-index: 3;
-  border: 1px solid orange;
-  border-radius: 50px;
+  z-index: 2;
+
+  width: 50%;
 
 }
 
