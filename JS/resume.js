@@ -164,12 +164,21 @@ window.onload = () => {
           let genreVideo = await response.json();
 
 
-          let videoMovie = genreVideo.genres;
+          let videoMovie = genreVideo.results;
           console.log(genreVideo);
 
+          for (i = 0; i < (genreVideo.results).length; i++) {
+            const videoPlay = document.querySelector('.overlayVideo-content')
+            const iframe = document.createElement('iframe')
+            iframe.style.width = '560px'
+            iframe.style.height = '315px'
+            iframe.src = "https://www.youtube.com/embed/" + genreVideo.results[i].key
+            iframe.style.title = "YouTube video player"
+            iframe.style.frameborder = "0"
+            iframe.style.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 
-          const videoPlay = document.querySelector('.overlayVideo-content')
-          videoPlay.src = "https://www.youtube.com/embed/Lco-Uq3xDOk"
+            videoPlay.append(iframe)
+          }
           // for (i = 0; i < (genreVideo.genres).length; i++) {
           //   genreID.innerText += genreVideo.genres[i].name + " ";
           // }
