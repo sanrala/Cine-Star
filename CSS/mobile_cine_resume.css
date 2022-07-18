@@ -10,6 +10,15 @@ body {
   /* flex-direction: column; */
 }
 
+#voteSpec {
+  position: relative;
+  top: 200px;
+}
+
+iframe {
+  width: 500px;
+}
+
 a {
   text-decoration: none;
   color: white;
@@ -223,7 +232,19 @@ li {
 
 
 
+.overlayVideo-content {
+  position: relative;
 
+  width: 100%;
+  text-align: center;
+  display: block;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  margin: auto;
+
+
+}
 
 
 
@@ -574,10 +595,10 @@ svg #main-circ {
 .voteAverageImdb {
   color: white;
   position: relative;
-  /* bottom: 280px;*/
-  left: 55px;
+  bottom: 250px;
+  left: 85px;
   font-size: 0.9rem;
-  z-index: 3;
+  z-index: 1;
   width: 20%;
 }
 
@@ -625,11 +646,11 @@ svg #main-circ {
   align-items: center;
   position: relative;
   top: -215px;
-  left: 160px;
+  left: 10px;
   font-size: 1.2rem;
   z-index: 2;
 
-  width: 50%;
+  width: 90%;
 
 }
 
@@ -637,7 +658,7 @@ svg #main-circ {
 
 .notes {
 
-  top: 5px;
+  top: 205px;
 
 
 
@@ -665,30 +686,23 @@ svg #main-circ {
 }
 
 #resume {
-  /* position: relative; */
+  position: relative;
   width: 100%;
-  top: 20px;
+  top: 220px;
 }
 
 #resume p {
-  width: 80%;
+  width: 100%;
 
 }
 
 
-iframe {
+/* iframe {
   width:
     100%;
-}
+} */
 
-.content h3 {
-  display: flex;
-  justify-content: left;
-  margin-top: 50px;
-  color: red;
-  font-size: 1.5rem;
 
-}
 
 .content p {
   display: flex;
@@ -779,15 +793,22 @@ iframe {
 
 
 .vote {
+  position: relative;
   width: 390px;
+  top: 200px;
 }
 
 .comment {
+  position: relative;
   width: 390px;
-
-
+  top: 200px;
 }
 
+.video {
+  position: relative;
+  left: 175px;
+  bottom: 15px;
+}
 
 
 

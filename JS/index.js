@@ -276,8 +276,6 @@ const createMovieAffiche = (movieAffiche) => {
     imgScreen1.classList.add('itemAffiche')
     imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + movieAffiche.backdrop_path;
 
-
-
     const overlay = document.createElement('div')
     overlay.classList.add('overlaySlider')
 
@@ -473,15 +471,15 @@ const createNowTV = (TVPlay) => {
     type.classList.add('type')
 
     const aType = document.createElement('a')
-    aType.innerText = TVPlay.title;
+    aType.innerText = TVPlay.name;
     aType.style.fontSize = '0.8rem'
-    aType.href = `cine1_resume.html?id=${TVPlay.id}`
+    aType.href = `cine1_resume.html?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}`
 
     // const spanGenre = document.createElement('span')
     // spanGenre= movie.genre_ids;
 
     const aVote = document.createElement('a')
-    aVote.innerText = "Date de sortie : " + TVPlay.release_date
+    aVote.innerText = "Date de sortie : " + TVPlay.first_air_date
     aVote.style.fontSize = '0.8rem'
     aVote.style.color = '#878484'
 

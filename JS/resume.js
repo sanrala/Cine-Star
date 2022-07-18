@@ -8,19 +8,6 @@ function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-//Fin menu burger        
-
-
-
-//overlay iframe
-
-// function on() {
-//   document.getElementById("overlay").style.display = "block";
-// }
-
-// function off() {
-//   document.getElementById("overlay").style.display = "none";
-// }
 
 
 // ---------------------------CAROUSEL---------------------------
@@ -57,30 +44,30 @@ window.addEventListener("resize", e => (width = carousel.offsetWidth));
 
 
 // ---------------------------CAROUSEL2---------------------------
-// const gap2 = 16;
+// const gapVideo = 16;
 
-// const carousel2 = document.getElementById("carousel2"),
-//   content2 = document.getElementById("content2"),
-//   next2 = document.getElementById("next2"),
-//   prev2 = document.getElementById("prev2");
+// const carouselVideo = document.getElementsByClassName("overlayVideo-content"),
+//   contentVideo = document.getElementById("contentVideo"),
+//   nextVideo = document.getElementById("nextVideo"),
+//   prevVideo = document.getElementById("prevVideo");
 
-// next2.addEventListener("click", e => {
-//   carousel2.scrollBy(width + gap2, 0);
+// nextVideo.addEventListener("click", e => {
+//   carouselVideo.scrollBy(widthVideo + gapVideo, 0);
 
-//   if (content2.scrollWidth - width - gap2 <= carousel2.scrollLeft + width) {
-//     next2.style.color = "red";
+//   if (contentVideo.scrollWidth - widthVideo - gapVideo <= carouselVideo.scrollLeft + widthVideo) {
+//     nextVideo.style.color = "red";
 //   }
 // });
-// prev2.addEventListener("click", e => {
-//   carousel2.scrollBy(-(width + gap2), 0);
-//   if (carousel2.scrollLeft - width - gap2 <= 0) {
-//     prev2.style.color = "red";
+// prevVideo.addEventListener("click", e => {
+//   carouselVideo.scrollBy(-(widthVideo + gapVideo), 0);
+//   if (carouselVideo.scrollLeft - widthVideo - gapVideo <= 0) {
+//     prevVideo.style.color = "red";
 //   }
 
 // });
 
-// let width2 = carousel2.offsetWidth;
-// window.addEventListener("resize", e => (width2 = carousel2.offsetWidth));
+// let widthVideo = carouselVideo.offsetWidth;
+// window.addEventListener("resize", e => (widthVideo = carouselVideo.offsetWidth));
 
 // ---------------------------FIN CAROUSEL---------------------------
 
@@ -170,18 +157,73 @@ window.onload = () => {
           for (i = 0; i < (genreVideo.results).length; i++) {
             const videoPlay = document.querySelector('.overlayVideo-content')
             const iframe = document.createElement('iframe')
-            iframe.style.width = '560px'
-            iframe.style.height = '315px'
+            // iframe.style.width = '560px'
+            // iframe.style.height = '315px'
             iframe.src = "https://www.youtube.com/embed/" + genreVideo.results[i].key
             iframe.style.title = "YouTube video player"
             iframe.style.frameborder = "0"
             iframe.style.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 
             videoPlay.append(iframe)
+
+            const li = document.createElement('li')
+            li.classList.add('item-a')
+
+            const box = document.createElement('div')
+            box.classList.add('box')
+
+            const slide = document.createElement('div')
+            slide.classList.add('slide-img')
+
+            const imgScreen1 = document.createElement('img')
+            imgScreen1.classList.add('item')
+            imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + movie.poster_path;
+
+            const overlay = document.createElement('div')
+            overlay.classList.add('overlaySlider')
+
+            const a = document.createElement('a')
+            a.classList.add('love-btn')
+            a.innerText = "J'aime"
+
+            const detailsBox = document.createElement('div')
+            detailsBox.classList.add('details-box')
+
+            const type = document.createElement('div')
+            type.classList.add('type')
+
+            const aType = document.createElement('a')
+            aType.innerText = movie.title;
+            aType.style.fontSize = ('0.7rem')
+            aType.href = `cine1_resume.html?id=${movie.id}&with_genres=${movie.genre_ids}`
+
+            const seeDetail = document.createElement('a')
+            seeDetail.classList.add('overview')
+            seeDetail.href = `cine1_resume.html?id=${movie.id}&with_genres=${movie.genre_ids}`
+            seeDetail.innerText = " Plus...";
+
+            const aVote = document.createElement('a')
+            aVote.innerText = "Date de sortie : " + movie.release_date
+            aVote.style.fontSize = ('0.8rem')
+            aVote.style.color = '#878484'
+
+
+
+            overlay.append(a, seeDetail);
+            slide.append(imgScreen1, overlay)
+            box.append(slide,
+              detailsBox
+            )
+            detailsBox.append(type)
+            type.append(aType
+              , aVote
+
+            )
+            li.append(box)
+            // return aType
+            return li;
+
           }
-          // for (i = 0; i < (genreVideo.genres).length; i++) {
-          //   genreID.innerText += genreVideo.genres[i].name + " ";
-          // }
 
 
         } catch (error) {
@@ -198,48 +240,6 @@ window.onload = () => {
       const box = document.querySelector('.item-a')
 
 
-      // const title = document.querySelector('h2')
-
-      // const span = document.createElement('span')
-      // span.classList.add('title')
-      // span.innerText = popularMovie.title
-
-
-      // const voteAverage = document.createElement('span')
-      // voteAverage.classList.add('voteAverageImdb')
-      // voteAverage.innerText = popularMovie.vote_average + "/10 "
-
-
-      // const logoAverage = document.createElement('img')
-      // logoAverage.classList.add('logoAverage')
-      // logoAverage.src = "icones/imdb.png"
-      // logoAverage.alt = "imdb"
-
-
-      // const genreID = document.createElement('span')
-      // genreID.classList.add('genreID')
-      // genreID.innerText = popularMovie.genre_ids
-      // genreID.style.color = "orange"
-
-
-
-      // const overlayVideo = document.querySelector('.video')
-
-
-      // const lienBA = document.createElement('span')
-      // lienBA.classList.add('lienBA')
-      // lienBA.innerHTML = " Regarder la bande-annonce "
-      // lienBA.style.color = "white"
-      // lienBA.href = openNav()
-
-      // voteAverage.append(logoAverage)
-      // div.append(img)
-      // box.append(span, voteAverage, genreID)
-      // overlayVideo.append(lienBA)
-
-
-
-
 
       const sypnosis = document.querySelector('#resume')
       const p = document.createElement('p')
@@ -253,6 +253,132 @@ window.onload = () => {
     }
   })
 }
+
+// -------------------------------------TV----------------
+// window.onload = () => {
+//   console.log(window);
+//   const urlSearchParams = new URLSearchParams(window.location.search)
+//   const params = Object.fromEntries(urlSearchParams.entries())
+//   console.log(params);
+
+
+
+//   let tv = fetch('  https://api.themoviedb.org/3/tv/' + params.id + '?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&page=1');
+//   tv.then(async response => {
+//     try {
+//       let popularTV = await response.json();
+
+
+
+//       let genreTV = fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=e0e252f245f519ae01af7682ea83a642&' + params.with_genres);
+//       genreTV.then(async response => {
+//         try {
+//           let genreTV = await response.json();
+
+
+//           let RegenreTV= genreTV.genres;
+
+//           const title = document.querySelector('h2')
+
+//           const span = document.createElement('span')
+//           span.classList.add('title')
+//           span.innerText = popularTV.name
+
+
+//           const voteAverage = document.createElement('span')
+//           voteAverage.classList.add('voteAverageImdb')
+//           voteAverage.innerText = popularTV.vote_average + "/10 "
+
+
+//           const logoAverage = document.createElement('img')
+//           logoAverage.classList.add('logoAverage')
+//           logoAverage.src = "icones/imdb.png"
+//           logoAverage.alt = "imdb"
+
+
+//           const genreID = document.createElement('span')
+//           genreID.classList.add('genreID')
+
+//           for (i = 0; i < (popularTV.genres).length; i++) {
+//             genreID.innerText += popularTV.genres[i].name + " ";
+//           }
+
+//           genreID.style.color = "orange"
+
+
+
+//           const overlayVideo = document.querySelector('.video')
+
+
+//           const lienBA = document.createElement('span')
+//           lienBA.classList.add('lienBA')
+//           lienBA.innerHTML = " Regarder la bande-annonce "
+//           lienBA.style.color = "white"
+
+
+//           voteAverage.append(logoAverage)
+//           div.append(img)
+//           box.append(span, voteAverage, genreID)
+//           overlayVideo.append(lienBA)
+
+//         } catch (error) {
+//           console.log(error);
+//         }
+//       })
+
+//       let videoTV = fetch('https://api.themoviedb.org/3/movie/' + params.id + '/videos?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR');
+//       videoTV.then(async response => {
+//         try {
+//           let genreVideoTV = await response.json();
+
+
+//           let videoTV = genreVideoTV.results;
+//           console.log(genreVideoTV);
+
+//           for (i = 0; i < (genreVideoTV.results).length; i++) {
+//             const videoPlay = document.querySelector('.overlayVideo-content')
+//             const iframe = document.createElement('iframe')
+//             iframe.style.width = '560px'
+//             iframe.style.height = '315px'
+//             iframe.src = "https://www.youtube.com/embed/" + genreVideo.results[i].key
+//             iframe.style.title = "YouTube video player"
+//             iframe.style.frameborder = "0"
+//             iframe.style.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+//             videoPlay.append(iframe)
+//           }
+
+
+//         } catch (error) {
+//           console.log(error);
+//         }
+//       })
+
+//       const div = document.querySelector('.slide-img')
+//       const img = document.createElement('img')
+//       img.classList.add('item')
+//       img.src = "https://image.tmdb.org/t/p/w500" + popularTV.backdrop_path
+//       img.alt = popularMovie.title
+
+//       const box = document.querySelector('.item-a')
+
+
+
+//       const sypnosis = document.querySelector('#resume')
+//       const p = document.createElement('p')
+//       p.innerText = popularTV.overview
+//       sypnosis.append(p)
+
+
+
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   })
+// }
+
+
+
 
 
 
@@ -424,6 +550,8 @@ function totalVote(average) {
     span4.classList.add('checked');
   }
 }
+
+
 
 
 // ----------------FIN DE VOTE --------------------
