@@ -101,6 +101,7 @@ window.onload = () => {
 
           const span = document.createElement('span')
           span.classList.add('title')
+          span.style.margin = "0 auto"
           span.innerText = popularMovie.title
 
 
@@ -117,6 +118,7 @@ window.onload = () => {
 
           const genreID = document.createElement('span')
           genreID.classList.add('genreID')
+          genreID.style.margin = "0 auto"
 
           for (i = 0; i < (popularMovie.genres).length; i++) {
             genreID.innerText += popularMovie.genres[i].name + " ";
@@ -172,53 +174,6 @@ window.onload = () => {
             const box = document.createElement('div')
             box.classList.add('box')
 
-            const slide = document.createElement('div')
-            slide.classList.add('slide-img')
-
-            const imgScreen1 = document.createElement('img')
-            imgScreen1.classList.add('item')
-            imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + movie.poster_path;
-
-            const overlay = document.createElement('div')
-            overlay.classList.add('overlaySlider')
-
-            const a = document.createElement('a')
-            a.classList.add('love-btn')
-            a.innerText = "J'aime"
-
-            const detailsBox = document.createElement('div')
-            detailsBox.classList.add('details-box')
-
-            const type = document.createElement('div')
-            type.classList.add('type')
-
-            const aType = document.createElement('a')
-            aType.innerText = movie.title;
-            aType.style.fontSize = ('0.7rem')
-            aType.href = `cine1_resume.html?id=${movie.id}&with_genres=${movie.genre_ids}`
-
-            const seeDetail = document.createElement('a')
-            seeDetail.classList.add('overview')
-            seeDetail.href = `cine1_resume.html?id=${movie.id}&with_genres=${movie.genre_ids}`
-            seeDetail.innerText = " Plus...";
-
-            const aVote = document.createElement('a')
-            aVote.innerText = "Date de sortie : " + movie.release_date
-            aVote.style.fontSize = ('0.8rem')
-            aVote.style.color = '#878484'
-
-
-
-            overlay.append(a, seeDetail);
-            slide.append(imgScreen1, overlay)
-            box.append(slide,
-              detailsBox
-            )
-            detailsBox.append(type)
-            type.append(aType
-              , aVote
-
-            )
             li.append(box)
             // return aType
             return li;

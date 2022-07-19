@@ -249,6 +249,7 @@ li {
 
 
 
+
 .menu .menu_btn {
   display: flex;
   align-items: center;
@@ -595,7 +596,7 @@ svg #main-circ {
 .voteAverageImdb {
   color: white;
   position: relative;
-  bottom: 250px;
+  top: 40px;
   left: 85px;
   font-size: 0.9rem;
   z-index: 1;
@@ -605,7 +606,7 @@ svg #main-circ {
 .logoAverage {
   position: relative;
 
-  top: 2px;
+  top: 5px;
   right: 80px;
   z-index: 3;
   width: 30px;
@@ -638,6 +639,11 @@ svg #main-circ {
 
 }
 
+.bx-play-circle {
+  position: relative;
+  right: 15px;
+  top: 15px;
+}
 
 .BA {
 
@@ -645,11 +651,11 @@ svg #main-circ {
   flex-wrap: wrap;
   align-items: center;
   position: relative;
-  top: -215px;
-  left: 10px;
+  top: -245px;
+
   font-size: 1.2rem;
   z-index: 2;
-
+  margin: 0 auto;
   width: 90%;
 
 }
@@ -726,9 +732,11 @@ svg #main-circ {
 
 
 .item-a {
-  margin-left: -25px;
+  margin-left: -28px;
+  margin-top: 10px;
   width: 100%;
 }
+
 
 
 
