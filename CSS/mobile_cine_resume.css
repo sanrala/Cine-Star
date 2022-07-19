@@ -802,8 +802,9 @@ svg #main-circ {
 
 .vote {
   position: relative;
-  width: 390px;
+  width: 400px;
   top: 200px;
+  right: 30px;
 }
 
 .comment {
