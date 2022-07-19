@@ -72,7 +72,24 @@ i {
 
 }
 
+#prevAffiche {
+    position: absolute;
+    top: 400px;
+    z-index: 2;
+    transform: translate(50%, -50%);
+    font-size: 5rem;
+    cursor: pointer;
+}
 
+#nextAffiche {
+    position: absolute;
+    top: 400px;
+    right: 130px;
+    transform: translate(50%, -50%);
+    z-index: 2;
+    font-size: 5rem;
+    cursor: pointer;
+}
 
 #wrapperAffiche {
     width: 90%;
@@ -119,9 +136,10 @@ i {
     width: 100%;
 
 
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
     overflow: hidden;
 
-    /* margin: 10px; */
 
 }
 
@@ -424,6 +442,8 @@ button.dropbtn:focus::after {
     align-content: flex-start;
     flex-direction: column;
     width: 90%;
+    /* margin-top: 74px; */
+
 }
 
 /* .content div {

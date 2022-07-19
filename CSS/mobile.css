@@ -246,6 +246,13 @@ li {
 
 }
 
+#prevAffiche {
+  display: none;
+}
+
+#nextAffiche {
+  display: none;
+}
 
 #wrapperAffiche {
   width: 100%;

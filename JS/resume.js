@@ -147,6 +147,8 @@ window.onload = () => {
         }
       })
 
+
+
       let video = fetch('https://api.themoviedb.org/3/movie/' + params.id + '/videos?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR');
       video.then(async response => {
         try {
@@ -159,8 +161,6 @@ window.onload = () => {
           for (i = 0; i < (genreVideo.results).length; i++) {
             const videoPlay = document.querySelector('.overlayVideo-content')
             const iframe = document.createElement('iframe')
-            // iframe.style.width = '560px'
-            // iframe.style.height = '315px'
             iframe.src = "https://www.youtube.com/embed/" + genreVideo.results[i].key
             iframe.style.title = "YouTube video player"
             iframe.style.frameborder = "0"
@@ -213,25 +213,23 @@ window.onload = () => {
 // window.onload = () => {
 //   console.log(window);
 //   const urlSearchParams = new URLSearchParams(window.location.search)
-//   const params = Object.fromEntries(urlSearchParams.entries())
-//   console.log(params);
+//   const paramsTV = Object.fromEntries(urlSearchParams.entries())
+//   console.log(paramsTV);
 
-
-
-//   let tv = fetch('  https://api.themoviedb.org/3/tv/' + params.id + '?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&page=1');
+//   let tv = fetch('  https://api.themoviedb.org/3/tv/' + paramsTV.id + '?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&page=1');
 //   tv.then(async response => {
 //     try {
 //       let popularTV = await response.json();
 
 
 
-//       let genreTV = fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=e0e252f245f519ae01af7682ea83a642&' + params.with_genres);
+//       let genreTV = fetch('https://api.themoviedb.org/3/genre/tv/list?api_key=e0e252f245f519ae01af7682ea83a642&' + paramsTV.with_genres);
 //       genreTV.then(async response => {
 //         try {
 //           let genreTV = await response.json();
 
 
-//           let RegenreTV= genreTV.genres;
+//           let RegenreTV = genreTV.genres;
 
 //           const title = document.querySelector('h2')
 
@@ -279,41 +277,17 @@ window.onload = () => {
 //         } catch (error) {
 //           console.log(error);
 //         }
+
 //       })
 
-//       let videoTV = fetch('https://api.themoviedb.org/3/movie/' + params.id + '/videos?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR');
-//       videoTV.then(async response => {
-//         try {
-//           let genreVideoTV = await response.json();
 
 
-//           let videoTV = genreVideoTV.results;
-//           console.log(genreVideoTV);
-
-//           for (i = 0; i < (genreVideoTV.results).length; i++) {
-//             const videoPlay = document.querySelector('.overlayVideo-content')
-//             const iframe = document.createElement('iframe')
-//             iframe.style.width = '560px'
-//             iframe.style.height = '315px'
-//             iframe.src = "https://www.youtube.com/embed/" + genreVideo.results[i].key
-//             iframe.style.title = "YouTube video player"
-//             iframe.style.frameborder = "0"
-//             iframe.style.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-
-//             videoPlay.append(iframe)
-//           }
-
-
-//         } catch (error) {
-//           console.log(error);
-//         }
-//       })
 
 //       const div = document.querySelector('.slide-img')
 //       const img = document.createElement('img')
 //       img.classList.add('item')
 //       img.src = "https://image.tmdb.org/t/p/w500" + popularTV.backdrop_path
-//       img.alt = popularMovie.title
+//       img.alt = popularTV.name
 
 //       const box = document.querySelector('.item-a')
 
@@ -330,6 +304,8 @@ window.onload = () => {
 //       console.log(error);
 //     }
 //   })
+
+
 // }
 
 

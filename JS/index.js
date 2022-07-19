@@ -41,19 +41,17 @@ function myFunction() {
 
 
 // ---------------------------CAROUSEL AFFICHE---------------------------
-const gapAffiche = 29;
+const gapAffiche = 16;
 
 const carouselAffiche = document.getElementById("carouselAffiche"),
     contentAffiche = document.getElementById("contentAffiche"),
     nextAffiche = document.getElementById("nextAffiche"),
     prevAffiche = document.getElementById("prevAffiche");
-//    setInterval(() => {
-//     carouselAffiche.scrollBy(widthAffiche + gapAffiche, 0);
-// }, 2000);
-//  nextAffiche.addEventListener("click", e => {
-//    carouselAffiche.scrollBy(widthAffiche + gapAffiche, 0);
 
-//  });
+nextAffiche.addEventListener("click", e => {
+    carouselAffiche.scrollBy(widthAffiche + gapAffiche, 0);
+
+});
 prevAffiche.addEventListener("click", e => {
     carouselAffiche.scrollBy(-(widthAffiche + gapAffiche), 0);
 
@@ -151,6 +149,28 @@ prevUpComing.addEventListener("click", e => {
 
 let widthUpComing = carouselUpComing.offsetWidth;
 window.addEventListener("resize", e => (widthUpComing = carouselUpComing.offsetWidth));
+
+// ---------------------------FIN CAROUSEL4---------------------------
+
+// ---------------------------CAROUSEL4---------------------------
+const gapTopRatedTV = 16;
+
+const carouselTopRatedTV = document.getElementById("carousel5"),
+    contentTopRatedTV = document.getElementById("content5"),
+    nextTopRatedTV = document.getElementById("next5"),
+    prevTopRatedTV = document.getElementById("prev5");
+
+nextTopRatedTV.addEventListener("click", e => {
+    carouselTopRatedTV.scrollBy(widthTopRatedTV + gapTopRatedTV, 0);
+
+});
+prevTopRatedTV.addEventListener("click", e => {
+    carouselTopRatedTV.scrollBy(-(widthTopRatedTV + gapTopRatedTV), 0);
+
+});
+
+let widthTopRatedTV = carouselTopRatedTV.offsetWidth;
+window.addEventListener("resize", e => (widthTopRatedTV = carouselTopRatedTV.offsetWidth));
 
 // ---------------------------FIN CAROUSEL4---------------------------
 
@@ -274,7 +294,7 @@ const createMovieAffiche = (movieAffiche) => {
 
     const imgScreen1 = document.createElement('img')
     imgScreen1.classList.add('itemAffiche')
-    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + movieAffiche.backdrop_path;
+    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + movieAffiche.poster_path;
 
     const overlay = document.createElement('div')
     overlay.classList.add('overlaySlider')
@@ -296,10 +316,10 @@ const createMovieAffiche = (movieAffiche) => {
     // const spanGenre = document.createElement('span')
     // spanGenre= movie.genre_ids;
 
-    // const aVote = document.createElement('a')
-    // aVote.innerText = "Date de sortie : " + movieAffiche.release_date
-    // aVote.style.fontSize=('0.8rem')
-    // aVote.style.color='#878484'
+    const aVote = document.createElement('a')
+    aVote.innerText = "Date de sortie : " + movieAffiche.release_date
+    aVote.style.fontSize = ('0.8rem')
+    aVote.style.color = '#878484'
 
 
 
@@ -475,8 +495,10 @@ const createNowTV = (TVPlay) => {
     aType.style.fontSize = '0.8rem'
     aType.href = `cine1_resume.html?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}`
 
-    // const spanGenre = document.createElement('span')
-    // spanGenre= movie.genre_ids;
+    const seeDetail = document.createElement('a')
+    seeDetail.classList.add('overview')
+    seeDetail.href = `cine1_resume.html?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}`
+    seeDetail.innerText = " Plus...";
 
     const aVote = document.createElement('a')
     aVote.innerText = "Date de sortie : " + TVPlay.first_air_date
@@ -485,7 +507,7 @@ const createNowTV = (TVPlay) => {
 
 
 
-    overlay.append(a);
+    overlay.append(a, seeDetail);
     slide.append(imgScreen1, overlay)
     box.append(slide,
         detailsBox
@@ -559,8 +581,10 @@ const createTopRated = (topRated) => {
     aType.style.fontSize = ('0.8rem')
     aType.href = `cine1_resume.html?id=${topRated.id}`
 
-    // const spanGenre = document.createElement('span')
-    // spanGenre= movie.genre_ids;
+    const seeDetail = document.createElement('a')
+    seeDetail.classList.add('overview')
+    seeDetail.href = `cine1_resume.html?id=${topRated.id}&with_genres=${topRated.genre_ids}`
+    seeDetail.innerText = " Plus...";
 
     const aVote = document.createElement('a')
     aVote.innerText = "Date de sortie : " + topRated.release_date
@@ -569,7 +593,7 @@ const createTopRated = (topRated) => {
 
 
 
-    overlay.append(a);
+    overlay.append(a, seeDetail);
     slide.append(imgScreen1, overlay)
     box.append(slide,
         detailsBox
@@ -661,13 +685,15 @@ const createupComing = (upComing, dateUpComing) => {
     type.classList.add('type')
 
     const aType = document.createElement('a')
-    aType.innerText = topRated.title;
+    aType.innerText = upComing.title;
     aType.style.fontSize = ('0.8rem')
     aType.style.fontSize = ('0.8rem')
     aType.href = `cine1_resume.html?id=${upComing.id}`
 
-    // const spanGenre = document.createElement('span')
-    // spanGenre= movie.genre_ids;
+    const seeDetail = document.createElement('a')
+    seeDetail.classList.add('overview')
+    seeDetail.href = `cine1_resume.html?id=${upComing.id}&with_genres=${upComing.genre_ids}`
+    seeDetail.innerText = " Plus...";
 
     const aVote = document.createElement('a')
     aVote.innerText = "Date de sortie : " + upComing.release_date
@@ -676,7 +702,7 @@ const createupComing = (upComing, dateUpComing) => {
 
 
 
-    overlay.append(a);
+    overlay.append(a, seeDetail);
     slide.append(imgScreen1, overlay)
     box.append(slide,
         detailsBox
@@ -692,7 +718,93 @@ const createupComing = (upComing, dateUpComing) => {
 }
 
 // }
-// ------------------FIN CAROUSEL FILMS TOP RATED---------------
+// ------------------FIN CAROUSEL FILMS UPCOMING---------------
+
+
+// ------------------CAROUSEL 3 FILMS RECOMMENDATIONS---------------
+
+const newCarousel5 = document.querySelector('#content5')
+
+let topRatedTV = fetch('https://api.themoviedb.org/3/tv/top_rated?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&page=1');
+topRatedTV.then(async response => {
+    try {
+        let topRatedTV = await response.json();
+
+        let recentTopRatedTV = topRatedTV.results;
+
+        const topRatedTVNode = recentTopRatedTV.map(topRatedTV => {
+            return createPersonPopular(topRatedTV)
+        })
+        newCarousel5.append(...topRatedTVNode);
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+
+
+const createPersonPopular = (topRatedTV) => {
+    const li = document.createElement('li')
+    li.classList.add('item-a')
+
+    const box = document.createElement('div')
+    box.classList.add('box')
+
+    const slide = document.createElement('div')
+    slide.classList.add('slide-img')
+
+    const imgScreen1 = document.createElement('img')
+    imgScreen1.classList.add('item')
+    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + topRatedTV.poster_path;
+
+    const overlay = document.createElement('div')
+    overlay.classList.add('overlaySlider')
+
+    const a = document.createElement('a')
+    a.classList.add('love-btn')
+    a.innerText = "J'aime"
+
+    const detailsBox = document.createElement('div')
+    detailsBox.classList.add('details-box')
+
+    const type = document.createElement('div')
+    type.classList.add('type')
+
+    const aType = document.createElement('a')
+    aType.innerText = topRatedTV.name;
+    aType.style.fontSize = ('0.8rem')
+    aType.style.fontSize = ('0.8rem')
+    aType.href = `cine1_resume.html?id=${topRatedTV.id}`
+
+    const seeDetail = document.createElement('a')
+    seeDetail.classList.add('overview')
+    seeDetail.href = `cine1_resume.html?id=${topRatedTV.id}&with_genres=${topRatedTV.genre_ids}`
+    seeDetail.innerText = " Plus...";
+
+    const aVote = document.createElement('a')
+    aVote.innerText = "Date de sortie : " + topRatedTV.first_air_date
+    aVote.style.fontSize = ('0.8rem')
+    aVote.style.color = '#878484'
+
+
+
+    overlay.append(a, seeDetail);
+    slide.append(imgScreen1, overlay)
+    box.append(slide,
+        detailsBox
+    )
+    detailsBox.append(type)
+    type.append(aType
+        // , spanGenre
+        , aVote
+    )
+    li.append(box)
+
+    return li;
+
+
+}
+// ------------------FIN CAROUSEL FILMS RECOMMENDATIONS---------------
 
 let affichage = false;
 let myfilms = document.querySelector('.films')
@@ -730,7 +842,7 @@ const createFilm = (films) => {
 
     const link = document.createElement('a');
     link.href = `cine1_resume.html?id=${films.id - 1}`
-    // &cat=series
+
 
     const imgFilm = document.createElement('img')
     imgFilm.src = films.img
@@ -747,8 +859,6 @@ const createFilm = (films) => {
     film.append(link)
 }
 
-// displayFilms(films, affichage)
-// getAllFilms()
 
 
 
@@ -796,18 +906,17 @@ const createSerie = (series) => {
     imgSerie.src = series.img
     imgSerie.style.width = "150px"
     imgSerie.style.height = "200px"
-    //   imgSerie.alt= series.titre
+
     imgSerie.alt = series.titre
     a.href = series.lien
     a.append(imgSerie)
     return a
 
-    //   serie.append(a, imgSerie)
+
 
     return imgSerie
 }
-// displaySeries(series, affichage)
-getAllSeries()
+
 
 
 
@@ -867,8 +976,8 @@ const createAP = (aps) => {
     return imgAPS
 }
 
-// displayAP(aps, affichage)
-getAllAPS()
+
+
 
 
 
