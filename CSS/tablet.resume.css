@@ -9,6 +9,12 @@
   display: none;
 }
 
+.bx-play-circle {
+  position: relative;
+  left: 15px;
+  bottom: 5px;
+}
+
 .header_main {
   display: block;
   background-color: rgb(34, 34, 37);

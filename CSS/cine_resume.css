@@ -39,9 +39,9 @@ div {
   height: 40px;
 }
 
-#btnCompte {
-  height: 30px;
-  width: 30px;
+.fas {
+  font-size: 1.6rem;
+  color: white;
 }
 
 .header_main {
@@ -521,6 +521,7 @@ flex-wrap: wrap;
   position: relative;
   bottom: 250px;
   left: 30px;
+  /* right: 30px; */
   font-size: 1.6rem;
   z-index: 2;
   width: 50%;
@@ -557,18 +558,21 @@ flex-wrap: wrap;
 
 }
 
+
+
 .BA {
 
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  /* align-items: center; */
+  flex-direction: column;
   position: relative;
   bottom: 165px;
   left: 10px;
   font-size: 1.2rem;
   z-index: 2;
 
-  width: 50%;
+  width: 100%;
 
 }
 
@@ -721,8 +725,8 @@ flex-wrap: wrap;
 }
 
 #resume p {
-  width: 60%;
-  margin: 10px;
+  width: 90%;
+  /* margin: 10px; */
 }
 
 @media (max-width=500px) {
@@ -1047,6 +1051,11 @@ form input {
   background-color: rgb(226, 222, 222);
 }
 
+#listAll h4 {
+
+  color: black;
+}
+
 .liComment {
   box-shadow: 0 0 5px rgb(133, 17, 17);
   background-color: rgb(199, 193, 193);
@@ -1129,7 +1138,7 @@ li .todo.done {
 .notes {
   padding: 0.125rem 0.5rem;
   display: flex;
-  position: relative;
+  /* position: relative; */
   align-items: center;
   font-size: 0.8rem;
 
@@ -1138,10 +1147,15 @@ li .todo.done {
   /* background: transparent; */
   padding: 10px;
   padding-left: 10px;
-  bottom: 85px;
+  bottom: 15px;
   max-width: 230px;
 
 
+}
+
+.noteResume {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .checked {
@@ -1155,7 +1169,6 @@ li .todo.done {
   color: orange;
   font-size: 3.6rem;
 
-
 }
 
 .overlayVideo i {
@@ -1167,11 +1180,19 @@ li .todo.done {
 
 
 .video {
-  display: block;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 50px;
 }
 
 
 
+.video .bx {
+
+  font-size: 5rem;
+
+}
 
 
 i {

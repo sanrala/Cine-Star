@@ -10,10 +10,7 @@ body {
   /* flex-direction: column; */
 }
 
-#voteSpec {
-  position: relative;
-  top: 200px;
-}
+
 
 iframe {
   width: 500px;
@@ -86,7 +83,7 @@ a {
   display: block;
 }
 
-#compte img {
+#compte .fas {
   margin: 5px auto;
   margin-right: 15px;
 }
@@ -589,15 +586,15 @@ svg #main-circ {
   top: 10px;
   left: 15px;
 
-  width: 90%;
+  width: 300px;
   text-align: center;
 }
 
 .voteAverageImdb {
   color: white;
   position: relative;
-  top: 40px;
-  left: 85px;
+  top: 105px;
+  left: 290px;
   font-size: 0.9rem;
   z-index: 1;
   width: 20%;
@@ -606,23 +603,23 @@ svg #main-circ {
 .logoAverage {
   position: relative;
 
-  top: 5px;
-  right: 80px;
+  top: -20px;
+  right: 55px;
   z-index: 3;
-  width: 30px;
+  /* width: 30px; */
 }
 
 .genreID {
 
   position: relative;
   bottom: 5px;
-  left: 15px;
+  left: 25px;
   font-size: 1rem;
   text-align: center;
   width: 90%;
 }
 
-.btnTrailer {
+/* .btnTrailer {
   position: relative;
   bottom: 5px;
   left: 15px;
@@ -631,18 +628,16 @@ svg #main-circ {
   border: 1px solid orange;
   border-radius: 50px;
 
-}
+} */
 
 
-.lienBA {
-  display: none;
 
-}
 
 .bx-play-circle {
+  margin-left: 100px;
+  margin-top: 0px;
   position: relative;
-  right: 15px;
-  top: 15px;
+  top: -50px;
 }
 
 .BA {
@@ -651,11 +646,11 @@ svg #main-circ {
   flex-wrap: wrap;
   align-items: center;
   position: relative;
-  top: -245px;
+  /* top: 0; */
 
   font-size: 1.2rem;
   z-index: 2;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   width: 90%;
 
 }
@@ -663,12 +658,16 @@ svg #main-circ {
 
 
 .notes {
-
-  top: 205px;
-
-
+  position: relative;
+  top: 100px;
+  right: 95px;
 
 }
+
+/* .noteResume {
+  display: flex;
+  flex-direction: column;
+} */
 
 #classement {
   display: flex;
@@ -694,7 +693,7 @@ svg #main-circ {
 #resume {
   position: relative;
   width: 100%;
-  top: 220px;
+  top: 83px;
 }
 
 #resume p {
@@ -799,24 +798,38 @@ svg #main-circ {
   position: relative;
 }
 
+#voteSpec {
+  position: relative;
+  width: 395px;
+  top: 120px;
+}
 
 .vote {
   position: relative;
-  width: 400px;
-  top: 200px;
-  right: 30px;
+  width: 395px;
+  top: 150px;
+  right: 10px;
+  margin: 0 auto;
 }
 
 .comment {
   position: relative;
   width: 390px;
-  top: 200px;
+  top: 120px;
+  right: 10px;
+  margin: 0;
+}
+
+.critique {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
 }
 
 .video {
   position: relative;
-  left: 175px;
-  bottom: 15px;
+  /* margin: 0 auto; */
+  right: 10px;
 }
 
 
@@ -843,7 +856,10 @@ svg #main-circ {
 }
 
 #listAll {
+  position: relative;
+  right: 70px;
   width: 100%;
+  top: 120px;
 }
 
 .footer {

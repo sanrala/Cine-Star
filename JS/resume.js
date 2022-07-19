@@ -101,7 +101,7 @@ window.onload = () => {
 
           const span = document.createElement('span')
           span.classList.add('title')
-          span.style.margin = "0 auto"
+
           span.innerText = popularMovie.title
 
 
@@ -118,7 +118,7 @@ window.onload = () => {
 
           const genreID = document.createElement('span')
           genreID.classList.add('genreID')
-          genreID.style.margin = "0 auto"
+
 
           for (i = 0; i < (popularMovie.genres).length; i++) {
             genreID.innerText += popularMovie.genres[i].name + " ";
@@ -131,16 +131,16 @@ window.onload = () => {
           const overlayVideo = document.querySelector('.video')
 
 
-          const lienBA = document.createElement('span')
-          lienBA.classList.add('lienBA')
-          lienBA.innerHTML = " Regarder la bande-annonce "
-          lienBA.style.color = "white"
+          // const lienBA = document.createElement('span')
+          // lienBA.classList.add('lienBA')
+          // lienBA.innerHTML = " Regarder la bande-annonce "
+          // lienBA.style.color = "white"
 
 
           voteAverage.append(logoAverage)
           div.append(img)
-          box.append(span, voteAverage, genreID)
-          overlayVideo.append(lienBA)
+          box.append()
+          overlayVideo.append(span, voteAverage, genreID)
 
         } catch (error) {
           console.log(error);
