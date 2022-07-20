@@ -104,7 +104,7 @@ i {
     overflow: auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
-    /* margin-left: 100px; */
+    margin-top: 90px;
     width: 100%;
 
 }
@@ -133,7 +133,7 @@ i {
 
 
 .boxAffiche {
-    width: 100%;
+    width: 450px;
 
 
     box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
@@ -159,14 +159,14 @@ i {
 }
 
 .slideAffiche-img {
-    /* height: 550px; */
+    height: 550px;
     position: relative;
 
 }
 
 .slideAffiche-img img {
-    /* width: 100%;
-    height: 100%; */
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     box-sizing: border-box;
 
@@ -617,13 +617,31 @@ button.dropbtn:focus::after {
 
 }
 
+/* div {
+    background-image: url("https://image.tmdb.org/t/p/w500/odJ4hx6g6vBt4lBWKFD1tI8WS4x.jpg");
+    width: 400px;
+    height: 200px;
+    background-size: contain;
+    box-shadow: inset 30px 0 100px 50px #000000;
+} */
+
 .slide-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     box-sizing: border-box;
 
+
 }
+
+/* div {
+    background-image: url("https://www.dailydot.com/wp-content/uploads/2018/04/pattern-2048x1024.jpg");
+    width: 400px;
+    height: 200px;
+    background-size: contain;
+    box-shadow: inset 30px 30px 100px 10px #000000;
+} */
+
 
 .detail-box {
     width: 100%;

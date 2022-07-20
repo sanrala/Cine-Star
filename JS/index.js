@@ -477,6 +477,7 @@ const createNowTV = (TVPlay) => {
     imgScreen1.classList.add('item')
     imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + TVPlay.poster_path;
 
+
     const overlay = document.createElement('div')
     overlay.classList.add('overlaySlider')
 

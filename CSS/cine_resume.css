@@ -406,7 +406,12 @@ button.dropbtn:focus::after {
   flex-wrap: wrap;
   position: relative;
 
+
 }
+
+
+
+
 
 #nextVideo {
   position: absolute;
@@ -470,7 +475,7 @@ flex-wrap: wrap;
 
 
 .box {
-  width: 100%;
+  width: 90%;
 
   box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -499,11 +504,18 @@ flex-wrap: wrap;
 
 }
 
-
+/* div {
+  background-image: url(http://127.0.0.1:5500/TP/Cine-Star/image/AP4.jpg);
+  background-size: contain;
+  box-shadow: inset 30px 30px 100px 10px #000000;
+} */
 
 .slide-img {
   height: 100%;
   position: relative;
+  width: 100%;
+  background-size: contain;
+  box-shadow: inset 30px 30px 100px 10px #000000;
 
 }
 
@@ -573,7 +585,7 @@ flex-wrap: wrap;
   font-size: 1.2rem;
   z-index: 2;
 
-  width: 100%;
+  width: 98%;
 
 }
 
@@ -595,6 +607,7 @@ flex-wrap: wrap;
   height: 100%;
   object-fit: cover;
   box-sizing: border-box;
+
 
 }
 
@@ -1011,6 +1024,8 @@ svg #main-circ {
   display: flex;
   flex-direction: column;
   margin: 10px;
+
+
 }
 
 #feedbackHere {
@@ -1185,8 +1200,13 @@ li .todo.done {
   display: flex;
   flex-direction: column;
   top: 50px;
+  width: 90%;
+
 }
 
+.video a {
+  width: 90%;
+}
 
 
 .video .bx {

@@ -191,6 +191,9 @@ window.onload = () => {
       img.classList.add('item')
       img.src = "https://image.tmdb.org/t/p/w500" + popularMovie.backdrop_path
       img.alt = popularMovie.title
+      // img.style.backgroundImage = "url(https://image.tmdb.org/t/p/w500/odJ4hx6g6vBt4lBWKFD1tI8WS4x.jpg)"
+      // img.style.width = "500px"
+      // img.style.height = "500px"
 
       const box = document.querySelector('.item-a')
 

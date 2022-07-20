@@ -174,6 +174,21 @@ li {
   width: 100%;
 }
 
+#carouselAffiche {
+
+  margin-top: 30px;
+
+
+}
+
+#prevAffiche {
+  display: none;
+}
+
+#nextAffiche {
+  display: none;
+}
+
 .titleSwiperAffiche {
   display: none;
 }
