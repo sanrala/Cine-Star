@@ -565,7 +565,7 @@ const createTopRated = (topRated) => {
 
 const newCarousel4 = document.querySelector('#content4')
 
-let upComing = fetch('https://api.themoviedb.org/3/discover/movie?api_key=e0e252f245f519ae01af7682ea83a642&language=tr-TR&release_date.gte=2022-07-22&release_date.lte=2023-01-30&region=TR https://api.themoviedb.org/3/discover/movie?api_key=e0e252f245f519ae01af7682ea83a642&language=tr-TR&primary_release_date.gte=2022-07-22&primary_release_date.lte=2023-01-30&region=TR');
+let upComing = fetch('https://api.themoviedb.org/3/discover/movie?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&release_date.gte=2022-07-22&release_date.lte=2023-01-30&region=FR https://api.themoviedb.org/3/discover/movie?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&primary_release_date.gte=2022-07-22&primary_release_date.lte=2023-01-30&region=FR');
 upComing.then(async response => {
     try {
         let upComingMovie = await response.json();
@@ -585,23 +585,11 @@ upComing.then(async response => {
 
 
 
-let dateUpComing = fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&page=1')
-    .then(async response => {
-
-        try {
-            const dateUptComing = await response.json();
-            let dateUp = dateUptComing.dates
-            console.log(dateUp);
-
-        } catch (e) {
-            console.log(e);
-        }
-    })
 
 
 
 
-const createupComing = (upComing, dateUp) => {
+const createupComing = (upComing) => {
 
 
 
