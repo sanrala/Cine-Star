@@ -162,66 +162,6 @@ const aps = [
 
 
 
-// function getAllFilms() {
-
-// const filmsFirebase = fetch('https://cinestars-aa75e-default-rtdb.firebaseio.com/films.json')
-
-// filmsFirebase.then(async response => {
-//     try {
-//         const filmsFromFirebase = await response.json();
-//         console.log(filmsFromFirebase);
-//         const filmNode = filmsFromFirebase.map(films => {
-
-//             return createFilm(films)
-//         });
-//         film.innerHTML = ""
-//         film.append(...filmNode)
-
-
-//     } catch (e) {
-//         console.log(e);
-//     }
-// })
-// }
-// function getAllSeries() {
-//     const seriesFirebase = fetch('https://cinestars-aa75e-default-rtdb.firebaseio.com/series.json')
-//     seriesFirebase.then(async response => {
-//     try {
-//         const seriesFromFirebase = await response.json();
-
-//         const serieNode = seriesFromFirebase.map(series => {
-
-//             return createSerie(series)
-//         });
-//         serie.innerHTML = ""
-//         serie.append(...serieNode)
-
-
-//     } catch (e) {
-//         console.log(e);
-//     }
-// })
-// }
-
-// function getAllAPS() {
-//     const apsFirebase = fetch('https://cinestars-aa75e-default-rtdb.firebaseio.com/aps.json')
-//     apsFirebase.then(async response => {
-//     try {
-//         const APSFromFirebase = await response.json();
-
-//         const apNode = APSFromFirebase.map(aps => {
-
-//             return createFilm(aps)
-//         });
-//         ap.innerHTML = ""
-//         ap.append(...apNode)
-
-
-//     } catch (e) {
-//         console.log(e);
-//     }
-// })
-// }
 
 
 
@@ -296,7 +236,7 @@ const createMovieAffiche = (movieAffiche) => {
         detailsBox.append(type)
 
         li.append(box)
-        // return aType
+
         return li;
 
     } else {
@@ -344,7 +284,7 @@ const createMovieAffiche = (movieAffiche) => {
         detailsBox.append(type)
 
         li.append(box)
-        // return aType
+
         return li;
     }
 
@@ -439,7 +379,7 @@ const createTop = (movie) => {
 
     )
     li.append(box)
-    // return aType
+
     return li;
 
 
@@ -470,9 +410,7 @@ TVPlay.then(async response => {
 
 
 const createNowTV = (TVPlay) => {
-    // const imgAffiche = document.createElement('img')
-    // imgAffiche.src ="https://image.tmdb.org/t/p/w500/" + moviePlay.backdrop_path;
-    //  mainBody.append(imgAffiche).length
+
     const li = document.createElement('li')
     li.classList.add('item-a')
 
@@ -525,7 +463,7 @@ const createNowTV = (TVPlay) => {
     )
     detailsBox.append(type)
     type.append(aType
-        // , spanGenre
+
         , aVote
     )
     li.append(box)
@@ -612,7 +550,7 @@ const createTopRated = (topRated) => {
     )
     detailsBox.append(type)
     type.append(aType
-        // , spanGenre
+
         , aVote
     )
     li.append(box)
@@ -627,7 +565,7 @@ const createTopRated = (topRated) => {
 
 const newCarousel4 = document.querySelector('#content4')
 
-let upComing = fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&page=1');
+let upComing = fetch('https://api.themoviedb.org/3/discover/movie?api_key=e0e252f245f519ae01af7682ea83a642&language=tr-TR&release_date.gte=2022-07-22&release_date.lte=2023-01-30&region=TR https://api.themoviedb.org/3/discover/movie?api_key=e0e252f245f519ae01af7682ea83a642&language=tr-TR&primary_release_date.gte=2022-07-22&primary_release_date.lte=2023-01-30&region=TR');
 upComing.then(async response => {
     try {
         let upComingMovie = await response.json();
@@ -646,29 +584,27 @@ upComing.then(async response => {
 })
 
 
-function selectAllData() {
-    let dateUpComing = fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&page=1')
-        .then(async response => {
 
-            try {
-                const dateUptComing = await response.json();
-                let dateUp = dateUptComing.dates
-                console.log(dateUp);
+let dateUpComing = fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&page=1')
+    .then(async response => {
 
-            } catch (e) {
-                console.log(e);
-            }
-        })
-}
-selectAllData()
-// const todayTimeStamp = Date.now()
-// console.log(todayTimeStamp)
-// const todayTimeStampUpComing = Date.now(upComing.release_date )
-// console.log(todayTimeStampUpComing)
+        try {
+            const dateUptComing = await response.json();
+            let dateUp = dateUptComing.dates
+            console.log(dateUp);
+
+        } catch (e) {
+            console.log(e);
+        }
+    })
 
 
-const createupComing = (upComing, dateUpComing) => {
-    // if (todayTimeStamp >= todayTimeStampUpComing ) { //timestamp
+
+
+const createupComing = (upComing, dateUp) => {
+
+
+
 
     const li = document.createElement('li')
     li.classList.add('item-a')
@@ -700,7 +636,7 @@ const createupComing = (upComing, dateUpComing) => {
     aType.innerText = upComing.title;
     aType.style.fontSize = ('0.8rem')
     aType.style.fontSize = ('0.8rem')
-    aType.href = `cine1_resume.php?id=${upComing.id}&type=movie`
+    aType.href = `cine1_resume.php?id=${upComing.id}&with_genres=${upComing.genre_ids}&type=movie`
 
     const seeDetail = document.createElement('a')
     seeDetail.classList.add('overview')
@@ -746,7 +682,7 @@ topRatedTV.then(async response => {
         let recentTopRatedTV = topRatedTV.results;
 
         const topRatedTVNode = recentTopRatedTV.map(topRatedTV => {
-            return createPersonPopular(topRatedTV)
+            return createTopRatedTV(topRatedTV)
         })
         newCarousel5.append(...topRatedTVNode);
     } catch (error) {
@@ -756,7 +692,7 @@ topRatedTV.then(async response => {
 
 
 
-const createPersonPopular = (topRatedTV) => {
+const createTopRatedTV = (topRatedTV) => {
     const li = document.createElement('li')
     li.classList.add('item-a')
 
@@ -820,175 +756,6 @@ const createPersonPopular = (topRatedTV) => {
 }
 // ------------------FIN CAROUSEL FILMS RECOMMENDATIONS---------------
 
-let affichage = false;
-let myfilms = document.querySelector('.films')
-
-const film = document.querySelector('.actually_films')
-
-
-
-const displayFilms = (test, affichage, ok) => {
-    if (affichage) {
-        myfilms.innerHTML = ''
-
-        myfilms.style.color = "white"
-
-    } else if (ok) {
-
-    }
-
-    else {
-
-        const filmNode = test.map(films => {
-
-            return createFilm(films)
-        });
-        film.innerHTML = ""
-        film.append(...filmNode)
-    }
-
-}
-
-
-
-const createFilm = (films) => {
-
-
-    const link = document.createElement('a');
-    link.href = `cine1_resume.html?id=${films.id - 1}`
-
-
-    const imgFilm = document.createElement('img')
-    imgFilm.src = films.img
-    imgFilm.style.width = "150px"
-    imgFilm.style.height = "200px"
-    imgFilm.alt = films.titre
-
-
-    link.appendChild(imgFilm)
-
-
-
-    return link
-    film.append(link)
-}
-
-
-
-
-
-
-
-// liste Series
-const serie = document.querySelector('.actually_series')
-let myseries = document.querySelector('.series')
-
-
-
-const displaySeries = (ser, aff, ok) => {
-
-
-
-    if (aff) {
-
-        myseries.innerHTML = ''
-        myseries.style.color = "white"
-    } else if (ok) {
-
-    }
-
-    else {
-        const serieNode = ser.map(series => {
-
-            return createSerie(series)
-        });
-        serie.innerHTML = ""
-
-        serie.append(...serieNode)
-    }
-
-}
-
-
-
-const createSerie = (series) => {
-    const a = document.createElement('a')
-    a.href = films.lien
-
-
-    const imgSerie = document.createElement('img')
-    imgSerie.src = series.img
-    imgSerie.style.width = "150px"
-    imgSerie.style.height = "200px"
-
-    imgSerie.alt = series.titre
-    a.href = series.lien
-    a.append(imgSerie)
-    return a
-
-
-
-    return imgSerie
-}
-
-
-
-
-
-
-
-//   liste avantpremieres
-
-
-
-
-
-
-const ap = document.querySelector('.actually_ap')
-const apAll = document.querySelector('.avantpremieres')
-
-const displayAP = (avpre, affichage, ok) => {
-
-    if (affichage) {
-
-        apAll.style.color = "white"
-        apAll.innerHTML = ""
-    } else if (ok) {
-
-    }
-
-    else {
-        const apNode = avpre.map(aps => {
-
-            return createAP(aps)
-        });
-        ap.innerHTML = ""
-        ap.append(...apNode)
-    }
-
-}
-
-
-
-const createAP = (aps) => {
-    const a = document.createElement('a')
-
-
-    const imgAPS = document.createElement('img')
-    imgAPS.src = aps.img
-    imgAPS.style.width = "150px"
-    imgAPS.style.height = "200px"
-    imgAPS.alt = aps.titre
-
-    a.href = aps.lien
-    a.append(imgAPS)
-    return a
-
-
-
-
-    return imgAPS
-}
 
 
 
