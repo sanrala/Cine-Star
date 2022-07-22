@@ -236,7 +236,7 @@ movieAffiche.then(async response => {
         let movieNowAffiche = await response.json();
         console.log(movieAffiche);
         let recentMovieAffiche = movieNowAffiche.results;
-
+        console.log(recentMovieAffiche);
         const movieAfficheNode = recentMovieAffiche.map(movieAffiche => {
             return createMovieAffiche(movieAffiche)
         })
@@ -249,52 +249,104 @@ movieAffiche.then(async response => {
 
 
 const createMovieAffiche = (movieAffiche) => {
-    const li = document.createElement('li')
-    li.classList.add('item-a')
 
-    const box = document.createElement('div')
-    box.classList.add('boxAffiche')
+    if (movieAffiche.media_type === 'movie') {
 
-    const slide = document.createElement('div')
-    slide.classList.add('slideAffiche-img')
+        const li = document.createElement('li')
+        li.classList.add('item-a')
 
-    const imgScreen1 = document.createElement('img')
-    imgScreen1.classList.add('item')
-    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + movieAffiche.poster_path;
+        const box = document.createElement('div')
+        box.classList.add('boxAffiche')
 
-    const overlay = document.createElement('div')
-    overlay.classList.add('overlaySliderAffiche')
+        const slide = document.createElement('div')
+        slide.classList.add('slideAffiche-img')
 
-    const a = document.createElement('a')
-    a.classList.add('loveAffiche-btn')
-    a.innerText = "J'aime"
+        const imgScreen1 = document.createElement('img')
+        imgScreen1.classList.add('item')
+        imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + movieAffiche.poster_path;
 
-    const detailsBox = document.createElement('div')
-    detailsBox.classList.add('details-box')
+        const overlay = document.createElement('div')
+        overlay.classList.add('overlaySliderAffiche')
 
-    const type = document.createElement('div')
-    type.classList.add('type')
+        const a = document.createElement('a')
+        a.classList.add('loveAffiche-btn')
+        a.innerText = "J'aime"
 
-    const seeDetail = document.createElement('a')
-    seeDetail.classList.add('overviewAffiche')
-    seeDetail.href = `cine1_resume.php?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=movie`
-    seeDetail.innerText = " Plus...";
-    seeDetail.style.textDecoration = "none";
+        const detailsBox = document.createElement('div')
+        detailsBox.classList.add('details-box')
+
+        const type = document.createElement('div')
+        type.classList.add('type')
+
+        const seeDetail = document.createElement('a')
+        seeDetail.classList.add('overviewAffiche')
+        seeDetail.href = `cine1_resume.php?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=movie`
+        seeDetail.innerText = " Plus...";
+        seeDetail.style.textDecoration = "none";
 
 
 
 
 
-    overlay.append(a, seeDetail);
-    slide.append(imgScreen1, overlay)
-    box.append(slide,
-        detailsBox
-    )
-    detailsBox.append(type)
+        overlay.append(a, seeDetail);
+        slide.append(imgScreen1, overlay)
+        box.append(slide,
+            detailsBox
+        )
+        detailsBox.append(type)
 
-    li.append(box)
-    // return aType
-    return li;
+        li.append(box)
+        // return aType
+        return li;
+
+    } else {
+        const li = document.createElement('li')
+        li.classList.add('item-a')
+
+        const box = document.createElement('div')
+        box.classList.add('boxAffiche')
+
+        const slide = document.createElement('div')
+        slide.classList.add('slideAffiche-img')
+
+        const imgScreen1 = document.createElement('img')
+        imgScreen1.classList.add('item')
+        imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + movieAffiche.poster_path;
+
+        const overlay = document.createElement('div')
+        overlay.classList.add('overlaySliderAffiche')
+
+        const a = document.createElement('a')
+        a.classList.add('loveAffiche-btn')
+        a.innerText = "J'aime"
+
+        const detailsBox = document.createElement('div')
+        detailsBox.classList.add('details-box')
+
+        const type = document.createElement('div')
+        type.classList.add('type')
+
+        const seeDetail = document.createElement('a')
+        seeDetail.classList.add('overviewAffiche')
+        seeDetail.href = `cine1_resume.php?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=tv`
+        seeDetail.innerText = " Plus...";
+        seeDetail.style.textDecoration = "none";
+
+
+
+
+
+        overlay.append(a, seeDetail);
+        slide.append(imgScreen1, overlay)
+        box.append(slide,
+            detailsBox
+        )
+        detailsBox.append(type)
+
+        li.append(box)
+        // return aType
+        return li;
+    }
 
 }
 
