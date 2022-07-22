@@ -12,6 +12,11 @@ li {
     color: white;
 }
 
+.bx {
+    font-size: 1.6rem;
+    color: white;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -278,6 +283,27 @@ i {
     padding: 10px;
 }
 
+.dropbtnDeconnecting {
+    min-width: 100px;
+    min-height: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 100;
+    color: #313133;
+    background: #4FD1C5;
+    background: linear-gradient(90deg, rgba(129, 230, 217, 1) 0%, rgba(79, 209, 197, 1) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, .64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+}
+
 /* .dropdown button {
  
     margin-bottom: 22px;
@@ -299,10 +325,26 @@ button.dropbtn::before {
     transition: all .3s ease-in-out 0s;
 }
 
-.button.dropbtn:hover,
-.button.dropbtn:focus {
-    color: #313133;
-    transform: translateY(-6px);
+button.dropbtnDeconnecting::before {
+    content: '';
+    border-radius: 1000px;
+    min-width: calc(120px + 12px);
+    min-height: calc(30px + 12px);
+    border: 6px solid #00FFCB;
+    box-shadow: 0 0 60px rgba(0, 255, 203, .64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+}
+
+
+
+button.dropbtnDeconnecting:hover::before,
+button.dropbtnDeconnecting:focus::before {
+    opacity: 1;
 }
 
 button.dropbtn:hover::before,
@@ -312,51 +354,6 @@ button.dropbtn:focus::before {
 
 
 
-button.dropbtn:hover::after,
-button.dropbtn:focus::after {
-    animation: none;
-    display: none;
-}
-
-
-.dropbtn:hover,
-.dropbtn:focus {
-    background-color: #3e8e41;
-}
-
-.dropdown {
-
-    /* margin-right: 15px; */
-
-    position: relative;
-    display: inline-block;
-
-}
-
-.dropdown-content {
-    margin-left: -150px;
-    display: none;
-    position: absolute;
-    /* background-color: #f9f9f9; */
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1
-}
-
-.show {
-    display: block;
-}
 
 /* FIN BOUTON COMPTE */
 
@@ -375,10 +372,7 @@ button.dropbtn:focus::after {
     align-items: center;
     text-align: center;
     background-color: rgb(34, 34, 37);
-    /* 
-    ;
-   height: 100%; */
-    /* width: 140px; */
+
 }
 
 .sidebar li {
@@ -435,24 +429,17 @@ button.dropbtn:focus::after {
 
 .mainContent {
     background-color: rgb(34, 34, 37);
-    /* margin:1rem; */
-    /* flex: auto; */
+
     display: flex;
-    /* flex-wrap: wrap; */
+
     align-content: flex-start;
     flex-direction: column;
     width: 90%;
-    /* margin-top: 74px; */
+
 
 }
 
-/* .content div {
-    width: 200px;
-    height: 200px;
-    margin: 1rem;
-    background-color: brown;
 
-} */
 
 /* CAROUSEL */
 .photos {
@@ -711,9 +698,28 @@ button.dropbtn:focus::after {
     flex-flow: column;
 }
 
+.overlaySliderAffiche {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(56, 119, 145, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
 .overview {
     color: white;
     transform: translate(250%, 750%);
+}
+
+.overviewAffiche {
+    color: white;
+    transform: translate(450%, 1300%);
 }
 
 .love-btn {
@@ -736,11 +742,40 @@ button.dropbtn:focus::after {
     transition: all ease 0.3s;
 }
 
+.loveAffiche-btn {
+    width: 160px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    color: #252525;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, .2);
+}
+
+.loveAffiche-btn:hover {
+    color: white;
+    background-color: palevioletred;
+    transition: all ease 0.3s;
+}
+
 .overlaySlider {
     visibility: hidden;
 }
 
+.overlaySliderAffiche {
+    visibility: hidden;
+}
+
 .slide-img:hover .overlaySlider {
+    visibility: visible;
+    animation: fade 0.5s;
+}
+
+.slideAffiche-img:hover .overlaySliderAffiche {
     visibility: visible;
     animation: fade 0.5s;
 }
@@ -801,5 +836,5 @@ button.dropbtn:focus::after {
 
     width: 100%;
     height: 12vh;
-    z-index: 2000;
+
 }

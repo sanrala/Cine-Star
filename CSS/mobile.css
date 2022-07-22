@@ -180,7 +180,23 @@ li {
   transform: translateY(0);
 }
 
+.overviewAffiche {
+  color: white;
+  transform: translateY(-101%);
+  transition: transform 0.3s ease-in;
+}
+
+.overlaySliderAffiche:hover .overviewAffiche {
+  transform: translateY(0);
+}
+
 .love-btn {
+  width: 80px;
+  height: 40px;
+
+}
+
+.loveAffiche-btn {
   width: 80px;
   height: 40px;
 

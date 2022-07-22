@@ -1,47 +1,11 @@
 
 
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyDopEBR4bbjewi6lvSlirK49p59JMcGTec",
-    authDomain: "cinestars-aa75e.firebaseapp.com",
-    projectId: "cinestars-aa75e",
-    storageBucket: "cinestars-aa75e.appspot.com",
-    messagingSenderId: "580492067329",
-    appId: "1:580492067329:web:4b257ed89a531cfdf03600"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-
-import { getDatabase, get, ref, set, child, update, remove }
-    from "https://www.gstatic.com/firebasejs/9.8.3/firebase-database.js"
-
-const db = getDatabase();
-
-
-
-
-
-// BOUTON CONNEXION
-
-document.getElementById("myBtn").onmouseover = function () { myFunction() };
-
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// FIN BOUTON CONNEXION
 
 
 // ---------------------------CAROUSEL AFFICHE---------------------------
-const gapAffiche = 16;
+const gapAffiche = 17;
 
 const carouselAffiche = document.getElementById("carouselAffiche"),
     contentAffiche = document.getElementById("contentAffiche"),
@@ -52,6 +16,8 @@ nextAffiche.addEventListener("click", e => {
     carouselAffiche.scrollBy(widthAffiche + gapAffiche, 0);
 
 });
+
+
 prevAffiche.addEventListener("click", e => {
     carouselAffiche.scrollBy(-(widthAffiche + gapAffiche), 0);
 
@@ -293,52 +259,42 @@ const createMovieAffiche = (movieAffiche) => {
     slide.classList.add('slideAffiche-img')
 
     const imgScreen1 = document.createElement('img')
-    imgScreen1.classList.add('itemAffiche')
+    imgScreen1.classList.add('item')
     imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + movieAffiche.poster_path;
 
     const overlay = document.createElement('div')
-    overlay.classList.add('overlaySlider')
+    overlay.classList.add('overlaySliderAffiche')
 
-    // const a = document.createElement('a')
-    // a.classList.add('love-btn')
-    // a.innerText = "J'aime"
+    const a = document.createElement('a')
+    a.classList.add('loveAffiche-btn')
+    a.innerText = "J'aime"
 
-
+    const detailsBox = document.createElement('div')
+    detailsBox.classList.add('details-box')
 
     const type = document.createElement('div')
     type.classList.add('type')
 
-    const aType = document.createElement('a')
-    aType.innerText = movieAffiche.title;
-    aType.style.fontSize = ('0.7rem')
-    aType.href = `cine1_resume.html?id=${movieAffiche.id}`
-
-    // const spanGenre = document.createElement('span')
-    // spanGenre= movie.genre_ids;
-
-    const aVote = document.createElement('a')
-    aVote.innerText = "Date de sortie : " + movieAffiche.release_date
-    aVote.style.fontSize = ('0.8rem')
-    aVote.style.color = '#878484'
+    const seeDetail = document.createElement('a')
+    seeDetail.classList.add('overviewAffiche')
+    seeDetail.href = `cine1_resume.php?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=movie`
+    seeDetail.innerText = " Plus...";
+    seeDetail.style.textDecoration = "none";
 
 
 
 
+
+    overlay.append(a, seeDetail);
     slide.append(imgScreen1, overlay)
-    box.append(slide)
+    box.append(slide,
+        detailsBox
+    )
+    detailsBox.append(type)
 
-    type.append(aType)
     li.append(box)
     // return aType
     return li;
-
-
-
-
-
-
-    return slide;
-
 
 }
 
@@ -405,12 +361,13 @@ const createTop = (movie) => {
     const aType = document.createElement('a')
     aType.innerText = movie.title;
     aType.style.fontSize = ('0.7rem')
-    aType.href = `cine1_resume.html?id=${movie.id}&with_genres=${movie.genre_ids}`
+    aType.href = `cine1_resume.php?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
 
     const seeDetail = document.createElement('a')
     seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.html?id=${movie.id}&with_genres=${movie.genre_ids}`
+    seeDetail.href = `cine1_resume.php?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
     seeDetail.innerText = " Plus...";
+    seeDetail.style.textDecoration = "none";
 
     const aVote = document.createElement('a')
     aVote.innerText = "Date de sortie : " + movie.release_date
@@ -494,12 +451,13 @@ const createNowTV = (TVPlay) => {
     const aType = document.createElement('a')
     aType.innerText = TVPlay.name;
     aType.style.fontSize = '0.8rem'
-    aType.href = `cine1_resume.html?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}`
+    aType.href = `cine1_resume.php?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}&type=tv`
 
     const seeDetail = document.createElement('a')
     seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.html?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}`
+    seeDetail.href = `cine1_resume.php?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}&type=tv`
     seeDetail.innerText = " Plus...";
+    seeDetail.style.textDecoration = "none";
 
     const aVote = document.createElement('a')
     aVote.innerText = "Date de sortie : " + TVPlay.first_air_date
@@ -580,12 +538,13 @@ const createTopRated = (topRated) => {
     aType.innerText = topRated.title;
     aType.style.fontSize = ('0.8rem')
     aType.style.fontSize = ('0.8rem')
-    aType.href = `cine1_resume.html?id=${topRated.id}`
+    aType.href = `cine1_resume.php?id=${topRated.id}&type=movie`
 
     const seeDetail = document.createElement('a')
     seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.html?id=${topRated.id}&with_genres=${topRated.genre_ids}`
+    seeDetail.href = `cine1_resume.php?id=${topRated.id}&with_genres=${topRated.genre_ids}&type=movie`
     seeDetail.innerText = " Plus...";
+    seeDetail.style.textDecoration = "none";
 
     const aVote = document.createElement('a')
     aVote.innerText = "Date de sortie : " + topRated.release_date
@@ -689,12 +648,13 @@ const createupComing = (upComing, dateUpComing) => {
     aType.innerText = upComing.title;
     aType.style.fontSize = ('0.8rem')
     aType.style.fontSize = ('0.8rem')
-    aType.href = `cine1_resume.html?id=${upComing.id}`
+    aType.href = `cine1_resume.php?id=${upComing.id}&type=movie`
 
     const seeDetail = document.createElement('a')
     seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.html?id=${upComing.id}&with_genres=${upComing.genre_ids}`
+    seeDetail.href = `cine1_resume.php?id=${upComing.id}&with_genres=${upComing.genre_ids}&type=movie`
     seeDetail.innerText = " Plus...";
+    seeDetail.style.textDecoration = "none";
 
     const aVote = document.createElement('a')
     aVote.innerText = "Date de sortie : " + upComing.release_date
@@ -775,12 +735,13 @@ const createPersonPopular = (topRatedTV) => {
     aType.innerText = topRatedTV.name;
     aType.style.fontSize = ('0.8rem')
     aType.style.fontSize = ('0.8rem')
-    aType.href = `cine1_resume.html?id=${topRatedTV.id}`
+    aType.href = `cine1_resume.php?id=${topRatedTV.id}&type=tv`
 
     const seeDetail = document.createElement('a')
     seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.html?id=${topRatedTV.id}&with_genres=${topRatedTV.genre_ids}`
+    seeDetail.href = `cine1_resume.php?id=${topRatedTV.id}&with_genres=${topRatedTV.genre_ids}&type=tv`
     seeDetail.innerText = " Plus...";
+    seeDetail.style.textDecoration = "none";
 
     const aVote = document.createElement('a')
     aVote.innerText = "Date de sortie : " + topRatedTV.first_air_date
