@@ -16,9 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") { //comme on a method POST on entre d
     if (!$password || !$pseudo) { //si un des 2 champs est vide alors on attribut un message a la variable $error
         $error = "TOUS LES CHAMPS DOIVENT ÊTRE REMPLIS";
     } else {
-        $statementUser = $pdo->prepare('SELECT * FROM user WHERE pseudo=:pseudo AND password=:password');
+        $statementUser = $pdo->prepare('SELECT * FROM user WHERE pseudo=:pseudo AND mdpUser=:mdpUser');
         $statementUser->bindValue(':pseudo', $pseudo);
-        $statementUser->bindValue(':password', $password);
+        $statementUser->bindValue(':mdpUser', $password);
         $statementUser->execute();
         $user = $statementUser->fetch();
 

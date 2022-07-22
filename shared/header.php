@@ -64,6 +64,10 @@
         <li id="menu"><i class="fas fa-solid fa-heart"></i>Favoris</li>
       </a>
 
+      <a href='./alerte.php?id=<?php echo $id; ?>'>
+        <li id="menu"><i class="fas fa-solid fa-bell"></i>Mes Alertes</li>
+      </a>
+
       <a href="#">
         <li id="menu"><i class='bx bxs-contact'></i>Nous contacter</li>
       </a>
