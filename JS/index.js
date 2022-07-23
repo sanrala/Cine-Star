@@ -220,7 +220,7 @@ const createMovieAffiche = (movieAffiche) => {
 
         const seeDetail = document.createElement('a')
         seeDetail.classList.add('overviewAffiche')
-        seeDetail.href = `cine1_resume.php?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=movie`
+        seeDetail.href = `./cine1_resume.php?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=movie`
         seeDetail.innerText = " Plus...";
         seeDetail.style.textDecoration = "none";
 
