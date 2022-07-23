@@ -16,7 +16,7 @@ li {
 
 h3 {
   color: orange;
-  margin: 10px;
+
 }
 
 span {
@@ -356,7 +356,115 @@ button.dropbtn:focus::after {
 
 /* CAROUSEL */
 
+/* #prevCast {
+  position: absolute;
+  top: 400px;
+  z-index: 2;
+  transform: translate(50%, -50%);
+  font-size: 5rem;
+  cursor: pointer;
+}
 
+#nextCast {
+  position: absolute;
+  top: 400px;
+  right: 130px;
+  transform: translate(50%, -50%);
+  z-index: 2;
+  font-size: 5rem;
+  cursor: pointer;
+} */
+
+#wrapperCast {
+  width: 90%;
+  /* max-width: 1120px; */
+  position: relative;
+
+}
+
+
+
+#carouselCast {
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  /* margin-top: 90px; */
+  width: 100%;
+
+}
+
+
+#carouselCast::-webkit-scrollbar {
+  height: 0;
+}
+
+
+
+
+
+#contentCast {
+  display: flex;
+  align-items: center;
+  /* display: grid; */
+  grid-gap: 5px;
+  grid-auto-flow: column;
+  /* margin: auto; */
+  box-sizing: border-box;
+  width: 90%;
+  height: 100%;
+
+}
+
+
+
+.slideCast-img {
+  height: 200px;
+  position: relative;
+
+}
+
+.slideCast-img img {
+  width: 150px;
+  height: 200px;
+
+  object-fit: cover;
+  box-sizing: border-box;
+
+}
+
+.itemCast {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+
+
+.detailCast-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+
+
+
+
+}
+
+.typeCast {
+  /* position: absolute; */
+  display: flex;
+  flex-direction: column;
+  background-color: #d2d1d1;
+  /* transform: translateY(101%);
+  transition: transform 0.3s ease-in; */
+
+
+}
 
 #wrapperVideo {
   /* width: 100%; */
@@ -440,17 +548,9 @@ flex-wrap: wrap;
 } */
 
 #slider-text h2 {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 400;
-  font-size: 30px;
-  letter-spacing: 3px;
-  /* margin-top: 20px; */
-  padding-left: 10px;
-  /* border: 3px solid rgb(109, 108, 108); */
-  border-radius: 10px;
-  /* background-color: rgb(78, 77, 77); */
+
   color: orange;
-  width: 88.5%;
+
 
 }
 
@@ -478,10 +578,10 @@ flex-wrap: wrap;
   width: 90%;
 
   box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  /* border-radius: 10px; */
   overflow: hidden;
 
-  margin: 20px;
+  /* margin: 5px; */
 
 }
 
@@ -521,12 +621,6 @@ flex-wrap: wrap;
 
 
 
-.item-a {
-  display: flex;
-  flex-direction: column;
-
-
-}
 
 
 .title {

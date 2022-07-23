@@ -580,6 +580,10 @@ svg #main-circ {
 
 }
 
+.boxCast {
+  width: 100%;
+  margin: 15px;
+}
 
 .title {
   color: white;
@@ -644,7 +648,7 @@ svg #main-circ {
 
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  /* align-items: center; */
   position: relative;
   /* top: 0; */
 
@@ -660,7 +664,7 @@ svg #main-circ {
 .notes {
   position: relative;
   top: 100px;
-  right: 95px;
+
 
 }
 
@@ -751,22 +755,57 @@ svg #main-circ {
 
 }
 
-#wrapper {
-  /* width: 100%; */
 
-  max-width: 412px;
+#wrapperCast {
+  width: 100%;
+  max-width: 400px;
   position: relative;
+  top: 100px;
+}
+
+#contentCast {
+  width: 100%;
+
+}
+
+#carouselCast {
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  /* margin-top: 90px; */
+  width: 100%;
+
+}
+
+
+#carouselCast::-webkit-scrollbar {
+  height: 0;
+}
+
+#slider-text {
+  position: relative;
+  top: 100px;
+
+}
+
+#slider-text h2 {
+  font-size: 20px;
 
 
 }
 
-#wrapper2 {
-  /* width: 100%; */
+.titleSwiper {
+  display: flex;
+  justify-content: left;
+  max-width: 400px;
+}
 
-  max-width: 412px;
-  position: relative;
+#prevCast {
+  display: none;
+}
 
-
+#nextCast {
+  display: none;
 }
 
 #carousel {
