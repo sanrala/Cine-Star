@@ -37,9 +37,11 @@
                 <li class="burger" onclick="openNav()"><a href="#"><i class="fas fa-solid fa-bars fa-2x"></i></a></li>
 
                 <li>
-                    <?php if (!$id) : ?>
-                    <a href="./compte.php" id="compte"><i class="fas fa-solid fa-user"></i></a>
+                    <a href="compte.html" id="compte"><i class="fas fa-solid fa-user"></i></a>
                 </li>
+
+
+
             </ul>
 
             <div id="myNav" class="overlay">
@@ -47,14 +49,17 @@
                 <div class="overlay-content">
 
 
-                    <a href="./index.php">
+                    <a href="index.html">
                         <li id="menu"><i class="fas fa-light fa-house-user"></i>Accueil</li>
-                        <?php else : ?>
                     </a>
-                    <a href="./favoris.php">
+
+                    <a href='favoris.html'>
                         <li id="menu"><i class="fas fa-solid fa-heart"></i>Favoris</li>
                     </a>
-                    <?php endif; ?>
+                    <a href='alerte.html'>
+                        <li id="menu"><i class="fas fa-solid fa-bell"></i>Mes Alertes</li>
+                    </a>
+
                     <a href="#">
                         <li id="menu"><i class='bx bxs-contact'></i>Nous contacter</li>
                     </a>
@@ -71,7 +76,9 @@
 
                 <div class="dropdown">
 
-                    <a href="./compte.php"><button id="myBtn" class="dropbtn">Compte </button></a>
+                    <a href="compte.html"><button id="myBtn" class="dropbtn">Compte </button></a>
+
+
 
                 </div>
             </div>
@@ -81,12 +88,18 @@
 
                 <ul>
 
-                    <a href="./index.php">
+                    <a href="index.html">
                         <li id="menu"><i class="fas fa-light fa-house-user"></i>Accueil</li>
                     </a>
-                    <a href="./favoris.php">
+
+                    <a href='favoris.html'>
                         <li id="menu"><i class="fas fa-solid fa-heart"></i>Favoris</li>
                     </a>
+
+                    <a href='alerte.html'>
+                        <li id="menu"><i class="fas fa-solid fa-bell"></i>Mes Alertes</li>
+                    </a>
+
                     <a href="#">
                         <li id="menu"><i class='bx bxs-contact'></i>Nous contacter</li>
                     </a>
@@ -94,7 +107,6 @@
 
                 </ul>
             </div>
-
             <div class="mainContent">
 
                 <h1>CONNECTEZ-VOUS</h1>
