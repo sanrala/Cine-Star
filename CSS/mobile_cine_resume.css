@@ -597,7 +597,7 @@ svg #main-circ {
 .voteAverageImdb {
   color: white;
   position: relative;
-  top: 105px;
+  top: 75px;
   left: 290px;
   font-size: 0.9rem;
   z-index: 1;
@@ -638,10 +638,11 @@ svg #main-circ {
 
 
 .bx-play-circle {
-  margin-left: 100px;
-  margin-top: 0px;
+  margin-left: 120px;
+
   position: relative;
   top: -50px;
+  left: 50px;
 }
 
 .BA {
@@ -868,7 +869,8 @@ svg #main-circ {
 .video {
   position: relative;
   /* margin: 0 auto; */
-  right: 10px;
+  left: 10px;
+  top: 70px;
 }
 
 
