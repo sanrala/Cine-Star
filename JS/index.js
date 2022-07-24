@@ -74,6 +74,28 @@ window.addEventListener("resize", e => (widthPlaying = carouselPlaying.offsetWid
 
 // ---------------------------FIN CAROUSEL2---------------------------
 
+// ---------------------------CAROUSELDISNEY+TV---------------------------
+const gapDisneyTV = 16;
+
+const carouselDisneyT = document.getElementById("carouselDisneyPlusTV"),
+    contentDisneyTV = document.getElementById("contentDisneyPlusTV"),
+    nextDisneyTV = document.getElementById("nextDisneyTV"),
+    prevDisneyTV = document.getElementById("prevDisneyTV");
+
+nextDisneyTV.addEventListener("click", e => {
+    carouselDisneyT.scrollBy(widthDisneyTV + gapDisneyTV, 0);
+
+});
+prevDisneyTV.addEventListener("click", e => {
+    carouselDisneyT.scrollBy(-(widthDisneyTV + gapDisneyTV), 0);
+
+});
+
+let widthDisneyTV = carouselDisneyT.offsetWidth;
+window.addEventListener("resize", e => (widthDisneyTV = carouselDisneyT.offsetWidth));
+
+// ---------------------------FIN DISNEY+TV---------------------------
+
 // ---------------------------CAROUSEL3---------------------------
 const gapTopRated = 16;
 
@@ -174,9 +196,9 @@ let movieAffiche = fetch('https://api.themoviedb.org/3/trending/all/day?api_key=
 movieAffiche.then(async response => {
     try {
         let movieNowAffiche = await response.json();
-        console.log(movieAffiche);
+
         let recentMovieAffiche = movieNowAffiche.results;
-        console.log(recentMovieAffiche);
+
         const movieAfficheNode = recentMovieAffiche.map(movieAffiche => {
             return createMovieAffiche(movieAffiche)
         })
@@ -386,6 +408,96 @@ const createTop = (movie) => {
 }
 // ------------------FIN CAROUSEL FILMS POULAIRES---------------
 
+// ------------------CAROUSEL SERIES DISNEY PLUS---------------
+
+
+
+
+
+
+
+const carouselDisneyTV = document.querySelector('#contentDisneyPlusTV')
+
+let disneyPlusTV = fetch('https://api.themoviedb.org/3/discover/tv?api_key=e0e252f245f519ae01af7682ea83a642&with_watch_providers=337&watch_region=FR');
+disneyPlusTV.then(async response => {
+    try {
+        let actualDisneyPlusTV = await response.json();
+        console.log(actualDisneyPlusTV);
+        let recentDisneyPlusTV = actualDisneyPlusTV.results;
+
+        const actualDisneyTVNode = recentDisneyPlusTV.map(disneyPlusTV => {
+            return createDisneyTV(disneyPlusTV)
+        })
+        carouselDisneyTV.append(...actualDisneyTVNode);
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+
+
+const createDisneyTV = (disneyPlusTV) => {
+    const li = document.createElement('li')
+    li.classList.add('item-a')
+
+    const box = document.createElement('div')
+    box.classList.add('box')
+
+    const slide = document.createElement('div')
+    slide.classList.add('slide-img')
+
+    const imgScreen1 = document.createElement('img')
+    imgScreen1.classList.add('item')
+    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + disneyPlusTV.poster_path;
+
+    const overlay = document.createElement('div')
+    overlay.classList.add('overlaySlider')
+
+    const a = document.createElement('a')
+    a.classList.add('love-btn')
+    a.innerText = "J'aime"
+
+    const detailsBox = document.createElement('div')
+    detailsBox.classList.add('details-box')
+
+    const type = document.createElement('div')
+    type.classList.add('type')
+
+    const aType = document.createElement('a')
+    aType.innerText = disneyPlusTV.name;
+    aType.style.fontSize = ('0.7rem')
+    aType.href = `cine1_resume.html?id=${disneyPlusTV.id}&with_genres=${disneyPlusTV.genre_ids}&type=tv`
+
+    const seeDetail = document.createElement('a')
+    seeDetail.classList.add('overview')
+    seeDetail.href = `cine1_resume.html?id=${disneyPlusTV.id}&with_genres=${disneyPlusTV.genre_ids}&type=tv`
+    seeDetail.innerText = " Plus...";
+    seeDetail.style.textDecoration = "none";
+
+    const aVote = document.createElement('a')
+    aVote.innerText = "Date de sortie : " + disneyPlusTV.first_air_date
+    aVote.style.fontSize = ('0.8rem')
+    aVote.style.color = '#878484'
+
+
+
+    overlay.append(a, seeDetail);
+    slide.append(imgScreen1, overlay)
+    box.append(slide,
+        detailsBox
+    )
+    detailsBox.append(type)
+    type.append(aType
+        , aVote
+
+    )
+    li.append(box)
+
+    return li;
+
+
+}
+// ------------------FIN CAROUSELSERIES DISNEY PLUS---------------
 
 // ------------------CAROUSEL 2 FILMS TV POPULARE---------------
 
@@ -395,7 +507,7 @@ let TVPlay = fetch('https://api.themoviedb.org/3/tv/popular?api_key=e0e252f245f5
 TVPlay.then(async response => {
     try {
         let playingNowTV = await response.json();
-        console.log(TVPlay);
+
         let recentPlayingTV = playingNowTV.results;
 
         const TVPlayNode = recentPlayingTV.map(TVPlay => {
@@ -571,7 +683,7 @@ upComing.then(async response => {
         let upComingMovie = await response.json();
 
         let recentupComingMovie = upComingMovie.results;
-        console.log(recentupComingMovie);
+
 
         const upComingNode = recentupComingMovie.map(upComing => {
             return createupComing(upComing)

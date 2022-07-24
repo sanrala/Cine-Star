@@ -455,7 +455,8 @@ button.dropbtn:focus::before {
 #wrapper4,
 #wrapper5,
 #wrapper6,
-#wrapper7 {
+#wrapper7,
+#wrapperDisneyPlusTV {
     width: 90%;
     /* max-width: 1364px; */
     position: relative;
@@ -471,7 +472,8 @@ button.dropbtn:focus::before {
 #carousel4,
 #carousel5,
 #carousel6,
-#carousel7 {
+#carousel7,
+#carouselDisneyPlusTV {
     overflow: auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
@@ -487,7 +489,8 @@ button.dropbtn:focus::before {
 #carousel4::-webkit-scrollbar,
 #carousel5::-webkit-scrollbar,
 #carousel6::-webkit-scrollbar,
-#carousel7::-webkit-scrollbar {
+#carousel7::-webkit-scrollbar,
+#contentDisneyPlusTV::-webkit-scrollbar {
     height: 0;
 }
 
@@ -501,7 +504,8 @@ button.dropbtn:focus::before {
 #content4,
 #content5,
 #content6,
-#content7 {
+#content7,
+#contentDisneyPlusTV {
     display: flex;
     align-items: center;
     /* display: grid; */
