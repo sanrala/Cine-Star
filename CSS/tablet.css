@@ -217,23 +217,9 @@ li {
 
 
 
-#prev,
-#next,
-#prev2,
-#next2,
-#prev3,
-#next3,
-#prev4,
-#next4,
-#prev5,
-#next5,
-#prev6,
-#next6,
-#prev7,
-#next7 {
-
-  display: none;
-
+.fa-angle-right,
+.fa-angle-left {
+  color: white;
 }
 
 .sidebar {

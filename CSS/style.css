@@ -456,7 +456,8 @@ button.dropbtn:focus::before {
 #wrapper5,
 #wrapper6,
 #wrapper7,
-#wrapperDisneyPlusTV {
+#wrapperDisneyPlusTV,
+#wrapperDisneyMovie {
     width: 90%;
     /* max-width: 1364px; */
     position: relative;
@@ -473,7 +474,8 @@ button.dropbtn:focus::before {
 #carousel5,
 #carousel6,
 #carousel7,
-#carouselDisneyPlusTV {
+#carouselDisneyPlusTV,
+#carouselDisneyMovie {
     overflow: auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
@@ -490,7 +492,8 @@ button.dropbtn:focus::before {
 #carousel5::-webkit-scrollbar,
 #carousel6::-webkit-scrollbar,
 #carousel7::-webkit-scrollbar,
-#contentDisneyPlusTV::-webkit-scrollbar {
+#carouselDisneyPlusTV::-webkit-scrollbar,
+#carouselDisneyMovie::-webkit-scrollbar {
     height: 0;
 }
 
@@ -505,7 +508,8 @@ button.dropbtn:focus::before {
 #content5,
 #content6,
 #content7,
-#contentDisneyPlusTV {
+#contentDisneyPlusTV,
+#contentDisneyMovie {
     display: flex;
     align-items: center;
     /* display: grid; */

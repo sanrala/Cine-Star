@@ -383,7 +383,9 @@ h2 {
 #prev7,
 #next7,
 #nextDisneyTV,
-#prevDisneyTV {
+#prevDisneyTV,
+#nextDisneyMovie,
+#prevDisneyMovie {
   display: none;
 }
 

@@ -96,6 +96,29 @@ window.addEventListener("resize", e => (widthDisneyTV = carouselDisneyT.offsetWi
 
 // ---------------------------FIN DISNEY+TV---------------------------
 
+
+// ---------------------------CAROUSELDISNEY+FILMS---------------------------
+const gapDisneyMovie = 16;
+
+const carouselDisneyM = document.getElementById("carouselDisneyMovie"),
+    contentDisneyMovie = document.getElementById("contentDisneyMovie"),
+    nextDisneyMovie = document.getElementById("nextDisneyMovie"),
+    prevDisneyMovie = document.getElementById("prevDisneyMovie");
+
+nextDisneyMovie.addEventListener("click", e => {
+    carouselDisneyM.scrollBy(widthDisneyMovie + gapDisneyMovie, 0);
+
+});
+prevDisneyMovie.addEventListener("click", e => {
+    carouselDisneyT.scrollBy(-(widthDisneyMovie + gapDisneyMovie), 0);
+
+});
+
+let widthDisneyMovie = carouselDisneyM.offsetWidth;
+window.addEventListener("resize", e => (widthDisneyMovie = carouselDisneyM.offsetWidth));
+
+// ---------------------------FIN DISNEY+FILM---------------------------
+
 // ---------------------------CAROUSEL3---------------------------
 const gapTopRated = 16;
 
@@ -410,12 +433,6 @@ const createTop = (movie) => {
 
 // ------------------CAROUSEL SERIES DISNEY PLUS---------------
 
-
-
-
-
-
-
 const carouselDisneyTV = document.querySelector('#contentDisneyPlusTV')
 
 let disneyPlusTV = fetch('https://api.themoviedb.org/3/discover/tv?api_key=e0e252f245f519ae01af7682ea83a642&with_watch_providers=337&watch_region=FR');
@@ -498,6 +515,91 @@ const createDisneyTV = (disneyPlusTV) => {
 
 }
 // ------------------FIN CAROUSELSERIES DISNEY PLUS---------------
+
+// ------------------CAROUSEL FILMS DISNEY PLUS---------------
+
+const carouselDisneyMovie = document.querySelector('#contentDisneyMovie')
+
+let disneyMovie = fetch('https://api.themoviedb.org/3/discover/movie?api_key=e0e252f245f519ae01af7682ea83a642&with_watch_providers=337&watch_region=FR');
+disneyMovie.then(async response => {
+    try {
+        let actualDisneyMovie = await response.json();
+
+        let recentDisneyMovie = actualDisneyMovie.results;
+
+        const actualDisneyMovieNode = recentDisneyMovie.map(disneyMovie => {
+            return createDisneyMovie(disneyMovie)
+        })
+        carouselDisneyMovie.append(...actualDisneyMovieNode);
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+
+
+const createDisneyMovie = (disneyMovie) => {
+    const li = document.createElement('li')
+    li.classList.add('item-a')
+
+    const box = document.createElement('div')
+    box.classList.add('box')
+
+    const slide = document.createElement('div')
+    slide.classList.add('slide-img')
+
+    const imgScreen1 = document.createElement('img')
+    imgScreen1.classList.add('item')
+    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + disneyMovie.poster_path;
+
+    const overlay = document.createElement('div')
+    overlay.classList.add('overlaySlider')
+
+    const a = document.createElement('a')
+    a.classList.add('love-btn')
+    a.innerText = "J'aime"
+
+    const detailsBox = document.createElement('div')
+    detailsBox.classList.add('details-box')
+
+    const type = document.createElement('div')
+    type.classList.add('type')
+
+    const aType = document.createElement('a')
+    aType.innerText = disneyMovie.title;
+    aType.style.fontSize = ('0.7rem')
+    aType.href = `cine1_resume.html?id=${disneyMovie.id}&with_genres=${disneyMovie.genre_ids}&type=movie`
+
+    const seeDetail = document.createElement('a')
+    seeDetail.classList.add('overview')
+    seeDetail.href = `cine1_resume.html?id=${disneyMovie.id}&with_genres=${disneyMovie.genre_ids}&type=movie`
+    seeDetail.innerText = " Plus...";
+    seeDetail.style.textDecoration = "none";
+
+    const aVote = document.createElement('a')
+    aVote.innerText = "Date de sortie : " + disneyMovie.release_date
+    aVote.style.fontSize = ('0.8rem')
+    aVote.style.color = '#878484'
+
+
+
+    overlay.append(a, seeDetail);
+    slide.append(imgScreen1, overlay)
+    box.append(slide,
+        detailsBox
+    )
+    detailsBox.append(type)
+    type.append(aType
+        , aVote
+
+    )
+    li.append(box)
+
+    return li;
+
+
+}
+// ------------------FIN CAROUSEL FILMS DISNEY PLUS---------------
 
 // ------------------CAROUSEL 2 FILMS TV POPULARE---------------
 
