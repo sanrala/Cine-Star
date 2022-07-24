@@ -182,7 +182,7 @@ window.onload = () => {
 
           const spanPerson = document.createElement('span')
           spanPerson.classList.add('personCharacter')
-          spanPerson.style.fontSize = '1.2rem'
+          spanPerson.style.fontSize = '0.9rem'
           spanPerson.innerText = personMovie.character
 
 
@@ -415,7 +415,7 @@ window.onload = () => {
 
           const spanPerson = document.createElement('span')
           spanPerson.classList.add('personCharacter')
-          spanPerson.style.fontSize = '1.2rem'
+          spanPerson.style.fontSize = '0.9rem'
           spanPerson.innerText = personMovie.character
 
           overlay.append(a);
