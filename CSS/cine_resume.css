@@ -299,7 +299,7 @@ button.dropbtn:focus::after {
 
 .sidebar ul {
   position: fixed;
-  margin-top: 250px;
+  margin-top: 150px;
 }
 
 
@@ -377,7 +377,7 @@ button.dropbtn:focus::after {
 
 #wrapperCast {
   width: 90%;
-  /* max-width: 1120px; */
+  max-width: 920px;
   position: relative;
 
 }
@@ -701,9 +701,25 @@ flex-wrap: wrap;
   height: 100%;
   object-fit: cover;
   box-sizing: border-box;
-
+  filter: brightness(0.8);
 
 }
+
+/* .poster {
+  display: flex;
+  position: absolute;
+  top: 600px;
+  left: 100px;
+  z-index: 2;
+  width: 300px;
+  height: 400px;
+}
+
+.poster img {
+  width: 100%;
+  height: 100%;
+
+} */
 
 .detail-box {
   width: 100%;
@@ -1217,12 +1233,7 @@ li .todo.done {
   color: red;
 }
 
-.poster {
-  width: 360px;
-  height: 480px;
-  border: 1px solid black;
-  margin-left: 30px;
-}
+
 
 .choice {
   display: flex;

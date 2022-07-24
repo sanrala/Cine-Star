@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -19,13 +19,14 @@
   <title>CineStars</title>
 </head>
 
-
 <body>
 
+</body>
+
+</html>
 
 
-
-
+<body>
   <div class="container">
     <div class="header_main">
 
@@ -33,7 +34,12 @@
 
         <li class="burger" onclick="openNav()"><a href="#"><i class="fas fa-solid fa-bars fa-2x"></i></a></li>
 
-        <li><a href="compte.html" id="compte"><i class="fas fa-solid fa-user"></i></a></li>
+        <li>
+          <a href="compte.htm" id="compte"><i class="fas fa-solid fa-user"></i></a>
+        </li>
+
+
+
       </ul>
 
       <div id="myNav" class="overlay">
@@ -44,9 +50,14 @@
           <a href="index.html">
             <li id="menu"><i class="fas fa-light fa-house-user"></i>Accueil</li>
           </a>
-          <a href="favoris.html">
+
+          <a href='favoris.html'>
             <li id="menu"><i class="fas fa-solid fa-heart"></i>Favoris</li>
           </a>
+          <a href='alerte.html'>
+            <li id="menu"><i class="fas fa-solid fa-bell"></i>Mes Alertes</li>
+          </a>
+
           <a href="#">
             <li id="menu"><i class='bx bxs-contact'></i>Nous contacter</li>
           </a>
@@ -65,6 +76,8 @@
 
           <a href="compte.html"><button id="myBtn" class="dropbtn">Compte </button></a>
 
+          -->
+
         </div>
       </div>
     </div>
@@ -76,9 +89,15 @@
           <a href="index.html">
             <li id="menu"><i class="fas fa-light fa-house-user"></i>Accueil</li>
           </a>
-          <a href="favoris.html">
+
+          <a href='favoris.html'>
             <li id="menu"><i class="fas fa-solid fa-heart"></i>Favoris</li>
           </a>
+
+          <a href='alerte.html'>
+            <li id="menu"><i class="fas fa-solid fa-bell"></i>Mes Alertes</li>
+          </a>
+
           <a href="#">
             <li id="menu"><i class='bx bxs-contact'></i>Nous contacter</li>
           </a>
@@ -87,7 +106,12 @@
         </ul>
       </div>
       <div class="mainContent">
+        <div class="poster">
+          <!-- <img src="https://image.tmdb.org/t/p/w500//13r1DFhfL0qufFjXnrvWuh6qKqH.jpg " alt="Gravatar" /> </img> -->
+          <div class="info_film">
 
+          </div>
+        </div>
         <div class="row" id="slider-text">
           <div class="swiper">
             <h2 class="titleSwiper">
@@ -184,7 +208,28 @@
           </span>
 
 
+          <div class="row" id="slider-text">
+            <div class="swiper">
+              <h2 class="titleSwiper">CASTING
+                <div class="swipeButton">
+                  <i class="fas fa-solid fa-angle-left" id="prevCast"></i>
+                  <i class="fas fa-solid fa-angle-right" id="nextCast"></i>
+                </div>
+              </h2>
+            </div>
+          </div>
 
+          <div id="wrapperCast">
+
+            <div id="carouselCast">
+
+              <div id="contentCast">
+
+
+
+              </div>
+            </div>
+          </div>
 
           <!-- --------------------------------VOTE----------------------------- -->
 
@@ -652,8 +697,6 @@
 
 
     <script>
-
-
       //Menu Burger
 
       function openNav() {
@@ -673,8 +716,6 @@
       function closeNavVideo() {
         document.getElementById("myNavVideo").style.width = "0%";
       }
-
-
     </script>
 
 

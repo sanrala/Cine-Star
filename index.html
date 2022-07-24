@@ -7,11 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CSS/style.css">
   <link rel="stylesheet" media="(max-width: 500px)" href="CSS/mobile.css">
-  <!-- <link rel="stylesheet" media="(max-width: 400px)" href="CSS/mobilepetit.css"> -->
   <link rel="stylesheet" media="(max-width: 1234px)" href="CSS/tablet.css">
-  <!-- <link rel="stylesheet" media="(max-width: 1560px)" href="CSS/portable.css"> -->
-  <!-- <link rel="stylesheet" media="(max-width: 500px)" href="CSS/Mobile/mobile_cine1_resume.css"> -->
-  <!-- <link rel="stylesheet" media="(min-width: 768px) and (max-width: 991px)" href="CSS/tablette.css"> -->
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +21,11 @@
   <title>Document</title>
 </head>
 
+<body>
+
+</body>
+
+</html>
 
 <body>
   <div class="container">
@@ -34,7 +35,12 @@
 
         <li class="burger" onclick="openNav()"><a href="#"><i class="fas fa-solid fa-bars fa-2x"></i></a></li>
 
-        <li><a href="compte.html" id="compte"><i class="fas fa-solid fa-user"></i></a></li>
+        <li>
+          <a href="compte.htm" id="compte"><i class="fas fa-solid fa-user"></i></a>
+        </li>
+
+
+
       </ul>
 
       <div id="myNav" class="overlay">
@@ -45,9 +51,14 @@
           <a href="index.html">
             <li id="menu"><i class="fas fa-light fa-house-user"></i>Accueil</li>
           </a>
-          <a href="favoris.html">
+
+          <a href='favoris.html'>
             <li id="menu"><i class="fas fa-solid fa-heart"></i>Favoris</li>
           </a>
+          <a href='alerte.html'>
+            <li id="menu"><i class="fas fa-solid fa-bell"></i>Mes Alertes</li>
+          </a>
+
           <a href="#">
             <li id="menu"><i class='bx bxs-contact'></i>Nous contacter</li>
           </a>
@@ -66,6 +77,8 @@
 
           <a href="compte.html"><button id="myBtn" class="dropbtn">Compte </button></a>
 
+          -->
+
         </div>
       </div>
     </div>
@@ -77,9 +90,15 @@
           <a href="index.html">
             <li id="menu"><i class="fas fa-light fa-house-user"></i>Accueil</li>
           </a>
-          <a href="favoris.html">
+
+          <a href='favoris.html'>
             <li id="menu"><i class="fas fa-solid fa-heart"></i>Favoris</li>
           </a>
+
+          <a href='alerte .html'>
+            <li id="menu"><i class="fas fa-solid fa-bell"></i>Mes Alertes</li>
+          </a>
+
           <a href="#">
             <li id="menu"><i class='bx bxs-contact'></i>Nous contacter</li>
           </a>
@@ -229,7 +248,7 @@
 
 
           <div id="carousel5">
-            tghyhgh
+
             <div id="content5">
 
 
@@ -255,35 +274,7 @@
         document.getElementById("myNav").style.width = "0%";
       }
 
-      //Fin menu burger  
-
-
-      // let slideIndex = 1;
-      // showSlides(slideIndex);
-
-      // function plusSlides(n) {
-      //   showSlides(slideIndex += n);
-      // }
-
-      // function currentSlide(n) {
-      //   showSlides(slideIndex = n);
-      // }
-
-      // function showSlides(n) {
-      //   let i;
-      //   let slides = document.getElementsByClassName("mySlides");
-      //   let dots = document.getElementsByClassName("dot");
-      //   if (n > slides.length) { slideIndex = 1 }
-      //   if (n < 1) { slideIndex = slides.length }
-      //   for (i = 0; i < slides.length; i++) {
-      //     slides[i].style.display = "none";
-      //   }
-      //   for (i = 0; i < dots.length; i++) {
-      //     dots[i].className = dots[i].className.replace(" active", "");
-      //   }
-      //   slides[slideIndex - 1].style.display = "block";
-      //   dots[slideIndex - 1].className += " active";
-      // }
+    //Fin menu burger  
     </script>
 </body>
 </body>

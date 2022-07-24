@@ -49,8 +49,32 @@ window.onload = () => {
     movies.then(async response => {
       try {
         let popularMovie = await response.json();
+        // const poster = document.querySelector('.poster')
+        // const imgPosters = document.createElement('img');
+        // imgPosters.src = "https://image.tmdb.org/t/p/w500" + popularMovie.poster_path
+        // imgPosters.alt = popularMovie.title;
+        // imgPosters.style.width = "300px";
+        // imgPosters.style.height = "400px";
 
-        const b = document.querySelector('#star1')
+        // poster.append(imgPosters);
+        const div = document.querySelector('.slide-img')
+        const img = document.createElement('img')
+        img.classList.add('item')
+        img.src = "https://image.tmdb.org/t/p/w500" + popularMovie.backdrop_path
+        img.alt = popularMovie.title
+        div.append(img)
+
+        const box = document.querySelector('.item-a')
+
+
+
+        const sypnosis = document.querySelector('#resume')
+        const p = document.createElement('p')
+        p.innerText = popularMovie.overview
+
+
+
+        sypnosis.append(p)
 
 
         let genre = fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=e0e252f245f519ae01af7682ea83a642&' + paramsTV.with_genres);
@@ -96,7 +120,7 @@ window.onload = () => {
 
 
             voteAverage.append(logoAverage)
-            div.append(img)
+
             box.append()
             overlayVideo.append(span, voteAverage, genreID)
 
@@ -233,21 +257,6 @@ window.onload = () => {
 
 
 
-        const div = document.querySelector('.slide-img')
-        const img = document.createElement('img')
-        img.classList.add('item')
-        img.src = "https://image.tmdb.org/t/p/w500" + popularMovie.backdrop_path
-        img.alt = popularMovie.title
-
-
-        const box = document.querySelector('.item-a')
-
-
-
-        const sypnosis = document.querySelector('#resume')
-        const p = document.createElement('p')
-        p.innerText = popularMovie.overview
-        sypnosis.append(p)
 
 
 
@@ -413,17 +422,6 @@ window.onload = () => {
 
 
 
-          overlay.append(a);
-          slide.append(imgScreen1, overlay)
-          box.append(slide,
-            detailsBox
-          )
-          detailsBox.append(type)
-          type.append(aType
-
-
-          )
-          li.append(box)
 
 
 
@@ -449,6 +447,7 @@ window.onload = () => {
         img.classList.add('item')
         img.src = "https://image.tmdb.org/t/p/w500" + popularTV.backdrop_path
         img.alt = popularTV.name
+
 
         const box = document.querySelector('.item-a')
 

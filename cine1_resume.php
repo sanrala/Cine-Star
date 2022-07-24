@@ -5,14 +5,19 @@ $id = $_GET['id'] ?? null;
 <!DOCTYPE html>
 <html lang="en">
 
-<?php require_once './shared/head.php' ?>
+<?php require_once './shared/head_resume.php' ?>
 
 
 <body>
   <div class="container">
     <?php require_once './shared/header.php' ?>
     <div class="mainContent">
+      <div class="poster">
+        <!-- <img src="https://image.tmdb.org/t/p/w500//13r1DFhfL0qufFjXnrvWuh6qKqH.jpg " alt="Gravatar" /> </img> -->
+        <div class="info_film">
 
+        </div>
+      </div>
       <div class="row" id="slider-text">
         <div class="swiper">
           <h2 class="titleSwiper">

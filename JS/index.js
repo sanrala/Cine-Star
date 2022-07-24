@@ -220,7 +220,7 @@ const createMovieAffiche = (movieAffiche) => {
 
         const seeDetail = document.createElement('a')
         seeDetail.classList.add('overviewAffiche')
-        seeDetail.href = `./cine1_resume.php?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=movie&person=${movieAffiche.person_id}`
+        seeDetail.href = `cine1_resume.html?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=movie&person=${movieAffiche.person_id}`
         seeDetail.innerText = " Plus...";
         seeDetail.style.textDecoration = "none";
 
@@ -268,7 +268,7 @@ const createMovieAffiche = (movieAffiche) => {
 
         const seeDetail = document.createElement('a')
         seeDetail.classList.add('overviewAffiche')
-        seeDetail.href = `cine1_resume.php?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=tv`
+        seeDetail.href = `cine1_resume.html?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=tv`
         seeDetail.innerText = " Plus...";
         seeDetail.style.textDecoration = "none";
 
@@ -353,11 +353,11 @@ const createTop = (movie) => {
     const aType = document.createElement('a')
     aType.innerText = movie.title;
     aType.style.fontSize = ('0.7rem')
-    aType.href = `cine1_resume.php?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
+    aType.href = `cine1_resume.html?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
 
     const seeDetail = document.createElement('a')
     seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.php?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
+    seeDetail.href = `cine1_resume.html?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
     seeDetail.innerText = " Plus...";
     seeDetail.style.textDecoration = "none";
 
@@ -441,11 +441,11 @@ const createNowTV = (TVPlay) => {
     const aType = document.createElement('a')
     aType.innerText = TVPlay.name;
     aType.style.fontSize = '0.8rem'
-    aType.href = `cine1_resume.php?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}&type=tv`
+    aType.href = `cine1_resume.html?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}&type=tv`
 
     const seeDetail = document.createElement('a')
     seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.php?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}&type=tv`
+    seeDetail.href = `cine1_resume.html?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}&type=tv`
     seeDetail.innerText = " Plus...";
     seeDetail.style.textDecoration = "none";
 
@@ -528,11 +528,11 @@ const createTopRated = (topRated) => {
     aType.innerText = topRated.title;
     aType.style.fontSize = ('0.8rem')
     aType.style.fontSize = ('0.8rem')
-    aType.href = `cine1_resume.php?id=${topRated.id}&type=movie`
+    aType.href = `cine1_resume.html?id=${topRated.id}&type=movie`
 
     const seeDetail = document.createElement('a')
     seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.php?id=${topRated.id}&with_genres=${topRated.genre_ids}&type=movie`
+    seeDetail.href = `cine1_resume.html?id=${topRated.id}&with_genres=${topRated.genre_ids}&type=movie`
     seeDetail.innerText = " Plus...";
     seeDetail.style.textDecoration = "none";
 
@@ -624,11 +624,11 @@ const createupComing = (upComing) => {
     aType.innerText = upComing.title;
     aType.style.fontSize = ('0.8rem')
     aType.style.fontSize = ('0.8rem')
-    aType.href = `cine1_resume.php?id=${upComing.id}&with_genres=${upComing.genre_ids}&type=movie`
+    aType.href = `cine1_resume.html?id=${upComing.id}&with_genres=${upComing.genre_ids}&type=movie`
 
     const seeDetail = document.createElement('a')
     seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.php?id=${upComing.id}&with_genres=${upComing.genre_ids}&type=movie`
+    seeDetail.href = `cine1_resume.html?id=${upComing.id}&with_genres=${upComing.genre_ids}&type=movie`
     seeDetail.innerText = " Plus...";
     seeDetail.style.textDecoration = "none";
 
@@ -711,11 +711,11 @@ const createTopRatedTV = (topRatedTV) => {
     aType.innerText = topRatedTV.name;
     aType.style.fontSize = ('0.8rem')
     aType.style.fontSize = ('0.8rem')
-    aType.href = `cine1_resume.php?id=${topRatedTV.id}&type=tv`
+    aType.href = `cine1_resume.html?id=${topRatedTV.id}&type=tv`
 
     const seeDetail = document.createElement('a')
     seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.php?id=${topRatedTV.id}&with_genres=${topRatedTV.genre_ids}&type=tv`
+    seeDetail.href = `cine1_resume.html?id=${topRatedTV.id}&with_genres=${topRatedTV.genre_ids}&type=tv`
     seeDetail.innerText = " Plus...";
     seeDetail.style.textDecoration = "none";
 
