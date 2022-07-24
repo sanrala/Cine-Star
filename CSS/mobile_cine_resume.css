@@ -722,7 +722,7 @@ svg #main-circ {
 .item-a {
   margin-left: -28px;
   margin-top: 10px;
-  width: 100%;
+  /* width: 100%; */
 }
 
 
@@ -750,7 +750,7 @@ svg #main-circ {
 
 #contentCast {
   width: 100%;
-
+  grid-gap: 15px;
 }
 
 #carouselCast {

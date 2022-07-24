@@ -159,12 +159,7 @@ window.onload = () => {
           imgScreen1.classList.add('item')
           imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + personMovie.profile_path;
 
-          // const overlay = document.createElement('div')
-          // overlay.classList.add('overlaySlider')
 
-          // const a = document.createElement('a')
-          // a.classList.add('love-btn')
-          // a.innerText = "J'aime"
 
           const overlay = document.createElement('div')
           overlay.classList.add('overlaySlider')
@@ -178,12 +173,17 @@ window.onload = () => {
 
           const type = document.createElement('div')
           type.classList.add('type')
+          type.style.textAlign = 'center'
 
           const aType = document.createElement('a')
           aType.innerText = personMovie.name;
           aType.style.fontSize = ('0.7rem')
           // aType.href = `cine1_resume.php?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
 
+          const spanPerson = document.createElement('span')
+          spanPerson.classList.add('personCharacter')
+          spanPerson.style.fontSize = '1.2rem'
+          spanPerson.innerText = personMovie.character
 
 
 
@@ -196,6 +196,7 @@ window.onload = () => {
           )
           detailsBox.append(type)
           type.append(aType
+            , spanPerson
 
 
           )
@@ -392,12 +393,6 @@ window.onload = () => {
           imgScreen1.classList.add('item')
           imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + personMovie.profile_path;
 
-          // const overlay = document.createElement('div')
-          // overlay.classList.add('overlaySlider')
-
-          // const a = document.createElement('a')
-          // a.classList.add('love-btn')
-          // a.innerText = "J'aime"
 
           const overlay = document.createElement('div')
           overlay.classList.add('overlaySlider')
@@ -411,29 +406,28 @@ window.onload = () => {
 
           const type = document.createElement('div')
           type.classList.add('type')
+          type.style.textAlign = 'center'
 
           const aType = document.createElement('a')
           aType.innerText = personMovie.name;
           aType.style.fontSize = ('0.7rem')
           // aType.href = `cine1_resume.php?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
 
+          const spanPerson = document.createElement('span')
+          spanPerson.classList.add('personCharacter')
+          spanPerson.style.fontSize = '1.2rem'
+          spanPerson.innerText = personMovie.character
 
-
-
-
-
-
-
-
-
-
-
-          slide.append(imgScreen1)
+          overlay.append(a);
+          slide.append(imgScreen1, overlay)
           box.append(slide,
             detailsBox
           )
           detailsBox.append(type)
+          type.append(aType
+            , spanPerson
 
+          )
           li.append(box)
 
           return li;
