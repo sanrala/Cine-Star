@@ -5,8 +5,8 @@
 
 
 iframe {
-  width: 660px;
-  height: 315px;
+  width: 1129px;
+  height: 634px;
 }
 
 
@@ -1336,7 +1336,8 @@ i {
   top: 0;
   background-color: rgba(37, 39, 40, 0.9);
   overflow: hidden;
-  transition: 0.5s;
+
+
 }
 
 .overlayVideo-content {
@@ -1348,7 +1349,8 @@ i {
   overflow: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  margin-left: 25%;
+  margin-left: 200px;
+  margin-top: 20px;
 
   /* max-width: 1305px; */
 
@@ -1362,7 +1364,7 @@ i {
   grid-auto-flow: column;
   /* margin: auto; */
   box-sizing: border-box;
-  width: 90%;
+  width: 100%;
   height: 100%;
 }
 

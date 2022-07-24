@@ -14,6 +14,7 @@ body {
 
 iframe {
   width: 500px;
+  height: 300px;
 }
 
 a {
@@ -228,20 +229,6 @@ li {
 }
 
 
-
-.overlayVideo-content {
-  position: relative;
-
-  width: 100%;
-  text-align: center;
-  display: block;
-  overflow: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  margin: auto;
-
-
-}
 
 
 
@@ -707,10 +694,7 @@ svg #main-circ {
 }
 
 
-/* iframe {
-  width:
-    100%;
-} */
+
 
 
 
