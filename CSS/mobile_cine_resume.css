@@ -839,7 +839,7 @@ svg #main-circ {
 .comment {
   position: relative;
   width: 390px;
-  top: 120px;
+  top: 135px;
   right: 10px;
   margin: 0;
 }
@@ -882,9 +882,9 @@ svg #main-circ {
 
 #listAll {
   position: relative;
-  right: 45px;
+  right: 25px;
   width: 100%;
-  top: 120px;
+  top: 140px;
 }
 
 .footer {

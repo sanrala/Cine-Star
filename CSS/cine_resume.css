@@ -4,10 +4,7 @@
 }
 
 
-iframe {
-  width: 1129px;
-  height: 634px;
-}
+
 
 
 li {
@@ -608,7 +605,7 @@ flex-wrap: wrap;
   color: white;
   position: relative;
   bottom: 250px;
-  left: 30px;
+  left: 20px;
   /* right: 30px; */
   font-size: 1.6rem;
   z-index: 2;
@@ -619,7 +616,7 @@ flex-wrap: wrap;
   color: white;
   position: relative;
   bottom: 240px;
-  left: 100px;
+  left: 75px;
   font-size: 1rem;
   z-index: 2;
   width: 50%;
@@ -640,7 +637,7 @@ flex-wrap: wrap;
   width: 50%;
   position: relative;
   bottom: 200px;
-  left: 30px;
+  left: 20px;
   font-size: 1.2rem;
   z-index: 2;
 
@@ -828,7 +825,7 @@ flex-wrap: wrap;
   width: 80%;
   position: relative;
 
-  bottom: 10px;
+  bottom: -10px;
 }
 
 #resume p {
@@ -836,11 +833,6 @@ flex-wrap: wrap;
   /* margin: 10px; */
 }
 
-@media (max-width=500px) {
-  .sidebar {
-    display: none;
-  }
-}
 
 
 
@@ -1332,11 +1324,16 @@ i {
   overflow: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  margin-left: 200px;
-  margin-top: 20px;
+  margin-left: 180px;
+  margin-top: 42px;
 
   /* max-width: 1305px; */
 
+}
+
+iframe {
+  width: 1735px;
+  height: 850px;
 }
 
 #video-content {
@@ -1374,11 +1371,11 @@ i {
 
 .overlayVideo .closebtnVideo {
   position: absolute;
-  top: 80px;
-  right: 45px;
+  top: 150px;
+  right: 25px;
   font-size: 60px;
   color: white;
-  z-index: 5;
+  z-index: 15;
 }
 
 .overlayVideo {
@@ -1392,3 +1389,10 @@ li {
 
 
 /* Video */
+
+@media (max-width=1920px) {
+  /* iframe {
+    width: 1629px;
+    height: 634px;
+  } */
+}
