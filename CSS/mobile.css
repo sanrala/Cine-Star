@@ -298,6 +298,24 @@ li {
 
 }
 
+.boxDisneyMovie {
+  width: 400px;
+
+}
+
+.boxTopRatedTV {
+  width: 400px;
+}
+
+.boxAPTV {
+  width: 400px;
+
+}
+
+.boxCanalSTV {
+  width: 400px;
+
+}
 
 
 .slideAffiche-img {
@@ -323,7 +341,13 @@ li {
 #wrapper4,
 #wrapper5,
 #wrapper6,
-#wrapper7 {
+#wrapper7,
+#wrapperDisneyPlusTV,
+#wrapperDisneyMovie,
+#wrapperAPM,
+#wrapperAPTV,
+#wrapperCanalMovie,
+#wrapperCanalTV {
   width: 100%;
   /* max-width: 280px; */
   position: relative;
@@ -336,7 +360,9 @@ li {
 #carousel4,
 #carousel5,
 #carousel6,
-#carousel7 {
+#carousel7,
+#carouselCanalMovie,
+#carouselAPTVCanalTV {
   overflow: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -351,17 +377,28 @@ li {
 #content4,
 #content5,
 #content6,
-#content7 {
+#content7,
+#contentCanalTV,
+#contentCanalMovie {
 
   width: 100%;
 
 
 }
 
+.nameMovies {
+  display: none;
+}
+
 #slider-text h2 {
   font-size: 1.2rem;
 
   width: 100%;
+}
+
+.titleSwiper {
+  display: inline;
+
 }
 
 h2 {
@@ -385,7 +422,17 @@ h2 {
 #nextDisneyTV,
 #prevDisneyTV,
 #nextDisneyMovie,
-#prevDisneyMovie {
+#prevDisneyMovie,
+#nextAPM,
+#prevAPM,
+#nextAPTV,
+#prevAPTV,
+#nextCTV,
+#prevCTV,
+#nextCanalMovie,
+#prevCanalMovie,
+#nextCanalSTV,
+#prevCanalSTV {
   display: none;
 }
 
@@ -402,7 +449,7 @@ h2 {
 
 }
 
-.type {
+.dateDeSortie {
   display: none;
 }
 

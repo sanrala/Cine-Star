@@ -139,9 +139,6 @@ i {
 
 .boxAffiche {
     width: 450px;
-
-
-    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     overflow: hidden;
 
@@ -391,7 +388,7 @@ button.dropbtn:focus::before {
 
 .sidebar ul {
     position: fixed;
-    margin-top: 250px;
+    margin-top: 12%;
 }
 
 
@@ -415,17 +412,7 @@ button.dropbtn:focus::before {
 }
 
 
-.sidebar span {
-    margin: 0.5rem;
-    background-color: teal;
-    flex-basis: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: 700;
-    font-size: 18px;
-}
+
 
 .mainContent {
     background-color: rgb(34, 34, 37);
@@ -457,7 +444,12 @@ button.dropbtn:focus::before {
 #wrapper6,
 #wrapper7,
 #wrapperDisneyPlusTV,
-#wrapperDisneyMovie {
+#wrapperDisneyMovie,
+#wrapperAPM,
+#wrapperAPTV,
+#wrapperCanalMovie,
+#wrapperCanalTV,
+#wrapperCanalSTV {
     width: 90%;
     /* max-width: 1364px; */
     position: relative;
@@ -475,7 +467,12 @@ button.dropbtn:focus::before {
 #carousel6,
 #carousel7,
 #carouselDisneyPlusTV,
-#carouselDisneyMovie {
+#carouselDisneyMovie,
+#carouselAPM,
+#carouselAPTV,
+#carouselCanalMovie,
+#carouselCanalTV,
+#carouselCanalSTV {
     overflow: auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
@@ -493,7 +490,12 @@ button.dropbtn:focus::before {
 #carousel6::-webkit-scrollbar,
 #carousel7::-webkit-scrollbar,
 #carouselDisneyPlusTV::-webkit-scrollbar,
-#carouselDisneyMovie::-webkit-scrollbar {
+#carouselDisneyMovie::-webkit-scrollbar,
+#carouselAPM::-webkit-scrollbar,
+#carouselAPTV::-webkit-scrollbar,
+#carouselCanalTV::-webkit-scrollbar,
+#carouselCanalMovie::-webkit-scrollbar,
+#carouselCanalSTV::-webkit-scrollbar {
     height: 0;
 }
 
@@ -509,7 +511,12 @@ button.dropbtn:focus::before {
 #content6,
 #content7,
 #contentDisneyPlusTV,
-#contentDisneyMovie {
+#contentDisneyMovie,
+#contentAPM,
+#contentAPTV,
+#contentCanalTV,
+#contentCanalMovie,
+#contentCanalSTV {
     display: flex;
     align-items: center;
     /* display: grid; */
@@ -528,7 +535,7 @@ button.dropbtn:focus::before {
     height: 200px;
     display: flex;
     flex-wrap: wrap;
-
+    border-radius: 10px;
 }
 
 /* TOP 10 */
@@ -548,11 +555,10 @@ button.dropbtn:focus::before {
     font-weight: 400;
     font-size: 30px;
     letter-spacing: 3px;
-    /* margin-top: 20px; */
+    margin-top: 20px;
     padding-left: 10px;
-    border: 3px solid rgb(109, 108, 108);
-    border-radius: 10px;
-    background-color: rgb(78, 77, 77);
+
+
     color: orange;
     width: 88.5%;
 
@@ -581,7 +587,7 @@ button.dropbtn:focus::before {
 .box {
     width: 250px;
 
-    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+
     border-radius: 10px;
     overflow: hidden;
 
@@ -589,6 +595,49 @@ button.dropbtn:focus::before {
 
 }
 
+.boxDisneyMovie {
+    width: 550px;
+
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    margin: 10px;
+
+}
+
+.boxTopRatedTV {
+    width: 550px;
+
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    margin: 10px;
+
+}
+
+.boxAPTV {
+    width: 550px;
+
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    margin: 10px;
+
+}
+
+.boxCanalSTV {
+    width: 550px;
+
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    margin: 10px;
+
+}
 
 
 #autoWidth.cs-hidden {
@@ -652,26 +701,18 @@ button.dropbtn:focus::before {
 }
 
 .type {
-    /* position: absolute; */
+
     display: flex;
     flex-direction: column;
-    background-color: #d2d1d1;
-    /* transform: translateY(101%);
-    transition: transform 0.3s ease-in; */
-
-
+    align-items: center;
+    background-color: transparent;
 }
 
 
 
 
-/* .item-a:hover .type {
-    transform: translateY(0);
-
-} */
-
 .type a {
-    color: #222222;
+    color: white;
     margin: 5px 0px;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -679,6 +720,7 @@ button.dropbtn:focus::before {
 
 
 }
+
 
 
 .type span {
@@ -720,17 +762,9 @@ button.dropbtn:focus::before {
     flex-flow: column;
 }
 
-.overview {
-    color: white;
-    transform: translate(250%, 750%);
-}
 
-.overviewAffiche {
-    color: white;
-    transform: translate(450%, 1300%);
-}
 
-.love-btn {
+.seeMore {
     width: 160px;
     height: 40px;
     display: flex;
@@ -744,13 +778,13 @@ button.dropbtn:focus::before {
     box-shadow: 2px 2px 30px rgba(0, 0, 0, .2);
 }
 
-.love-btn:hover {
+.seeMore:hover {
     color: white;
     background-color: palevioletred;
     transition: all ease 0.3s;
 }
 
-.loveAffiche-btn {
+/* .loveAffiche-btn {
     width: 160px;
     height: 40px;
     display: flex;
@@ -768,7 +802,7 @@ button.dropbtn:focus::before {
     color: white;
     background-color: palevioletred;
     transition: all ease 0.3s;
-}
+} */
 
 .overlaySlider {
     visibility: hidden;

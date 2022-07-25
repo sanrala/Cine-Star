@@ -15,15 +15,11 @@ const carouselCast = document.getElementById("carouselCast"),
 nextCast.addEventListener("click", e => {
   carouselCast.scrollBy(widthCast + gapCast, 0);
 
-  if (contentCast.scrollWidth - widthCast - gapCast <= carouselCast.scrollLeft + widthCast) {
-    nextCast.style.color = "red";
-  }
+
 });
 prevCast.addEventListener("click", e => {
   carouselCast.scrollBy(-(widthCast + gapCast), 0);
-  if (carouselCast.scrollLeft - widthCast - gapCast <= 0) {
-    prevCast.style.color = "red";
-  }
+
 
 });
 
@@ -176,13 +172,14 @@ window.onload = () => {
           type.style.textAlign = 'center'
 
           const aType = document.createElement('a')
+
           aType.innerText = personMovie.name;
           aType.style.fontSize = ('0.7rem')
           // aType.href = `cine1_resume.php?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
 
           const spanPerson = document.createElement('span')
           spanPerson.classList.add('personCharacter')
-          spanPerson.style.fontSize = '0.9rem'
+          spanPerson.style.fontSize = '0.7rem'
           spanPerson.innerText = personMovie.character
 
 
@@ -390,16 +387,14 @@ window.onload = () => {
           slide.classList.add('slideCast-img')
 
           const imgScreen1 = document.createElement('img')
-          imgScreen1.classList.add('item')
+          imgScreen1.classList.add('itemCast')
           imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + personMovie.profile_path;
 
 
           const overlay = document.createElement('div')
           overlay.classList.add('overlaySlider')
 
-          const a = document.createElement('a')
-          a.classList.add('love-btn')
-          a.innerText = "J'aime"
+
 
           const detailsBox = document.createElement('div')
           detailsBox.classList.add('details-box')
@@ -415,10 +410,10 @@ window.onload = () => {
 
           const spanPerson = document.createElement('span')
           spanPerson.classList.add('personCharacter')
-          spanPerson.style.fontSize = '0.9rem'
+          spanPerson.style.fontSize = '0.7rem'
           spanPerson.innerText = personMovie.character
 
-          overlay.append(a);
+
           slide.append(imgScreen1, overlay)
           box.append(slide,
             detailsBox

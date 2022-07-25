@@ -299,7 +299,7 @@ button.dropbtn:focus::after {
 
 .sidebar ul {
   position: fixed;
-  margin-top: 150px;
+  margin-top: 12%;
 }
 
 
@@ -323,17 +323,7 @@ button.dropbtn:focus::after {
 }
 
 
-.sidebar span {
-  margin: 0.5rem;
-  background-color: teal;
-  flex-basis: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-weight: 700;
-  font-size: 18px;
-}
+
 
 .mainContent {
   background-color: rgb(34, 34, 37);
@@ -346,34 +336,10 @@ button.dropbtn:focus::after {
   width: 100%;
 }
 
-/* .content div {
-  width: 200px;
-  height: 200px;
-  margin: 1rem;
-  background-color: brown;
-
-} */
 
 /* CAROUSEL */
 
-/* #prevCast {
-  position: absolute;
-  top: 400px;
-  z-index: 2;
-  transform: translate(50%, -50%);
-  font-size: 5rem;
-  cursor: pointer;
-}
 
-#nextCast {
-  position: absolute;
-  top: 400px;
-  right: 130px;
-  transform: translate(50%, -50%);
-  z-index: 2;
-  font-size: 5rem;
-  cursor: pointer;
-} */
 
 #wrapperCast {
   width: 90%;
@@ -400,7 +366,9 @@ button.dropbtn:focus::after {
 
 
 
-
+.boxCast {
+  width: 150px;
+}
 
 #contentCast {
   display: flex;
@@ -410,14 +378,17 @@ button.dropbtn:focus::after {
   grid-auto-flow: column;
   /* margin: auto; */
   box-sizing: border-box;
-
-
+  width: 90%;
+  height: 100%;
 }
+
+
 
 
 
 .slideCast-img {
   /* height: 100%; */
+
   position: relative;
   padding: auto;
 
@@ -510,6 +481,14 @@ button.dropbtn:focus::after {
   position: relative;
 
 
+}
+
+.itemCast {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
 }
 
 .item-a {

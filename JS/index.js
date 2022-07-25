@@ -110,7 +110,7 @@ nextDisneyMovie.addEventListener("click", e => {
 
 });
 prevDisneyMovie.addEventListener("click", e => {
-    carouselDisneyT.scrollBy(-(widthDisneyMovie + gapDisneyMovie), 0);
+    carouselDisneyM.scrollBy(-(widthDisneyMovie + gapDisneyMovie), 0);
 
 });
 
@@ -185,8 +185,115 @@ window.addEventListener("resize", e => (widthTopRatedTV = carouselTopRatedTV.off
 
 // ---------------------------FIN CAROUSEL4---------------------------
 
+// ---------------------------CAROUSEL AP FILM---------------------------
+const gapAPM = 16;
 
-//liste Films
+const carouselAPM = document.getElementById("carouselAPM"),
+    contentAPM = document.getElementById("contentAPM"),
+    nextAPM = document.getElementById("nextAPM"),
+    prevAPM = document.getElementById("prevAPM");
+
+nextAPM.addEventListener("click", e => {
+    carouselAPM.scrollBy(widthAPM + gapAPM, 0);
+
+});
+prevAPM.addEventListener("click", e => {
+    carouselAPM.scrollBy(-(widthAPM + gapAPM), 0);
+
+});
+
+let widthAPM = carouselAPM.offsetWidth;
+window.addEventListener("resize", e => (widthAPM = carouselAPM.offsetWidth));
+
+// ---------------------------FIN AP FILM---------------------------
+
+// ---------------------------CAROUSEL AP TV---------------------------
+const gapAPTV = 16;
+
+const carouselAPTV = document.getElementById("carouselAPTV"),
+    contentAPTV = document.getElementById("contentAPTV"),
+    nextAPTV = document.getElementById("nextAPTV"),
+    prevAPTV = document.getElementById("prevAPTV");
+
+nextAPTV.addEventListener("click", e => {
+    carouselAPTV.scrollBy(widthAPTV + gapAPTV, 0);
+
+});
+prevAPTV.addEventListener("click", e => {
+    carouselAPTV.scrollBy(-(widthAPTV + gapAPTV), 0);
+
+});
+
+let widthAPTV = carouselAPTV.offsetWidth;
+window.addEventListener("resize", e => (widthAPTV = carouselAPTV.offsetWidth));
+
+// ---------------------------FIN AP TV---------------------------
+
+// ---------------------------CAROUSEL canal TV---------------------------
+const gapCanalTV = 16;
+
+const carouselCanalTV = document.getElementById("carouselCanalTV"),
+    contentCanalTV = document.getElementById("contentCanalTV"),
+    nextCanalTV = document.getElementById("nextCTV"),
+    prevCanalTV = document.getElementById("prevCTV");
+
+nextCanalTV.addEventListener("click", e => {
+    carouselCanalTV.scrollBy(widthCanalTV + gapCanalTV, 0);
+
+});
+prevCanalTV.addEventListener("click", e => {
+    carouselCanalTV.scrollBy(-(widthCanalTV + gapCanalTV), 0);
+
+});
+
+let widthCanalTV = carouselCanalTV.offsetWidth;
+window.addEventListener("resize", e => (widthCanalTV = carouselCanalTV.offsetWidth));
+
+// ---------------------------FIN canal TV---------------------------
+
+// ---------------------------CAROUSEL canal Movie---------------------------
+const gapCanalMovie = 16;
+
+const carouselCanalMovie = document.getElementById("carouselCanalMovie"),
+    contentCanalMovie = document.getElementById("contentCanalMovie"),
+    nextCanalMovie = document.getElementById("nextCanalMovie"),
+    prevCanalMovie = document.getElementById("prevCanalMovie");
+
+nextCanalMovie.addEventListener("click", e => {
+    carouselCanalMovie.scrollBy(widthCanalMovie + gapCanalMovie, 0);
+
+});
+prevCanalMovie.addEventListener("click", e => {
+    carouselCanalMovie.scrollBy(-(widthCanalMovie + gapCanalMovie), 0);
+
+});
+
+let widthCanalMovie = carouselCanalMovie.offsetWidth;
+window.addEventListener("resize", e => (widthCanalMovie = carouselCanalMovie.offsetWidth));
+
+// ---------------------------FIN canal movie---------------------------
+
+// ---------------------------CAROUSEL canal serie---------------------------
+const gapCanalSTV = 16;
+
+const carouselCanalSTV = document.getElementById("carouselCanalSTV"),
+    contentCanalSTV = document.getElementById("contentCanalSTV"),
+    nextCanalSTV = document.getElementById("nextCanalSTV"),
+    prevCanalSTV = document.getElementById("prevCanalSTV");
+
+nextCanalSTV.addEventListener("click", e => {
+    carouselCanalSTV.scrollBy(widthCanalSTV + gapCanalSTV, 0);
+
+});
+prevCanalSTV.addEventListener("click", e => {
+    carouselCanalSTV.scrollBy(-(widthCanalSTV + gapCanalSTV), 0);
+
+});
+
+let widthCanalSTV = carouselCanalSTV.offsetWidth;
+window.addEventListener("resize", e => (widthCanalSTV = carouselCanalSTV.offsetWidth));
+
+// ---------------------------FIN canal serie---------------------------
 
 const films = [
 
@@ -254,8 +361,10 @@ const createMovieAffiche = (movieAffiche) => {
         overlay.classList.add('overlaySliderAffiche')
 
         const a = document.createElement('a')
-        a.classList.add('loveAffiche-btn')
-        a.innerText = "J'aime"
+        a.classList.add('seeMore')
+        a.href = `cine1_resume.html?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=movie&person=${movieAffiche.person_id}`
+        a.innerText = "Voir détails..."
+        a.style.textDecoration = "none";
 
         const detailsBox = document.createElement('div')
         detailsBox.classList.add('details-box')
@@ -263,17 +372,13 @@ const createMovieAffiche = (movieAffiche) => {
         const type = document.createElement('div')
         type.classList.add('type')
 
-        const seeDetail = document.createElement('a')
-        seeDetail.classList.add('overviewAffiche')
-        seeDetail.href = `cine1_resume.html?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=movie&person=${movieAffiche.person_id}`
-        seeDetail.innerText = " Plus...";
-        seeDetail.style.textDecoration = "none";
 
 
 
 
 
-        overlay.append(a, seeDetail);
+
+        overlay.append(a);
         slide.append(imgScreen1, overlay)
         box.append(slide,
             detailsBox
@@ -302,8 +407,10 @@ const createMovieAffiche = (movieAffiche) => {
         overlay.classList.add('overlaySliderAffiche')
 
         const a = document.createElement('a')
-        a.classList.add('loveAffiche-btn')
-        a.innerText = "J'aime"
+        a.classList.add('seeMore')
+        a.href = `cine1_resume.html?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=tv`
+        a.innerText = "Voir détails..."
+        a.style.textDecoration = "none";
 
         const detailsBox = document.createElement('div')
         detailsBox.classList.add('details-box')
@@ -311,17 +418,13 @@ const createMovieAffiche = (movieAffiche) => {
         const type = document.createElement('div')
         type.classList.add('type')
 
-        const seeDetail = document.createElement('a')
-        seeDetail.classList.add('overviewAffiche')
-        seeDetail.href = `cine1_resume.html?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=tv`
-        seeDetail.innerText = " Plus...";
-        seeDetail.style.textDecoration = "none";
 
 
 
 
 
-        overlay.append(a, seeDetail);
+
+        overlay.append(a);
         slide.append(imgScreen1, overlay)
         box.append(slide,
             detailsBox
@@ -386,8 +489,10 @@ const createTop = (movie) => {
     overlay.classList.add('overlaySlider')
 
     const a = document.createElement('a')
-    a.classList.add('love-btn')
-    a.innerText = "J'aime"
+    a.classList.add('seeMore')
+    a.innerText = "Voir détails..."
+    a.href = `cine1_resume.html?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
+    a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
     detailsBox.classList.add('details-box')
@@ -396,24 +501,25 @@ const createTop = (movie) => {
     type.classList.add('type')
 
     const aType = document.createElement('a')
+    aType.classList.add('nameMovies')
     aType.innerText = movie.title;
-    aType.style.fontSize = ('0.7rem')
+    aType.style.fontSize = ('0.9rem')
+    aType.style.textDecoration = 'none'
+    aType.style.color = "white"
+    aType.style.textAlign = 'center'
     aType.href = `cine1_resume.html?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
 
-    const seeDetail = document.createElement('a')
-    seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.html?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
-    seeDetail.innerText = " Plus...";
-    seeDetail.style.textDecoration = "none";
+
 
     const aVote = document.createElement('a')
+    aVote.classList.add('dateDeSortie')
     aVote.innerText = "Date de sortie : " + movie.release_date
     aVote.style.fontSize = ('0.8rem')
     aVote.style.color = '#878484'
 
 
 
-    overlay.append(a, seeDetail);
+    overlay.append(a);
     slide.append(imgScreen1, overlay)
     box.append(slide,
         detailsBox
@@ -471,8 +577,11 @@ const createDisneyTV = (disneyPlusTV) => {
     overlay.classList.add('overlaySlider')
 
     const a = document.createElement('a')
-    a.classList.add('love-btn')
-    a.innerText = "J'aime"
+    a.classList.add('seeMore')
+    a.innerText = "Voir détails..."
+    a.href = `cine1_resume.html?id=${disneyPlusTV.id}&with_genres=${disneyPlusTV.genre_ids}&type=tv`
+    a.style.textDecoration = "none";
+
 
     const detailsBox = document.createElement('div')
     detailsBox.classList.add('details-box')
@@ -481,24 +590,24 @@ const createDisneyTV = (disneyPlusTV) => {
     type.classList.add('type')
 
     const aType = document.createElement('a')
+    aType.classList.add('nameMovies')
     aType.innerText = disneyPlusTV.name;
-    aType.style.fontSize = ('0.7rem')
+    aType.style.fontSize = ('1rem')
+    aType.style.textDecoration = 'none'
+    aType.style.color = "white"
+    aType.style.textAlign = 'center'
     aType.href = `cine1_resume.html?id=${disneyPlusTV.id}&with_genres=${disneyPlusTV.genre_ids}&type=tv`
 
-    const seeDetail = document.createElement('a')
-    seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.html?id=${disneyPlusTV.id}&with_genres=${disneyPlusTV.genre_ids}&type=tv`
-    seeDetail.innerText = " Plus...";
-    seeDetail.style.textDecoration = "none";
 
     const aVote = document.createElement('a')
+    aVote.classList.add('dateDeSortie')
     aVote.innerText = "Date de sortie : " + disneyPlusTV.first_air_date
     aVote.style.fontSize = ('0.8rem')
     aVote.style.color = '#878484'
 
 
 
-    overlay.append(a, seeDetail);
+    overlay.append(a);
     slide.append(imgScreen1, overlay)
     box.append(slide,
         detailsBox
@@ -543,21 +652,23 @@ const createDisneyMovie = (disneyMovie) => {
     li.classList.add('item-a')
 
     const box = document.createElement('div')
-    box.classList.add('box')
+    box.classList.add('boxDisneyMovie')
 
     const slide = document.createElement('div')
     slide.classList.add('slide-img')
 
     const imgScreen1 = document.createElement('img')
     imgScreen1.classList.add('item')
-    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + disneyMovie.poster_path;
+    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + disneyMovie.backdrop_path;
 
     const overlay = document.createElement('div')
     overlay.classList.add('overlaySlider')
 
     const a = document.createElement('a')
-    a.classList.add('love-btn')
-    a.innerText = "J'aime"
+    a.classList.add('seeMore')
+    a.innerText = "Voir détails..."
+    a.href = `cine1_resume.html?id=${disneyMovie.id}&with_genres=${disneyMovie.genre_ids}&type=movie`
+    a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
     detailsBox.classList.add('details-box')
@@ -567,23 +678,23 @@ const createDisneyMovie = (disneyMovie) => {
 
     const aType = document.createElement('a')
     aType.innerText = disneyMovie.title;
-    aType.style.fontSize = ('0.7rem')
+    aType.style.fontSize = ('1.2rem')
+    aType.style.textDecoration = 'none'
+    aType.style.color = "white"
+    aType.style.textAlign = 'center'
     aType.href = `cine1_resume.html?id=${disneyMovie.id}&with_genres=${disneyMovie.genre_ids}&type=movie`
 
-    const seeDetail = document.createElement('a')
-    seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.html?id=${disneyMovie.id}&with_genres=${disneyMovie.genre_ids}&type=movie`
-    seeDetail.innerText = " Plus...";
-    seeDetail.style.textDecoration = "none";
+
 
     const aVote = document.createElement('a')
+    aVote.classList.add('dateDeSortie')
     aVote.innerText = "Date de sortie : " + disneyMovie.release_date
     aVote.style.fontSize = ('0.8rem')
     aVote.style.color = '#878484'
 
 
 
-    overlay.append(a, seeDetail);
+    overlay.append(a);
     slide.append(imgScreen1, overlay)
     box.append(slide,
         detailsBox
@@ -642,9 +753,12 @@ const createNowTV = (TVPlay) => {
     const overlay = document.createElement('div')
     overlay.classList.add('overlaySlider')
 
+
     const a = document.createElement('a')
-    a.classList.add('love-btn')
-    a.innerText = "J'aime"
+    a.classList.add('seeMore')
+    a.innerText = "Voir détails..."
+    a.href = `cine1_resume.html?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}&type=tv`
+    a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
     detailsBox.classList.add('details-box')
@@ -653,24 +767,25 @@ const createNowTV = (TVPlay) => {
     type.classList.add('type')
 
     const aType = document.createElement('a')
+    aType.classList.add('nameMovies')
     aType.innerText = TVPlay.name;
-    aType.style.fontSize = '0.8rem'
+    aType.style.fontSize = ('0.9rem')
+    aType.style.textDecoration = 'none'
+    aType.style.color = "white"
+    aType.style.textAlign = 'center'
     aType.href = `cine1_resume.html?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}&type=tv`
 
-    const seeDetail = document.createElement('a')
-    seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.html?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}&type=tv`
-    seeDetail.innerText = " Plus...";
-    seeDetail.style.textDecoration = "none";
+
 
     const aVote = document.createElement('a')
+    aVote.classList.add('dateDeSortie')
     aVote.innerText = "Date de sortie : " + TVPlay.first_air_date
     aVote.style.fontSize = '0.8rem'
     aVote.style.color = '#878484'
 
 
 
-    overlay.append(a, seeDetail);
+    overlay.append(a);
     slide.append(imgScreen1, overlay)
     box.append(slide,
         detailsBox
@@ -689,21 +804,21 @@ const createNowTV = (TVPlay) => {
 // ------------------FIN CAROUSEL FILMS NOW PLAYING---------------
 
 
-// ------------------CAROUSEL 3 FILMS NOW PLAYING---------------
+// ------------------CAROUSEL 3 FILMS NETFLIX---------------
 
 const newCarousel3 = document.querySelector('#content3')
 
-let topRated = fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&page=1');
-topRated.then(async response => {
+let netflixMovie = fetch('https://api.themoviedb.org/3/discover/movie?api_key=e0e252f245f519ae01af7682ea83a642&with_watch_providers=8&watch_region=FR');
+netflixMovie.then(async response => {
     try {
-        let topRatedMovie = await response.json();
+        let topNetflixMovie = await response.json();
 
-        let recentTopRatedMovie = topRatedMovie.results;
+        let recentNetflixMovie = topNetflixMovie.results;
 
-        const topRatedNode = recentTopRatedMovie.map(topRated => {
-            return createTopRated(topRated)
+        const netflixMovieNode = recentNetflixMovie.map(netflixMovie => {
+            return createTopRated(netflixMovie)
         })
-        newCarousel3.append(...topRatedNode);
+        newCarousel3.append(...netflixMovieNode);
     } catch (error) {
         console.log(error);
     }
@@ -711,7 +826,7 @@ topRated.then(async response => {
 
 
 
-const createTopRated = (topRated) => {
+const createTopRated = (netflixMovie) => {
     const li = document.createElement('li')
     li.classList.add('item-a')
 
@@ -723,14 +838,16 @@ const createTopRated = (topRated) => {
 
     const imgScreen1 = document.createElement('img')
     imgScreen1.classList.add('item')
-    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + topRated.poster_path;
+    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + netflixMovie.poster_path;
 
     const overlay = document.createElement('div')
     overlay.classList.add('overlaySlider')
 
     const a = document.createElement('a')
-    a.classList.add('love-btn')
-    a.innerText = "J'aime"
+    a.classList.add('seeMore')
+    a.innerText = "Voir détails..."
+    a.href = `cine1_resume.html?id=${netflixMovie.id}&with_genres=${netflixMovie.id}&type=movie`
+    a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
     detailsBox.classList.add('details-box')
@@ -739,25 +856,25 @@ const createTopRated = (topRated) => {
     type.classList.add('type')
 
     const aType = document.createElement('a')
-    aType.innerText = topRated.title;
-    aType.style.fontSize = ('0.8rem')
-    aType.style.fontSize = ('0.8rem')
-    aType.href = `cine1_resume.html?id=${topRated.id}&type=movie`
+    aType.classList.add('nameMovies')
+    aType.innerText = netflixMovie.title;
+    aType.style.fontSize = ('0.9rem')
+    aType.style.textDecoration = 'none'
+    aType.style.color = "white"
+    aType.style.textAlign = 'center'
+    aType.href = `cine1_resume.html?id=${netflixMovie.id}&with_genres=${netflixMovie.id}&type=movie`
 
-    const seeDetail = document.createElement('a')
-    seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.html?id=${topRated.id}&with_genres=${topRated.genre_ids}&type=movie`
-    seeDetail.innerText = " Plus...";
-    seeDetail.style.textDecoration = "none";
+
 
     const aVote = document.createElement('a')
-    aVote.innerText = "Date de sortie : " + topRated.release_date
+    aVote.classList.add('dateDeSortie')
+    aVote.innerText = "Date de sortie : " + netflixMovie.release_date
     aVote.style.fontSize = ('0.8rem')
     aVote.style.color = '#878484'
 
 
 
-    overlay.append(a, seeDetail);
+    overlay.append(a);
     slide.append(imgScreen1, overlay)
     box.append(slide,
         detailsBox
@@ -773,7 +890,7 @@ const createTopRated = (topRated) => {
 
 
 }
-// ------------------FIN CAROUSEL FILMS TOP RATED---------------
+// ------------------FIN CAROUSEL FILMS NETFLIX---------------
 
 // ------------------CAROUSEL 3 FILMS UPCOMING---------------
 
@@ -825,8 +942,10 @@ const createupComing = (upComing) => {
     overlay.classList.add('overlaySlider')
 
     const a = document.createElement('a')
-    a.classList.add('love-btn')
-    a.innerText = "J'aime"
+    a.classList.add('seeMore')
+    a.innerText = "Voir détails..."
+    a.href = `cine1_resume.html?id=${upComing.id}&with_genres=${upComing.genre_ids}&type=movie`
+    a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
     detailsBox.classList.add('details-box')
@@ -835,25 +954,25 @@ const createupComing = (upComing) => {
     type.classList.add('type')
 
     const aType = document.createElement('a')
+    aType.classList.add('nameMovies')
     aType.innerText = upComing.title;
-    aType.style.fontSize = ('0.8rem')
-    aType.style.fontSize = ('0.8rem')
+    aType.style.fontSize = ('0.9rem')
+    aType.style.textDecoration = 'none'
+    aType.style.color = "white"
+    aType.style.textAlign = 'center'
     aType.href = `cine1_resume.html?id=${upComing.id}&with_genres=${upComing.genre_ids}&type=movie`
 
-    const seeDetail = document.createElement('a')
-    seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.html?id=${upComing.id}&with_genres=${upComing.genre_ids}&type=movie`
-    seeDetail.innerText = " Plus...";
-    seeDetail.style.textDecoration = "none";
+
 
     const aVote = document.createElement('a')
+    aVote.classList.add('dateDeSortie')
     aVote.innerText = "Date de sortie : " + upComing.release_date
     aVote.style.fontSize = ('0.8rem')
     aVote.style.color = '#878484'
 
 
 
-    overlay.append(a, seeDetail);
+    overlay.append(a);
     slide.append(imgScreen1, overlay)
     box.append(slide,
         detailsBox
@@ -872,21 +991,21 @@ const createupComing = (upComing) => {
 // ------------------FIN CAROUSEL FILMS UPCOMING---------------
 
 
-// ------------------CAROUSEL 3 FILMS RECOMMENDATIONS---------------
+// ------------------CAROUSEL 3 NETFLIX TV---------------
 
 const newCarousel5 = document.querySelector('#content5')
 
-let topRatedTV = fetch('https://api.themoviedb.org/3/tv/top_rated?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&page=1');
-topRatedTV.then(async response => {
+let netflixTV = fetch('https://api.themoviedb.org/3/discover/tv?api_key=e0e252f245f519ae01af7682ea83a642&with_watch_providers=8&watch_region=FR');
+netflixTV.then(async response => {
     try {
-        let topRatedTV = await response.json();
+        let netflixTV = await response.json();
 
-        let recentTopRatedTV = topRatedTV.results;
+        let recentNetflixTV = netflixTV.results;
 
-        const topRatedTVNode = recentTopRatedTV.map(topRatedTV => {
-            return createTopRatedTV(topRatedTV)
+        const netflixTVNode = recentNetflixTV.map(netflixTV => {
+            return createNetflixTV(netflixTV)
         })
-        newCarousel5.append(...topRatedTVNode);
+        newCarousel5.append(...netflixTVNode);
     } catch (error) {
         console.log(error);
     }
@@ -894,26 +1013,28 @@ topRatedTV.then(async response => {
 
 
 
-const createTopRatedTV = (topRatedTV) => {
+const createNetflixTV = (netflixTV) => {
     const li = document.createElement('li')
     li.classList.add('item-a')
 
     const box = document.createElement('div')
-    box.classList.add('box')
+    box.classList.add('boxTopRatedTV')
 
     const slide = document.createElement('div')
     slide.classList.add('slide-img')
 
     const imgScreen1 = document.createElement('img')
     imgScreen1.classList.add('item')
-    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + topRatedTV.poster_path;
+    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + netflixTV.backdrop_path;
 
     const overlay = document.createElement('div')
     overlay.classList.add('overlaySlider')
 
     const a = document.createElement('a')
-    a.classList.add('love-btn')
-    a.innerText = "J'aime"
+    a.classList.add('seeMore')
+    a.innerText = "Voir détails..."
+    a.href = `cine1_resume.html?id=${netflixTV.id}&with_genres=${netflixTV.genre_ids}&type=tv`
+    a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
     detailsBox.classList.add('details-box')
@@ -922,25 +1043,24 @@ const createTopRatedTV = (topRatedTV) => {
     type.classList.add('type')
 
     const aType = document.createElement('a')
-    aType.innerText = topRatedTV.name;
-    aType.style.fontSize = ('0.8rem')
-    aType.style.fontSize = ('0.8rem')
-    aType.href = `cine1_resume.html?id=${topRatedTV.id}&type=tv`
+    aType.innerText = netflixTV.name;
+    aType.style.fontSize = ('1.2rem')
+    aType.style.textDecoration = 'none'
+    aType.style.color = "white"
+    aType.style.textAlign = 'center'
+    aType.href = `cine1_resume.html?id=${netflixTV.id}&with_genres=${netflixTV.genre_ids}&type=tv`
 
-    const seeDetail = document.createElement('a')
-    seeDetail.classList.add('overview')
-    seeDetail.href = `cine1_resume.html?id=${topRatedTV.id}&with_genres=${topRatedTV.genre_ids}&type=tv`
-    seeDetail.innerText = " Plus...";
-    seeDetail.style.textDecoration = "none";
+
 
     const aVote = document.createElement('a')
-    aVote.innerText = "Date de sortie : " + topRatedTV.first_air_date
+    aVote.classList.add('dateDeSortie')
+    aVote.innerText = "Date de sortie : " + netflixTV.first_air_date
     aVote.style.fontSize = ('0.8rem')
     aVote.style.color = '#878484'
 
 
 
-    overlay.append(a, seeDetail);
+    overlay.append(a);
     slide.append(imgScreen1, overlay)
     box.append(slide,
         detailsBox
@@ -956,13 +1076,445 @@ const createTopRatedTV = (topRatedTV) => {
 
 
 }
-// ------------------FIN CAROUSEL FILMS RECOMMENDATIONS---------------
+// ------------------FIN CAROUSEL NETFLIX TV---------------
+
+// ------------------CAROUSEL 3 FILMS AMAZON PRIMES---------------
+
+const newCarouselAPM = document.querySelector('#contentAPM')
+
+let APMovie = fetch('https://api.themoviedb.org/3/discover/movie?api_key=e0e252f245f519ae01af7682ea83a642&with_watch_providers=119&watch_region=FR');
+APMovie.then(async response => {
+    try {
+        let topAPMovie = await response.json();
+
+        let recentAPMovie = topAPMovie.results;
+
+        const APMovieNode = recentAPMovie.map(APMovie => {
+            return createAPM(APMovie)
+        })
+        newCarouselAPM.append(...APMovieNode);
+    } catch (error) {
+        console.log(error);
+    }
+})
 
 
 
+const createAPM = (APMovie) => {
+    const li = document.createElement('li')
+    li.classList.add('item-a')
+
+    const box = document.createElement('div')
+    box.classList.add('box')
+
+    const slide = document.createElement('div')
+    slide.classList.add('slide-img')
+
+    const imgScreen1 = document.createElement('img')
+    imgScreen1.classList.add('item')
+    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + APMovie.poster_path;
+
+    const overlay = document.createElement('div')
+    overlay.classList.add('overlaySlider')
+
+    const a = document.createElement('a')
+    a.classList.add('seeMore')
+    a.innerText = "Voir détails..."
+    a.href = `cine1_resume.html?id=${APMovie.id}&with_genres=${APMovie.id}&type=movie`
+    a.style.textDecoration = "none";
+
+    const detailsBox = document.createElement('div')
+    detailsBox.classList.add('details-box')
+
+    const type = document.createElement('div')
+    type.classList.add('type')
+
+    const aType = document.createElement('a')
+    aType.classList.add('nameMovies')
+    aType.innerText = APMovie.title;
+    aType.style.fontSize = ('0.9rem')
+    aType.style.textDecoration = 'none'
+    aType.style.color = "white"
+    aType.style.textAlign = 'center'
+    aType.href = `cine1_resume.html?id=${APMovie.id}&with_genres=${APMovie.id}&type=movie`
 
 
 
+    const aVote = document.createElement('a')
+    aVote.classList.add('dateDeSortie')
+    aVote.innerText = "Date de sortie : " + APMovie.release_date
+    aVote.style.fontSize = ('0.8rem')
+    aVote.style.color = '#878484'
 
 
 
+    overlay.append(a);
+    slide.append(imgScreen1, overlay)
+    box.append(slide,
+        detailsBox
+    )
+    detailsBox.append(type)
+    type.append(aType
+
+        , aVote
+    )
+    li.append(box)
+
+    return li;
+
+
+}
+// ------------------FIN CAROUSEL FILMS AMAZON PRIME---------------
+
+
+// ------------------CAROUSEL 3 SERIES AMAZON PRIMES---------------
+
+const newCarouselAPTV = document.querySelector('#contentAPTV')
+
+let APTV = fetch('https://api.themoviedb.org/3/discover/tv?api_key=e0e252f245f519ae01af7682ea83a642&with_watch_providers=119&watch_region=FR');
+APTV.then(async response => {
+    try {
+        let topAPTV = await response.json();
+
+        let recentAPTV = topAPTV.results;
+
+        const APTVNode = recentAPTV.map(APTV => {
+            return createAPTV(APTV)
+        })
+        newCarouselAPTV.append(...APTVNode);
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+
+
+const createAPTV = (APTV) => {
+    const li = document.createElement('li')
+    li.classList.add('item-a')
+
+    const box = document.createElement('div')
+    box.classList.add('boxAPTV')
+
+    const slide = document.createElement('div')
+    slide.classList.add('slide-img')
+
+    const imgScreen1 = document.createElement('img')
+    imgScreen1.classList.add('item')
+    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + APTV.backdrop_path;
+
+    const overlay = document.createElement('div')
+    overlay.classList.add('overlaySlider')
+
+    const a = document.createElement('a')
+    a.classList.add('seeMore')
+    a.innerText = "Voir détails..."
+    a.href = `cine1_resume.html?id=${APTV.id}&with_genres=${APTV.id}&type=tv`
+    a.style.textDecoration = "none";
+
+    const detailsBox = document.createElement('div')
+    detailsBox.classList.add('details-box')
+
+    const type = document.createElement('div')
+    type.classList.add('type')
+
+    const aType = document.createElement('a')
+    aType.innerText = APTV.name;
+    aType.style.fontSize = ('1.2rem')
+    aType.style.textDecoration = 'none'
+    aType.style.color = "white"
+    aType.style.textAlign = 'center'
+    aType.href = `cine1_resume.html?id=${APTV.id}&with_genres=${APTV.id}&type=tv`
+
+
+
+    const aVote = document.createElement('a')
+    aVote.classList.add('dateDeSortie')
+    aVote.innerText = "Date de sortie : " + APTV.first_air_date
+    aVote.style.fontSize = ('0.8rem')
+    aVote.style.color = '#878484'
+
+
+
+    overlay.append(a);
+    slide.append(imgScreen1, overlay)
+    box.append(slide,
+        detailsBox
+    )
+    detailsBox.append(type)
+    type.append(aType
+
+        , aVote
+    )
+    li.append(box)
+
+    return li;
+
+
+}
+// ------------------FIN CAROUSEL SERIES AMAZON PRIME---------------
+
+
+// ------------------CAROUSEL 3 SERIES CANAL+---------------
+
+const newCarouselCanalTV = document.querySelector('#contentCanalTV')
+
+let CanalTV = fetch('https://api.themoviedb.org/3/discover/tv?api_key=e0e252f245f519ae01af7682ea83a642&with_watch_providers=381&watch_region=FR');
+CanalTV.then(async response => {
+    try {
+        let topCanalTV = await response.json();
+
+        let recentCanalTV = topCanalTV.results;
+
+        const CanalTVNode = recentCanalTV.map(CanalTV => {
+            return createCanalTV(CanalTV)
+        })
+        newCarouselCanalTV.append(...CanalTVNode);
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+
+
+const createCanalTV = (CanalTV) => {
+    const li = document.createElement('li')
+    li.classList.add('item-a')
+
+    const box = document.createElement('div')
+    box.classList.add('box')
+
+    const slide = document.createElement('div')
+    slide.classList.add('slide-img')
+
+    const imgScreen1 = document.createElement('img')
+    imgScreen1.classList.add('item')
+    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + CanalTV.poster_path;
+
+    const overlay = document.createElement('div')
+    overlay.classList.add('overlaySlider')
+
+    const a = document.createElement('a')
+    a.classList.add('seeMore')
+    a.innerText = "Voir détails..."
+    a.href = `cine1_resume.html?id=${CanalTV.id}&with_genres=${CanalTV.id}&type=tv`
+    a.style.textDecoration = "none";
+
+    const detailsBox = document.createElement('div')
+    detailsBox.classList.add('details-box')
+
+    const type = document.createElement('div')
+    type.classList.add('type')
+
+    const aType = document.createElement('a')
+    aType.classList.add('nameMovies')
+    aType.innerText = CanalTV.name;
+    aType.style.fontSize = ('0.9rem')
+    aType.style.textDecoration = 'none'
+    aType.style.color = "white"
+    aType.style.textAlign = 'center'
+    aType.href = `cine1_resume.html?id=${CanalTV.id}&with_genres=${CanalTV.id}&type=tv`
+
+
+
+    const aVote = document.createElement('a')
+    aVote.classList.add('dateDeSortie')
+    aVote.innerText = "Date de sortie : " + CanalTV.first_air_date
+    aVote.style.fontSize = ('0.8rem')
+    aVote.style.color = '#878484'
+
+
+
+    overlay.append(a);
+    slide.append(imgScreen1, overlay)
+    box.append(slide,
+        detailsBox
+    )
+    detailsBox.append(type)
+    type.append(aType
+
+        , aVote
+    )
+    li.append(box)
+
+    return li;
+
+
+}
+// ------------------FIN CAROUSEL SERIES CANAL+---------------
+
+// ------------------CAROUSEL 3 FILMS CANAL+---------------
+
+const newCarouselCanalMovie = document.querySelector('#contentCanalMovie')
+
+let CanalMovie = fetch('https://api.themoviedb.org/3/discover/movie?api_key=e0e252f245f519ae01af7682ea83a642&with_watch_providers=381&watch_region=FR');
+CanalMovie.then(async response => {
+    try {
+        let topCanalMovie = await response.json();
+
+        let recentCanalMovie = topCanalMovie.results;
+
+        const CanalMovieNode = recentCanalMovie.map(CanalMovie => {
+            return createCanalMovie(CanalMovie)
+        })
+        newCarouselCanalMovie.append(...CanalMovieNode);
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+
+
+const createCanalMovie = (CanalMovie) => {
+    const li = document.createElement('li')
+    li.classList.add('item-a')
+
+    const box = document.createElement('div')
+    box.classList.add('box')
+
+    const slide = document.createElement('div')
+    slide.classList.add('slide-img')
+
+    const imgScreen1 = document.createElement('img')
+    imgScreen1.classList.add('item')
+    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + CanalMovie.poster_path;
+
+    const overlay = document.createElement('div')
+    overlay.classList.add('overlaySlider')
+
+    const a = document.createElement('a')
+    a.classList.add('seeMore')
+    a.innerText = "Voir détails..."
+    a.href = `cine1_resume.html?id=${CanalMovie.id}&with_genres=${CanalMovie.id}&type=movie`
+    a.style.textDecoration = "none";
+
+    const detailsBox = document.createElement('div')
+    detailsBox.classList.add('details-box')
+
+    const type = document.createElement('div')
+    type.classList.add('type')
+
+    const aType = document.createElement('a')
+    aType.classList.add('nameMovies')
+    aType.innerText = CanalMovie.title;
+    aType.style.fontSize = ('0.9rem')
+    aType.style.textDecoration = 'none'
+    aType.style.color = "white"
+    aType.style.textAlign = 'center'
+    aType.href = `cine1_resume.html?id=${CanalMovie.id}&with_genres=${CanalMovie.id}&type=movie`
+
+
+
+    const aVote = document.createElement('a')
+    aVote.classList.add('dateDeSortie')
+    aVote.innerText = "Date de sortie : " + CanalMovie.release_date
+    aVote.style.fontSize = ('0.8rem')
+    aVote.style.color = '#878484'
+
+
+
+    overlay.append(a);
+    slide.append(imgScreen1, overlay)
+    box.append(slide,
+        detailsBox
+    )
+    detailsBox.append(type)
+    type.append(aType
+
+        , aVote
+    )
+    li.append(box)
+
+    return li;
+
+
+}
+// ------------------FIN CAROUSEL FILMS CANAL+---------------
+
+// ------------------CAROUSEL 3 SERIES CANAL SERIES---------------
+
+const newCarouselCanalSTV = document.querySelector('#contentCanalSTV')
+
+let CanalSTV = fetch('https://api.themoviedb.org/3/discover/tv?api_key=e0e252f245f519ae01af7682ea83a642&with_watch_providers=345&watch_region=FR');
+CanalSTV.then(async response => {
+    try {
+        let topCanalSTV = await response.json();
+
+        let recentCanalSTV = topCanalSTV.results;
+
+        const CanalSTVNode = recentCanalSTV.map(CanalSTV => {
+            return createCanalSTV(CanalSTV)
+        })
+        newCarouselCanalSTV.append(...CanalSTVNode);
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+
+
+const createCanalSTV = (CanalSTV) => {
+    const li = document.createElement('li')
+    li.classList.add('item-a')
+
+    const box = document.createElement('div')
+    box.classList.add('boxCanalSTV')
+
+    const slide = document.createElement('div')
+    slide.classList.add('slide-img')
+
+    const imgScreen1 = document.createElement('img')
+    imgScreen1.classList.add('item')
+    imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + CanalSTV.backdrop_path;
+
+    const overlay = document.createElement('div')
+    overlay.classList.add('overlaySlider')
+
+    const a = document.createElement('a')
+    a.classList.add('seeMore')
+    a.innerText = "Voir détails..."
+    a.href = `cine1_resume.html?id=${CanalSTV.id}&with_genres=${CanalSTV.id}&type=tv`
+    a.style.textDecoration = "none";
+
+    const detailsBox = document.createElement('div')
+    detailsBox.classList.add('details-box')
+
+    const type = document.createElement('div')
+    type.classList.add('type')
+
+    const aType = document.createElement('a')
+    aType.classList.add('nameMovies')
+    aType.innerText = CanalSTV.name;
+    aType.style.fontSize = ('1.2rem')
+    aType.style.textDecoration = 'none'
+    aType.style.color = "white"
+    aType.style.textAlign = 'center'
+    aType.href = `cine1_resume.html?id=${CanalSTV.id}&with_genres=${CanalSTV.id}&type=tv`
+
+
+
+    const aVote = document.createElement('a')
+    aVote.classList.add('dateDeSortie')
+    aVote.innerText = "Date de sortie : " + CanalSTV.first_air_date
+    aVote.style.fontSize = ('0.8rem')
+    aVote.style.color = '#878484'
+
+
+
+    overlay.append(a);
+    slide.append(imgScreen1, overlay)
+    box.append(slide,
+        detailsBox
+    )
+    detailsBox.append(type)
+    type.append(aType
+
+        , aVote
+    )
+    li.append(box)
+
+    return li;
+
+
+}
+// ------------------FIN CAROUSEL SERIES CANAL+---------------
