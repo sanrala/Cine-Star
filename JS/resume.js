@@ -228,7 +228,7 @@ window.onload = () => {
             for (i = 0; i < (genreVideo.results).length; i++) {
               const videoPlay = document.querySelector('.overlayVideo-content')
               const iframe = document.createElement('iframe')
-              iframe.src = "https://www.youtube.com/embed/" + genreVideo.results[i].key
+              iframe.src = "https://www.youtube.com/embed/" + genreVideo.results[1].key
               iframe.style.title = "YouTube video player"
               iframe.style.frameborder = "0"
               iframe.style.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

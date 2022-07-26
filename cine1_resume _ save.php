@@ -12,7 +12,12 @@ $id = $_GET['id'] ?? null;
   <div class="container">
     <?php require_once './shared/header.php' ?>
     <div class="mainContent">
+      <div class="poster">
+        <!-- <img src="https://image.tmdb.org/t/p/w500//13r1DFhfL0qufFjXnrvWuh6qKqH.jpg " alt="Gravatar" /> </img> -->
+        <div class="info_film">
 
+        </div>
+      </div>
       <div class="row" id="slider-text">
         <div class="swiper">
           <h2 class="titleSwiper">
@@ -593,8 +598,7 @@ $id = $_GET['id'] ?? null;
   </div>
   </div>
   <div class="footer"></div> -->
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 
   <script>

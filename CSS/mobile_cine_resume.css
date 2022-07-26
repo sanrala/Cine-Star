@@ -12,10 +12,7 @@ body {
 
 
 
-iframe {
-  width: 500px;
-  height: 300px;
-}
+
 
 a {
   text-decoration: none;
@@ -50,6 +47,10 @@ a {
 .sidebar {
   display: none;
 }
+
+
+
+
 
 .player {
   position: absolute;
@@ -126,6 +127,8 @@ i {
   display: block;
 
 }
+
+
 
 .overlay-content li {
   display: flex;
@@ -857,6 +860,24 @@ svg #main-circ {
   top: 70px;
 }
 
+#video-content {
+  align-items: flex-start;
+}
+
+.overlayVideo .closebtnVideo {
+  position: absolute;
+  top: 520px;
+  right: -30px;
+  font-size: 60px;
+  color: white;
+  z-index: 20;
+}
+
+iframe {
+  width: 400px;
+  height: 250px;
+
+}
 
 
 

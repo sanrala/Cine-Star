@@ -167,17 +167,28 @@ i {
 .overlayVideo-content {
 
   margin-left: 0;
-  margin-top: 20px;
+  margin-top: 90px;
 
+}
+
+#video-content {
+  align-items: flex-start;
 }
 
 .overlayVideo .closebtnVideo {
   position: absolute;
-  top: 10px;
-  right: 1px;
+  top: 20px;
+  left: 5px;
   font-size: 60px;
   color: white;
-  z-index: 10;
+  z-index: 20;
+}
+
+iframe {
+  width: 1235px;
+  height: 550px;
+
+  box-shadow: 0 0 280px 280px #000000;
 }
 
 li {

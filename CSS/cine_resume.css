@@ -1371,8 +1371,8 @@ iframe {
 
 .overlayVideo .closebtnVideo {
   position: absolute;
-  top: 150px;
-  right: 25px;
+  top: 50px;
+  left: 125px;
   font-size: 60px;
   color: white;
   z-index: 15;
@@ -1389,10 +1389,3 @@ li {
 
 
 /* Video */
-
-@media (max-width=1920px) {
-  /* iframe {
-    width: 1629px;
-    height: 634px;
-  } */
-}

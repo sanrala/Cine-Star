@@ -362,7 +362,7 @@ const createMovieAffiche = (movieAffiche) => {
 
         const a = document.createElement('a')
         a.classList.add('seeMore')
-        a.href = `cine1_resume.html?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=movie&person=${movieAffiche.person_id}`
+        a.href = `./cine1_resume.php?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=movie&person=${movieAffiche.person_id}`
         a.innerText = "Voir détails..."
         a.style.textDecoration = "none";
 
@@ -408,7 +408,7 @@ const createMovieAffiche = (movieAffiche) => {
 
         const a = document.createElement('a')
         a.classList.add('seeMore')
-        a.href = `cine1_resume.html?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=tv`
+        a.href = `./cine1_resume.php?id=${movieAffiche.id}&with_genres=${movieAffiche.genre_ids}&type=tv`
         a.innerText = "Voir détails..."
         a.style.textDecoration = "none";
 
@@ -491,7 +491,7 @@ const createTop = (movie) => {
     const a = document.createElement('a')
     a.classList.add('seeMore')
     a.innerText = "Voir détails..."
-    a.href = `cine1_resume.html?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
+    a.href = `./cine1_resume.php?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
     a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
@@ -507,7 +507,7 @@ const createTop = (movie) => {
     aType.style.textDecoration = 'none'
     aType.style.color = "white"
     aType.style.textAlign = 'center'
-    aType.href = `cine1_resume.html?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
+    aType.href = `./cine1_resume.php?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
 
 
 
@@ -579,7 +579,7 @@ const createDisneyTV = (disneyPlusTV) => {
     const a = document.createElement('a')
     a.classList.add('seeMore')
     a.innerText = "Voir détails..."
-    a.href = `cine1_resume.html?id=${disneyPlusTV.id}&with_genres=${disneyPlusTV.genre_ids}&type=tv`
+    a.href = `./cine1_resume.php?id=${disneyPlusTV.id}&with_genres=${disneyPlusTV.genre_ids}&type=tv`
     a.style.textDecoration = "none";
 
 
@@ -596,7 +596,7 @@ const createDisneyTV = (disneyPlusTV) => {
     aType.style.textDecoration = 'none'
     aType.style.color = "white"
     aType.style.textAlign = 'center'
-    aType.href = `cine1_resume.html?id=${disneyPlusTV.id}&with_genres=${disneyPlusTV.genre_ids}&type=tv`
+    aType.href = `./cine1_resume.php?id=${disneyPlusTV.id}&with_genres=${disneyPlusTV.genre_ids}&type=tv`
 
 
     const aVote = document.createElement('a')
@@ -667,7 +667,7 @@ const createDisneyMovie = (disneyMovie) => {
     const a = document.createElement('a')
     a.classList.add('seeMore')
     a.innerText = "Voir détails..."
-    a.href = `cine1_resume.html?id=${disneyMovie.id}&with_genres=${disneyMovie.genre_ids}&type=movie`
+    a.href = `./cine1_resume.php?id=${disneyMovie.id}&with_genres=${disneyMovie.genre_ids}&type=movie`
     a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
@@ -682,7 +682,7 @@ const createDisneyMovie = (disneyMovie) => {
     aType.style.textDecoration = 'none'
     aType.style.color = "white"
     aType.style.textAlign = 'center'
-    aType.href = `cine1_resume.html?id=${disneyMovie.id}&with_genres=${disneyMovie.genre_ids}&type=movie`
+    aType.href = `./cine1_resume.php?id=${disneyMovie.id}&with_genres=${disneyMovie.genre_ids}&type=movie`
 
 
 
@@ -757,7 +757,7 @@ const createNowTV = (TVPlay) => {
     const a = document.createElement('a')
     a.classList.add('seeMore')
     a.innerText = "Voir détails..."
-    a.href = `cine1_resume.html?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}&type=tv`
+    a.href = `./cine1_resume.php?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}&type=tv`
     a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
@@ -773,7 +773,7 @@ const createNowTV = (TVPlay) => {
     aType.style.textDecoration = 'none'
     aType.style.color = "white"
     aType.style.textAlign = 'center'
-    aType.href = `cine1_resume.html?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}&type=tv`
+    aType.href = `./cine1_resume.php?id=${TVPlay.id}&with_genres=${TVPlay.genre_ids}&type=tv`
 
 
 
@@ -846,7 +846,7 @@ const createTopRated = (netflixMovie) => {
     const a = document.createElement('a')
     a.classList.add('seeMore')
     a.innerText = "Voir détails..."
-    a.href = `cine1_resume.html?id=${netflixMovie.id}&with_genres=${netflixMovie.id}&type=movie`
+    a.href = `./cine1_resume.php?id=${netflixMovie.id}&with_genres=${netflixMovie.id}&type=movie`
     a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
@@ -862,7 +862,7 @@ const createTopRated = (netflixMovie) => {
     aType.style.textDecoration = 'none'
     aType.style.color = "white"
     aType.style.textAlign = 'center'
-    aType.href = `cine1_resume.html?id=${netflixMovie.id}&with_genres=${netflixMovie.id}&type=movie`
+    aType.href = `./cine1_resume.php?id=${netflixMovie.id}&with_genres=${netflixMovie.id}&type=movie`
 
 
 
@@ -944,7 +944,7 @@ const createupComing = (upComing) => {
     const a = document.createElement('a')
     a.classList.add('seeMore')
     a.innerText = "Voir détails..."
-    a.href = `cine1_resume.html?id=${upComing.id}&with_genres=${upComing.genre_ids}&type=movie`
+    a.href = `./cine1_resume.php?id=${upComing.id}&with_genres=${upComing.genre_ids}&type=movie`
     a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
@@ -960,7 +960,7 @@ const createupComing = (upComing) => {
     aType.style.textDecoration = 'none'
     aType.style.color = "white"
     aType.style.textAlign = 'center'
-    aType.href = `cine1_resume.html?id=${upComing.id}&with_genres=${upComing.genre_ids}&type=movie`
+    aType.href = `./cine1_resume.php?id=${upComing.id}&with_genres=${upComing.genre_ids}&type=movie`
 
 
 
@@ -1033,7 +1033,7 @@ const createNetflixTV = (netflixTV) => {
     const a = document.createElement('a')
     a.classList.add('seeMore')
     a.innerText = "Voir détails..."
-    a.href = `cine1_resume.html?id=${netflixTV.id}&with_genres=${netflixTV.genre_ids}&type=tv`
+    a.href = `./cine1_resume.php?id=${netflixTV.id}&with_genres=${netflixTV.genre_ids}&type=tv`
     a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
@@ -1048,7 +1048,7 @@ const createNetflixTV = (netflixTV) => {
     aType.style.textDecoration = 'none'
     aType.style.color = "white"
     aType.style.textAlign = 'center'
-    aType.href = `cine1_resume.html?id=${netflixTV.id}&with_genres=${netflixTV.genre_ids}&type=tv`
+    aType.href = `./cine1_resume.php?id=${netflixTV.id}&with_genres=${netflixTV.genre_ids}&type=tv`
 
 
 
@@ -1120,7 +1120,7 @@ const createAPM = (APMovie) => {
     const a = document.createElement('a')
     a.classList.add('seeMore')
     a.innerText = "Voir détails..."
-    a.href = `cine1_resume.html?id=${APMovie.id}&with_genres=${APMovie.id}&type=movie`
+    a.href = `./cine1_resume.php?id=${APMovie.id}&with_genres=${APMovie.id}&type=movie`
     a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
@@ -1136,7 +1136,7 @@ const createAPM = (APMovie) => {
     aType.style.textDecoration = 'none'
     aType.style.color = "white"
     aType.style.textAlign = 'center'
-    aType.href = `cine1_resume.html?id=${APMovie.id}&with_genres=${APMovie.id}&type=movie`
+    aType.href = `./cine1_resume.php?id=${APMovie.id}&with_genres=${APMovie.id}&type=movie`
 
 
 
@@ -1209,7 +1209,7 @@ const createAPTV = (APTV) => {
     const a = document.createElement('a')
     a.classList.add('seeMore')
     a.innerText = "Voir détails..."
-    a.href = `cine1_resume.html?id=${APTV.id}&with_genres=${APTV.id}&type=tv`
+    a.href = `./cine1_resume.php?id=${APTV.id}&with_genres=${APTV.id}&type=tv`
     a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
@@ -1224,7 +1224,7 @@ const createAPTV = (APTV) => {
     aType.style.textDecoration = 'none'
     aType.style.color = "white"
     aType.style.textAlign = 'center'
-    aType.href = `cine1_resume.html?id=${APTV.id}&with_genres=${APTV.id}&type=tv`
+    aType.href = `./cine1_resume.php?id=${APTV.id}&with_genres=${APTV.id}&type=tv`
 
 
 
@@ -1297,7 +1297,7 @@ const createCanalTV = (CanalTV) => {
     const a = document.createElement('a')
     a.classList.add('seeMore')
     a.innerText = "Voir détails..."
-    a.href = `cine1_resume.html?id=${CanalTV.id}&with_genres=${CanalTV.id}&type=tv`
+    a.href = `./cine1_resume.php?id=${CanalTV.id}&with_genres=${CanalTV.id}&type=tv`
     a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
@@ -1313,7 +1313,7 @@ const createCanalTV = (CanalTV) => {
     aType.style.textDecoration = 'none'
     aType.style.color = "white"
     aType.style.textAlign = 'center'
-    aType.href = `cine1_resume.html?id=${CanalTV.id}&with_genres=${CanalTV.id}&type=tv`
+    aType.href = `./cine1_resume.php?id=${CanalTV.id}&with_genres=${CanalTV.id}&type=tv`
 
 
 
@@ -1385,7 +1385,7 @@ const createCanalMovie = (CanalMovie) => {
     const a = document.createElement('a')
     a.classList.add('seeMore')
     a.innerText = "Voir détails..."
-    a.href = `cine1_resume.html?id=${CanalMovie.id}&with_genres=${CanalMovie.id}&type=movie`
+    a.href = `./cine1_resume.php?id=${CanalMovie.id}&with_genres=${CanalMovie.id}&type=movie`
     a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
@@ -1401,7 +1401,7 @@ const createCanalMovie = (CanalMovie) => {
     aType.style.textDecoration = 'none'
     aType.style.color = "white"
     aType.style.textAlign = 'center'
-    aType.href = `cine1_resume.html?id=${CanalMovie.id}&with_genres=${CanalMovie.id}&type=movie`
+    aType.href = `./cine1_resume.php?id=${CanalMovie.id}&with_genres=${CanalMovie.id}&type=movie`
 
 
 
@@ -1473,7 +1473,7 @@ const createCanalSTV = (CanalSTV) => {
     const a = document.createElement('a')
     a.classList.add('seeMore')
     a.innerText = "Voir détails..."
-    a.href = `cine1_resume.html?id=${CanalSTV.id}&with_genres=${CanalSTV.id}&type=tv`
+    a.href = `./cine1_resume.php?id=${CanalSTV.id}&with_genres=${CanalSTV.id}&type=tv`
     a.style.textDecoration = "none";
 
     const detailsBox = document.createElement('div')
@@ -1489,7 +1489,7 @@ const createCanalSTV = (CanalSTV) => {
     aType.style.textDecoration = 'none'
     aType.style.color = "white"
     aType.style.textAlign = 'center'
-    aType.href = `cine1_resume.html?id=${CanalSTV.id}&with_genres=${CanalSTV.id}&type=tv`
+    aType.href = `./cine1_resume.php?id=${CanalSTV.id}&with_genres=${CanalSTV.id}&type=tv`
 
 
 
