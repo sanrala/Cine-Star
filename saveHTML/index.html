@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" media="(max-width: 500px)" href="CSS/mobile.css">
+  <link rel="stylesheet" media="(max-width: 1234px)" href="CSS/tablet.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Grape+Nuts&family=Parisienne&family=Raleway:wght@200&family=Rubik+Microbe&display=swap"
+    rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/343a754b43.js" crossorigin="anonymous"></script>
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<body>
+  <div class="container">
+    <div class="header_main">
+
+      <ul id="burg">
+
+        <li class="burger" onclick="openNav()"><a href="#"><i class="fas fa-solid fa-bars fa-2x"></i></a></li>
+
+        <li>
+          <a href="compte.html" id="compte"><i class="fas fa-solid fa-user"></i></a>
+        </li>
+
+
+
+      </ul>
+
+      <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+
+
+          <a href="index.html">
+            <li id="menu"><i class="fas fa-light fa-house-user"></i>Accueil</li>
+          </a>
+
+          <a href='favoris.html'>
+            <li id="menu"><i class="fas fa-solid fa-heart"></i>Favoris</li>
+          </a>
+          <a href='alerte.html'>
+            <li id="menu"><i class="fas fa-solid fa-bell"></i>Mes Alertes</li>
+          </a>
+
+          <a href="#">
+            <li id="menu"><i class='bx bxs-contact'></i>Nous contacter</li>
+          </a>
+
+        </div>
+
+      </div>
+      <img src="image/Cinestars.png" width="200" height="40" alt="logo" id="logo"></img>
+
+      <div class="menu">
+        <form id="form">
+          <input type="text" placeholder="Search" id="search" class="search">
+        </form>
+
+        <div class="dropdown">
+
+          <a href="compte.html"><button id="myBtn" class="dropbtn">Compte </button></a>
+
+          -->
+
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="sidebar">
+
+        <ul>
+
+          <a href="index.html">
+            <li id="menu"><i class="fas fa-light fa-house-user"></i>Accueil</li>
+          </a>
+
+          <a href='favoris.html'>
+            <li id="menu"><i class="fas fa-solid fa-heart"></i>Favoris</li>
+          </a>
+
+          <a href='alerte .html'>
+            <li id="menu"><i class="fas fa-solid fa-bell"></i>Mes Alertes</li>
+          </a>
+
+          <a href="#">
+            <li id="menu"><i class='bx bxs-contact'></i>Nous contacter</li>
+          </a>
+
+
+        </ul>
+      </div>
+      <div class="mainContent">
+
+        <!-- <div class="mainBody">
+        
+        </div> -->
+        <!-- <div class="row" id="slider-text">
+          <div class="swiper">
+            <h2 class="titleSwiper">TENDANCES -->
+
+        <div class="swipeButton">
+          <i class="fa-solid fa-angle-left" id="prevAffiche"></i>
+          <i class="fa-solid fa-angle-right" id="nextAffiche"></i>
+          <!-- </div>
+            </h2>
+          </div> -->
+        </div>
+
+        <div id="wrapperAffiche">
+
+          <div id="carouselAffiche">
+
+            <div id="contentAffiche">
+
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row" id="slider-text">
+          <div class="swiper">
+            <h2 class="titleSwiper">LES FILMS LES PLUS POPULAIRES
+              <div class="swipeButton">
+                <i class="fa-solid fa-angle-left" id="prev"></i>
+                <i class="fa-solid fa-angle-right" id="next"></i>
+              </div>
+            </h2>
+          </div>
+        </div>
+
+        <div id="wrapper">
+
+          <div id="carousel">
+
+            <div id="content">
+
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="slider-text">
+          <div class="swiper">
+            <h2 class="titleSwiper">LES PROCHAINES SORTIES : FILMS
+              <div class="swipeButton">
+                <i class="fa-solid fa-angle-left" id="prev4"></i>
+                <i class="fa-solid fa-angle-right" id="next4"></i>
+              </div>
+            </h2>
+          </div>
+        </div>
+
+
+        <div id="wrapper4">
+
+          <div id="carousel4">
+
+            <div id="content4">
+
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="slider-text">
+          <div class="swiper">
+            <h2 class="titleSwiper">LES FILMS DISNEY+ DU MOMENT
+              <div class="swipeButton">
+                <i class="fa-solid fa-angle-left" id="prevDisneyMovie"></i>
+                <i class="fa-solid fa-angle-right" id="nextDisneyMovie"></i>
+              </div>
+            </h2>
+          </div>
+        </div>
+
+        <div id="wrapperDisneyMovie">
+
+          <div id="carouselDisneyMovie">
+
+            <div id="contentDisneyMovie">
+
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="slider-text">
+          <div class="swiper">
+            <h2 class="titleSwiper">LES SERIES DISNEY+ DU MOMENT
+              <div class="swipeButton">
+                <i class="fa-solid fa-angle-left" id="prevDisneyTV"></i>
+                <i class="fa-solid fa-angle-right" id="nextDisneyTV"></i>
+              </div>
+            </h2>
+          </div>
+        </div>
+
+        <div id="wrapperDisneyPlusTV">
+
+          <div id="carouselDisneyPlusTV">
+
+            <div id="contentDisneyPlusTV">
+
+
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row" id="slider-text">
+          <div class="swiper">
+            <h2 class="titleSwiper">LES FILMS NETFLIX
+              <div class="swipeButton">
+                <i class="fa-solid fa-angle-left" id="prev3"></i>
+                <i class="fa-solid fa-angle-right" id="next3"></i>
+              </div>
+            </h2>
+          </div>
+        </div>
+
+        <div id="wrapper3">
+
+          <div id="carousel3">
+
+            <div id="content3">
+
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="slider-text">
+          <div class="swiper">
+            <h2 class="titleSwiper">LES SERIES NETFLIX
+              <div class="swipeButton">
+                <i class="fa-solid fa-angle-left" id="prev5"></i>
+                <i class="fa-solid fa-angle-right" id="next5"></i>
+              </div>
+            </h2>
+          </div>
+        </div>
+
+
+        <div id="wrapper5">
+
+
+          <div id="carousel5">
+
+            <div id="content5">
+
+
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row" id="slider-text">
+          <div class="swiper">
+            <h2 class="titleSwiper">LES SERIES LES PLUS POPULAIRES
+              <div class="swipeButton">
+                <i class="fa-solid fa-angle-left" id="prev2"></i>
+                <i class="fa-solid fa-angle-right" id="next2"></i>
+              </div>
+            </h2>
+          </div>
+        </div>
+
+
+        <div id="wrapper2">
+
+          <div id="carousel2">
+
+            <div id="content2">
+
+
+
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row" id="slider-text">
+          <div class="swiper">
+            <h2 class="titleSwiper">LES FILMS AMAZON PRIME VIDEO
+              <div class="swipeButton">
+                <i class="fa-solid fa-angle-left" id="prevAPM"></i>
+                <i class="fa-solid fa-angle-right" id="nextAPM"></i>
+              </div>
+            </h2>
+          </div>
+        </div>
+
+        <div id="wrapperAPM">
+
+          <div id="carouselAPM">
+
+            <div id="contentAPM">
+
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="slider-text">
+          <div class="swiper">
+            <h2 class="titleSwiper">LES SERIES AMAZON PRIME VIDEO
+              <div class="swipeButton">
+                <i class="fa-solid fa-angle-left" id="prevAPTV"></i>
+                <i class="fa-solid fa-angle-right" id="nextAPTV"></i>
+              </div>
+            </h2>
+          </div>
+        </div>
+
+
+        <div id="wrapperAPTV">
+
+
+          <div id="carouselAPTV">
+
+            <div id="contentAPTV">
+
+
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row" id="slider-text">
+          <div class="swiper">
+            <h2 class="titleSwiper">LES SERIES SUR CANAL+
+              <div class="swipeButton">
+                <i class="fa-solid fa-angle-left" id="prevCTV"></i>
+                <i class="fa-solid fa-angle-right" id="nextCTV"></i>
+              </div>
+            </h2>
+          </div>
+        </div>
+
+        <div id="wrapperCanalTV">
+
+          <div id="carouselCanalTV">
+
+            <div id="contentCanalTV">
+
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="slider-text">
+          <div class="swiper">
+            <h2 class="titleSwiper">LES FILMS SUR CANAL+
+              <div class="swipeButton">
+                <i class="fa-solid fa-angle-left" id="prevCanalMovie"></i>
+                <i class="fa-solid fa-angle-right" id="nextCanalMovie"></i>
+              </div>
+            </h2>
+          </div>
+        </div>
+
+        <div id="wrapperCanalMovie">
+
+          <div id="carouselCanalMovie">
+
+            <div id="contentCanalMovie">
+
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="slider-text">
+          <div class="swiper">
+            <h2 class="titleSwiper">LES SERIES SUR CANAL SERIES
+              <div class="swipeButton">
+                <i class="fa-solid fa-angle-left" id="prevCanalSTV"></i>
+                <i class="fa-solid fa-angle-right" id="nextCanalSTV"></i>
+              </div>
+            </h2>
+          </div>
+        </div>
+
+        <div id="wrapperCanalSTV">
+
+          <div id="carouselCanalSTV">
+
+            <div id="contentCanalSTV">
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">Copyright ©</div>
+    <script src="JS/index.js" type="module"> </script>
+
+
+    <script>
+      //Menu Burger
+      //Menu Burger
+      function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+      }
+
+      function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+      }
+
+    //Fin menu burger  
+    </script>
+</body>
+</body>
+
+</html>
