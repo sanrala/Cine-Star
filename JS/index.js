@@ -295,24 +295,6 @@ window.addEventListener("resize", e => (widthCanalSTV = carouselCanalSTV.offsetW
 
 // ---------------------------FIN canal serie---------------------------
 
-const films = [
-
-
-]
-
-const series = [
-
-
-
-
-]
-
-const aps = [
-
-
-]
-
-
 
 
 

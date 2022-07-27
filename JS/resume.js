@@ -45,14 +45,7 @@ window.onload = () => {
     movies.then(async response => {
       try {
         let popularMovie = await response.json();
-        // const poster = document.querySelector('.poster')
-        // const imgPosters = document.createElement('img');
-        // imgPosters.src = "https://image.tmdb.org/t/p/w500" + popularMovie.poster_path
-        // imgPosters.alt = popularMovie.title;
-        // imgPosters.style.width = "300px";
-        // imgPosters.style.height = "400px";
 
-        // poster.append(imgPosters);
         const div = document.querySelector('.slide-img')
         const img = document.createElement('img')
         img.classList.add('item')
@@ -130,7 +123,10 @@ window.onload = () => {
           try {
             let personMovie = await response.json();
             let newPersonMovie = personMovie.cast;
-            console.log(personMovie);
+            console.log(personMovie.cast);
+
+
+
             const newCarouselCast = document.querySelector('#contentCast')
             const personNode = newPersonMovie.map(personMovie => {
               return createPerson(personMovie)
@@ -157,6 +153,7 @@ window.onload = () => {
 
 
 
+
           const overlay = document.createElement('div')
           overlay.classList.add('overlaySlider')
 
@@ -171,11 +168,13 @@ window.onload = () => {
           type.classList.add('type')
           type.style.textAlign = 'center'
 
-          const aType = document.createElement('a')
 
+
+          const aType = document.createElement('a')
           aType.innerText = personMovie.name;
           aType.style.fontSize = ('0.7rem')
-          // aType.href = `cine1_resume.php?id=${movie.id}&with_genres=${movie.genre_ids}&type=movie`
+          aType.href = `./actors_actress.php?id=${personMovie.id}&type=movie`
+
 
           const spanPerson = document.createElement('span')
           spanPerson.classList.add('personCharacter')
@@ -204,13 +203,13 @@ window.onload = () => {
 
 
 
-          slide.append(imgScreen1)
-          box.append(slide,
-            detailsBox
-          )
-          detailsBox.append(type)
+          // slide.append(imgScreen1)
+          // box.append(slide,
+          //   detailsBox
+          // )
+          // detailsBox.append(type)
 
-          li.append(box)
+          // li.append(box)
 
           return li;
 
@@ -322,6 +321,103 @@ window.onload = () => {
           }
 
         })
+
+        let personTV = fetch(' https://api.themoviedb.org/3/tv/' + paramsTV.id + '/credits?api_key=e0e252f245f519ae01af7682ea83a642');
+        personTV.then(async response => {
+          try {
+            let personMovie = await response.json();
+            let newPersonMovie = personMovie.cast;
+            console.log(personMovie.cast);
+
+
+
+            const newCarouselCast = document.querySelector('#contentCast')
+            const personNode = newPersonMovie.map(personMovie => {
+              return createPersonTV(personMovie)
+            })
+            newCarouselCast.append(...personNode);
+          } catch (error) {
+            console.log(error);
+          }
+        })
+
+        const createPersonTV = (personMovie) => {
+          const li = document.createElement('li')
+          li.classList.add('item-a')
+
+          const box = document.createElement('div')
+          box.classList.add('box')
+
+          const slide = document.createElement('div')
+          slide.classList.add('slideCast-img')
+
+          const imgScreen1 = document.createElement('img')
+          imgScreen1.classList.add('item')
+          imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + personMovie.profile_path;
+
+
+
+
+          const overlay = document.createElement('div')
+          overlay.classList.add('overlaySlider')
+
+          const a = document.createElement('a')
+          a.classList.add('love-btn')
+          a.innerText = "J'aime"
+
+          const detailsBox = document.createElement('div')
+          detailsBox.classList.add('details-box')
+
+          const type = document.createElement('div')
+          type.classList.add('type')
+          type.style.textAlign = 'center'
+
+
+
+          const aType = document.createElement('a')
+          aType.innerText = personMovie.name;
+          aType.style.fontSize = ('0.7rem')
+          aType.href = `./actors_actress.php?id=${personMovie.id}&type=tv`
+
+
+          const spanPerson = document.createElement('span')
+          spanPerson.classList.add('personCharacter')
+          spanPerson.style.fontSize = '0.7rem'
+          spanPerson.innerText = personMovie.character
+
+
+
+
+
+          overlay.append(a);
+          slide.append(imgScreen1, overlay)
+          box.append(slide,
+            detailsBox
+          )
+          detailsBox.append(type)
+          type.append(aType
+            , spanPerson
+
+
+          )
+          li.append(box)
+
+
+
+
+
+
+          // slide.append(imgScreen1)
+          // box.append(slide,
+          //   detailsBox
+          // )
+          // detailsBox.append(type)
+
+          // li.append(box)
+
+          return li;
+
+        }
         let video = fetch('https://api.themoviedb.org/3/tv/' + paramsTV.id + '/videos?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR');
         video.then(async response => {
           try {
