@@ -42,7 +42,11 @@
 
   <div class="menu">
     <form id="form">
-      <input type="text" placeholder="Search" id="search" class="search">
+      <input type="text" onkeyup="search_animals()" placeholder="Search" id="search" class="search">
+      <ol id="list">
+        <li class="keyword"></li>
+      </ol>
+
     </form>
 
     <div class="dropdown">

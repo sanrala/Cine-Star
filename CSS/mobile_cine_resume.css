@@ -650,7 +650,10 @@ svg #main-circ {
 
 }
 
-
+#nextVideo,
+#prevVideo {
+  display: none;
+}
 
 .notes {
   position: relative;
@@ -725,7 +728,7 @@ svg #main-circ {
 .item-a {
   margin-left: -28px;
   margin-top: 10px;
-  /* width: 100%; */
+  margin: 10px;
 }
 
 
@@ -749,11 +752,37 @@ svg #main-circ {
   max-width: 400px;
   position: relative;
   top: 100px;
+
+}
+
+#wrapperVideo {
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  top: 100px;
+}
+
+.slide-video {
+  height: 300px;
+
+  position: relative;
+  padding: auto;
+
+}
+
+.slide-video iframe {
+  width: 450px;
+
+
+  object-fit: cover;
+  box-sizing: border-box;
+
 }
 
 #contentCast {
   width: 100%;
   grid-gap: 15px;
+
 }
 
 #carouselCast {

@@ -132,6 +132,30 @@ $id = $_GET['id'] ?? null;
           </div>
         </div>
 
+
+        <div class="row" id="slider-text">
+          <div class="swiper">
+            <h2 class="titleSwiper">VIDEOS
+              <div class="swipeButton">
+                <i class="fas fa-solid fa-angle-left" id="prevVideo"></i>
+                <i class="fas fa-solid fa-angle-right" id="nextVideo"></i>
+              </div>
+            </h2>
+          </div>
+        </div>
+
+        <div id="wrapperVideo">
+
+          <div id="carouselVideo">
+
+            <div id="contentVideo">
+
+
+
+            </div>
+          </div>
+        </div>
+
         <!-- --------------------------------VOTE----------------------------- -->
 
         <h3 id="voteSpec">VOTES SPECTATEURS</h3>
@@ -593,8 +617,7 @@ $id = $_GET['id'] ?? null;
   </div>
   </div>
   <div class="footer"></div> -->
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 
   <script>

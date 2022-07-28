@@ -28,6 +28,29 @@ window.addEventListener("resize", e => (widthCast = carouselCast.offsetWidth));
 
 // ---------------------------FIN CAROUSEL---------------------------
 
+// ---------------------------CAROUSEL VIDEO---------------------------
+const gapVideo = 16;
+
+const carouselVideo = document.getElementById("carouselVideo"),
+  contentVideo = document.getElementById("contentVideo"),
+  nextVideo = document.getElementById("nextVideo"),
+  prevVideo = document.getElementById("prevVideo");
+
+nextVideo.addEventListener("click", e => {
+  carouselVideo.scrollBy(widthVideo + gapVideo, 0);
+
+
+});
+prevVideo.addEventListener("click", e => {
+  carouselVideo.scrollBy(-(widthVideo + gapVideo), 0);
+
+
+});
+
+let widthVideo = carouselVideo.offsetWidth;
+window.addEventListener("resize", e => (widthVideo = carouselVideo.offsetWidth));
+
+// ---------------------------FIN CAROUSEL---------------------------
 
 
 
@@ -123,10 +146,6 @@ window.onload = () => {
           try {
             let personMovie = await response.json();
             let newPersonMovie = personMovie.cast;
-            console.log(personMovie.cast);
-
-
-
             const newCarouselCast = document.querySelector('#contentCast')
             const personNode = newPersonMovie.map(personMovie => {
               return createPerson(personMovie)
@@ -139,7 +158,7 @@ window.onload = () => {
 
         const createPerson = (personMovie) => {
           const li = document.createElement('li')
-          li.classList.add('item-a')
+          li.classList.add('item-b')
 
           const box = document.createElement('div')
           box.classList.add('box')
@@ -221,13 +240,15 @@ window.onload = () => {
             let genreVideo = await response.json();
 
 
-            let videoMovie = genreVideo.results;
-            console.log(genreVideo);
+            let newgenreVideo = genreVideo.results;
+            console.log(newgenreVideo);
+
+
 
             for (i = 0; i < (genreVideo.results).length; i++) {
               const videoPlay = document.querySelector('.overlayVideo-content')
               const iframe = document.createElement('iframe')
-              iframe.src = "https://www.youtube.com/embed/" + genreVideo.results[1].key
+              iframe.src = "https://www.youtube.com/embed/" + genreVideo.results[i].key
               iframe.style.title = "YouTube video player"
               iframe.style.frameborder = "0"
               iframe.style.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -251,11 +272,76 @@ window.onload = () => {
             console.log(error);
           }
         })
+        const newCarouselVideo = document.querySelector('#contentVideo')
+        let videos = fetch('https://api.themoviedb.org/3/movie/' + paramsTV.id + '/videos?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR');
+        videos.then(async response => {
+          try {
+            let videosMovie = await response.json();
+            let newVideosMovie = videosMovie.results;
+            console.log(newVideosMovie);
+
+            const videosNode = newVideosMovie.map(videosMovie => {
+              return createVideos(videosMovie)
+            })
+            newCarouselVideo.append(...videosNode);
+          } catch (error) {
+            console.log(error);
+          }
+        })
+
+        const createVideos = (videosMovie) => {
+
+          const li = document.createElement('li')
+          li.classList.add('itemVideo-a')
+
+          const box = document.createElement('div')
+          box.classList.add('boxVideo')
+
+          const slide = document.createElement('div')
+          slide.classList.add('slide-video')
+
+          const iframe = document.createElement('iframe')
+          iframe.classList.add('iframe-container')
+          iframe.src = "https://www.youtube.com/embed/" + videosMovie.key
+          iframe.style.title = "YouTube video player"
+          iframe.style.frameborder = "0"
+          iframe.style.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 
 
 
 
 
+
+          const detailsBox = document.createElement('div')
+          detailsBox.classList.add('details-box')
+
+          const type = document.createElement('div')
+          type.classList.add('type')
+          type.style.textAlign = 'center'
+
+
+          const spanTitle = document.createElement('span')
+          spanTitle.classList.add('titreVideo')
+          spanTitle.style.fontSize = '1rem'
+          spanTitle.innerText = videosMovie.name
+          spanTitle.style.color = 'black'
+
+
+
+
+
+
+          slide.append(iframe)
+          box.append(slide,
+            detailsBox
+          )
+          detailsBox.append(type)
+          type.append(spanTitle)
+          li.append(box)
+          return li
+
+
+        }
 
       } catch (error) {
         console.log(error);
@@ -404,17 +490,6 @@ window.onload = () => {
 
 
 
-
-
-
-          // slide.append(imgScreen1)
-          // box.append(slide,
-          //   detailsBox
-          // )
-          // detailsBox.append(type)
-
-          // li.append(box)
-
           return li;
 
         }
@@ -454,6 +529,77 @@ window.onload = () => {
             console.log(error);
           }
         })
+        const newCarouselVideo = document.querySelector('#contentVideo')
+        let videos = fetch('https://api.themoviedb.org/3/tv/' + paramsTV.id + '/videos?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR');
+        videos.then(async response => {
+          try {
+            let videosMovie = await response.json();
+            let newVideosMovie = videosMovie.results;
+            console.log(newVideosMovie);
+
+            const videosNode = newVideosMovie.map(videosMovie => {
+              return createVideos(videosMovie)
+            })
+            newCarouselVideo.append(...videosNode);
+          } catch (error) {
+            console.log(error);
+          }
+        })
+
+        const createVideos = (videosMovie) => {
+
+          const li = document.createElement('li')
+          li.classList.add('itemVideo-a')
+
+          const box = document.createElement('div')
+          box.classList.add('boxVideo')
+
+          const slide = document.createElement('div')
+          slide.classList.add('slide-video')
+
+          const iframe = document.createElement('iframe')
+          iframe.classList.add('iframe-container')
+          iframe.src = "https://www.youtube.com/embed/" + videosMovie.key
+          iframe.style.title = "YouTube video player"
+          iframe.style.frameborder = "0"
+          iframe.style.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+
+
+
+
+
+          const detailsBox = document.createElement('div')
+          detailsBox.classList.add('details-box')
+
+          const type = document.createElement('div')
+          type.classList.add('type')
+          type.style.textAlign = 'center'
+
+
+          const spanTitle = document.createElement('span')
+          spanTitle.classList.add('titreVideo')
+          spanTitle.style.fontSize = '1rem'
+          spanTitle.innerText = videosMovie.name
+          spanTitle.style.color = 'black'
+
+
+
+
+
+
+          slide.append(iframe)
+          box.append(slide,
+            detailsBox
+          )
+          detailsBox.append(type)
+          type.append(spanTitle)
+          li.append(box)
+          return li
+
+
+        }
+
 
 
         let person = fetch(' https://api.themoviedb.org/3/tv/' + paramsTV.id + '/credits?api_key=e0e252f245f519ae01af7682ea83a642');

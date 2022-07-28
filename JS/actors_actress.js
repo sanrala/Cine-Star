@@ -14,8 +14,6 @@ function myFunction() {
     }
 }
 
-
-
 // ---------------------------CAROUSEL---------------------------
 const gap = 16;
 
@@ -149,7 +147,7 @@ window.onload = () => {
             // ------------------------------------FILMOGRAPHIES-----------------------------------
 
             const newCarousel = document.querySelector('#content')
-
+            // if (params.type == "movie") {
             let movies = fetch('https://api.themoviedb.org/3/person/' + params.id + '/combined_credits?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR');
             movies.then(async response => {
                 try {
@@ -202,7 +200,7 @@ window.onload = () => {
 
                 const aType = document.createElement('a')
                 aType.classList.add('nameMovies')
-                aType.innerText = movie.title;
+                aType.innerText = movie.title || movie.name
                 aType.style.fontSize = ('0.9rem')
                 aType.style.textDecoration = 'none'
                 aType.style.color = "white"
@@ -235,7 +233,182 @@ window.onload = () => {
 
                 return li;
             }
+            // } 
+            // else {
+            //     let moviesTV = fetch('https://api.themoviedb.org/3/person/' + params.id + '/movie_credits?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR');
+            //     moviesTV.then(async response => {
+            //         try {
+            //             let popularMovieTV = await response.json();
 
+            //             let recentPopularMovieTV = popularMovieTV.cast;
+            //             console.log(recentPopularMovieTV);
+
+
+            //             const movieTVNode = recentPopularMovieTV.map(movieTV => {
+            //                 return createTop(movieTV)
+            //             })
+            //             newCarousel.append(...movieTVNode);
+            //         } catch (error) {
+            //             console.log(error);
+            //         }
+            //     })
+
+
+
+            //     const createTop = (movieTV) => {
+
+            //         const li = document.createElement('li')
+            //         li.classList.add('item-a')
+
+            //         const box = document.createElement('div')
+            //         box.classList.add('box')
+
+            //         const slide = document.createElement('div')
+            //         slide.classList.add('slide-img')
+
+            //         const imgScreen1 = document.createElement('img')
+            //         imgScreen1.classList.add('itemCast')
+            //         imgScreen1.src = "https://image.tmdb.org/t/p/w500/" + movieTV.poster_path;
+
+            //         const overlay = document.createElement('div')
+            //         overlay.classList.add('overlaySlider')
+
+            //         const a = document.createElement('a')
+            //         a.classList.add('seeMore')
+            //         a.innerText = "Voir détails..."
+            //         a.href = `./cine1_resume.php?id=${movieTV.id}&with_genres=${movieTV.genre_ids}&type=movie`
+            //         a.style.textDecoration = "none";
+
+            //         const detailsBox = document.createElement('div')
+            //         detailsBox.classList.add('details-box')
+
+            //         const type = document.createElement('div')
+            //         type.classList.add('type')
+
+            //         const aType = document.createElement('a')
+            //         aType.classList.add('nameMovies')
+            //         aType.innerText = movieTV.title;
+            //         aType.style.fontSize = ('0.9rem')
+            //         aType.style.textDecoration = 'none'
+            //         aType.style.color = "white"
+            //         aType.style.textAlign = 'center'
+            //         aType.href = `./cine1_resume.php?id=${movieTV.id}&with_genres=${movieTV.genre_ids}&type=movie`
+
+
+
+            //         const aVote = document.createElement('a')
+            //         aVote.classList.add('dateDeSortie')
+            //         aVote.innerText = "Date de sortie : "
+            //         aVote.style.fontSize = ('0.8rem')
+            //         aVote.style.color = '#878484'
+
+
+
+
+
+            //         overlay.append(a);
+            //         slide.append(imgScreen1, overlay)
+            //         box.append(slide,
+            //             detailsBox
+            //         )
+            //         detailsBox.append(type)
+            //         type.append(aType
+            //             , aVote
+
+            //         )
+            //         li.append(box)
+
+            //         return li;
+            // }
+            // }
+            // ------------------------------------FILMOGRAPHIES-----------------------------------
+
+            const slide = document.querySelector('.slideshowDiapo-container')
+
+            let photos = fetch('https://api.themoviedb.org/3/person/' + params.id + '/images?api_key=e0e252f245f519ae01af7682ea83a642');
+            photos.then(async response => {
+                try {
+                    let newPhotos = await response.json();
+
+                    let recentNewPhotos = newPhotos.profiles;
+                    console.log(newPhotos);
+
+                    const photosNode = recentNewPhotos.map(photos => {
+                        return createPhotos(photos)
+                    })
+                    slide.append(...photosNode);
+
+                } catch (error) {
+                    console.log(error);
+                }
+            })
+
+
+
+            const createPhotos = (photos) => {
+
+                const mySlides = document.createElement('div');
+                mySlides.classList.add('mySlides');
+
+                const imgPhotos = document.createElement('img');
+                imgPhotos.src = "https://image.tmdb.org/t/p/w500/" + photos.file_path
+                imgPhotos.style.width = '200px';
+
+                const text = document.createElement('div');
+                text.classList.add('text');
+                text.innerText = "Vote : " + photos.vote_average
+
+                slide.append(mySlides)
+                mySlides.append(imgPhotos, text);
+
+                return mySlides
+            }
+
+
+            // ------------------------------------FILMOGRAPHIES-----------------------------------
+
+            //     const slide = document.querySelector('.slideshowDiapo-container')
+
+            //     let photos = fetch('https://api.themoviedb.org/3/person/' + params.id + '/images?api_key=e0e252f245f519ae01af7682ea83a642');
+            //     photos.then(async response => {
+            //         try {
+            //             let newPhotos = await response.json();
+
+            //             let recentNewPhotos = newPhotos.profiles;
+            //             console.log(newPhotos);
+
+            //             const photosNode = recentNewPhotos.map(photos => {
+            //                 return createPhotos(photos)
+            //             })
+            //             slide.append(...photosNode);
+
+            //         } catch (error) {
+            //             console.log(error);
+            //         }
+            //     })
+
+
+
+            //     const createPhotos = (photos) => {
+
+            //         const mySlides = document.createElement('div');
+            //         mySlides.classList.add('mySlides');
+
+            //         const imgPhotos = document.createElement('img');
+            //         imgPhotos.src = "https://image.tmdb.org/t/p/w500/" + photos.file_path
+            //         imgPhotos.style.width = '200px';
+
+            //         const text = document.createElement('div');
+            //         text.classList.add('text');
+            //         text.innerText = "Vote : " + photos.vote_average
+
+            //         slide.append(mySlides)
+            //         mySlides.append(imgPhotos, text);
+
+            //         return mySlides
+            //     }
+
+            // }
         } catch (error) {
             console.log(error);
         }
