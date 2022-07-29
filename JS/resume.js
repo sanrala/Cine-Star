@@ -1,9 +1,28 @@
+const searchInput = document.querySelector('#search');
+let search = fetch('https://api.themoviedb.org/3/search/multi?api_key=e0e252f245f519ae01af7682ea83a642&language=en-US&page=1&include_adult=false&query=batman');
+search.then(async response => {
+  try {
+    let searchAPI = await response.json();
 
+    searchInput.addEventListener('keyup', function (event) {
 
+      const input = searchInput.value
+      const result = search.filter(item => item.name.toLocalLowerCase().includes(input.toLocalLowerCase()))
 
+      let suggestions = '';
 
+      if (input != '') {
+        result.forEach(searchItem =>
+          suggestions += searchItem.title
+        )
+      }
+      document.querySelector('#suggestions').innerHTML = suggestions;
+    })
 
-
+  } catch (error) {
+    console.log(error);
+  }
+})
 // ---------------------------CAROUSEL---------------------------
 const gapCast = 16;
 

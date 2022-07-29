@@ -7,6 +7,16 @@ li {
     list-style-type: none;
 }
 
+#suggestions {
+    font-size: 22px;
+    width: 60%;
+}
+
+#suggestions:hover {
+    background-color: #00FFCB;
+
+}
+
 .fas {
     font-size: 1.6rem;
     color: white;

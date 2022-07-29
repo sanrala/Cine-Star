@@ -329,6 +329,12 @@ button.dropbtn:focus::after {
     margin: 20px auto;
 }
 
+.signIn {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
 #compte {
     display: none;
 }
@@ -342,12 +348,15 @@ form {
     flex-direction: column;
     text-align: center;
 
+
 }
 
-input {
+#password,
+#name {
     padding: 15px;
     border-radius: 10px;
 }
+
 
 button {
     padding: 15px;
@@ -356,6 +365,17 @@ button {
     color: white;
     padding-left: 65px;
     padding-right: 65px;
+}
+
+
+
+.text {
+    color: white;
+}
+
+.text a {
+    text-decoration: none;
+    color: #00FFCB;
 }
 
 .footer {

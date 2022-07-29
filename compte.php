@@ -2,18 +2,18 @@
 $id = $_GET['id'] ?? null;
 $pdo = require_once('./db.php');
 
-// var_dump($_SERVER['REQUEST_METHOD']);
 
-$error = ' '; //equivalent a false
 
-if ($_SERVER['REQUEST_METHOD'] === "POST") { //comme on a method POST on entre dans cette condition apres avoir submit
-    $pseudo = $_POST['pseudo']; //on recupere la valeur de nos input grace ) l'attribut name
+$error = ' ';
+
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    $pseudo = $_POST['pseudo'];
     $password = $_POST['password'];
 
-    // echo $pseudo . " " . $password;
 
-    //le signe ! indique le contraire donc si c'est different
-    if (!$password || !$pseudo) { //si un des 2 champs est vide alors on attribut un message a la variable $error
+
+
+    if (!$password || !$pseudo) {
         $error = "TOUS LES CHAMPS DOIVENT ÊTRE REMPLIS";
     } else {
         $statementUser = $pdo->prepare('SELECT * FROM user WHERE pseudo=:pseudo AND mdpUser=:mdpUser');
@@ -68,11 +68,16 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") { //comme on a method POST on entre d
             <ul id="burg">
 
                 <li class="burger" onclick="openNav()"><a href="#"><i class="fas fa-solid fa-bars fa-2x"></i></a></li>
-
-                <li>
-                    <?php if (!$id) : ?>
+                <?php if (!$id) : ?>
+                    <li>
                         <a href="./compte.php" id="compte"><i class="fas fa-solid fa-user"></i></a>
-                </li>
+                    </li>
+                <?php else : ?>
+                    <li>
+                        <a href="./compte.php" id="compte"><i class='bx bx-face'></i></a>
+                    </li>
+                <?php endif; ?>
+
             </ul>
 
             <div id="myNav" class="overlay">
@@ -82,15 +87,18 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") { //comme on a method POST on entre d
 
                     <a href="./index.php">
                         <li id="menu"><i class="fas fa-light fa-house-user"></i>Accueil</li>
-                    <?php else : ?>
                     </a>
-                    <a href="./favoris.php">
+
+                    <a href='./favoris.php?id=<?php echo $id; ?>'>
                         <li id="menu"><i class="fas fa-solid fa-heart"></i>Favoris</li>
                     </a>
-                <?php endif; ?>
-                <a href="#">
-                    <li id="menu"><i class='bx bxs-contact'></i>Nous contacter</li>
-                </a>
+                    <a href='./alerte.php?id=<?php echo $id; ?>'>
+                        <li id="menu"><i class="fas fa-solid fa-bell"></i>Mes Alertes</li>
+                    </a>
+
+                    <a href="#">
+                        <li id="menu"><i class='bx bxs-contact'></i>Nous contacter</li>
+                    </a>
 
                 </div>
 
@@ -100,12 +108,16 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") { //comme on a method POST on entre d
             <div class="menu">
                 <form id="form">
                     <input type="text" placeholder="Search" id="search" class="search">
+                    <div id="suggestions"></div>
+
                 </form>
 
                 <div class="dropdown">
-
-                    <a href="./compte.php"><button id="myBtn" class="dropbtn">Compte </button></a>
-
+                    <?php if (!$id) : ?>
+                        <a href="./compte.php"><button id="myBtn" class="dropbtn">Compte </button></a>
+                    <?php else : ?>
+                        <a href="./compte.php"><button id="myBtn" class="dropbtnDeconnecting">Deconnexion </button></a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -117,9 +129,15 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") { //comme on a method POST on entre d
                     <a href="./index.php">
                         <li id="menu"><i class="fas fa-light fa-house-user"></i>Accueil</li>
                     </a>
-                    <a href="./favoris.php">
+
+                    <a href='./favoris.php?id=<?php echo $id; ?>'>
                         <li id="menu"><i class="fas fa-solid fa-heart"></i>Favoris</li>
                     </a>
+
+                    <a href='./alerte.php?id=<?php echo $id; ?>'>
+                        <li id="menu"><i class="fas fa-solid fa-bell"></i>Mes Alertes</li>
+                    </a>
+
                     <a href="#">
                         <li id="menu"><i class='bx bxs-contact'></i>Nous contacter</li>
                     </a>
@@ -127,7 +145,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") { //comme on a method POST on entre d
 
                 </ul>
             </div>
-
             <div class="mainContent">
 
                 <h1>CONNECTEZ-VOUS</h1>

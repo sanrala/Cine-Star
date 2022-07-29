@@ -1,18 +1,33 @@
 
-function search_animal() {
-    let input = document.getElementById('search').value
-    input = input.toLowerCase();
-    let x = document.getElementsByClassName('keyword')
+const searchInput = document.querySelector('#search');
+let search = fetch('https://api.themoviedb.org/3/search/multi?api_key=e0e252f245f519ae01af7682ea83a642&language=en-US&page=1&include_adult=false&query=' + searchInput);
+search.then(async response => {
+    try {
+        let searchAPI = await response.json();
+        console.log(searchAPI);
+        searchInput.addEventListener('keyup', function (event) {
 
-    for (let i = 0; i < x.length; i++) {
-        if (!x[i].innerHTML.toLowerCase().includes(input)) {
-            x[i].style.display = 'none';
-        } else {
-            x[i].style.display = 'list-item';
+            const input = searchInput.value
+            const result = search.filter(item => item.title.toLocalLowerCase().includes(input.toLocalLowerCase()))
 
-        }
+            let suggestions = '';
+            const a = document.createElement('a')
+            a.classList.add('seeMore')
+
+
+            a.style.textDecoration = "none";
+            if (input != '') {
+                result.forEach(search =>
+                    a.innerText += search.title
+                )
+            }
+            a.href = `./cine1_resume.php?id=${search.id}&with_genres=${search.genre_ids}&type=movie&person=${search.person_id}`
+        })
+
+    } catch (error) {
+        console.log(error);
     }
-}
+})
 
 
 
@@ -540,7 +555,7 @@ let disneyPlusTV = fetch('https://api.themoviedb.org/3/discover/tv?api_key=e0e25
 disneyPlusTV.then(async response => {
     try {
         let actualDisneyPlusTV = await response.json();
-        console.log(actualDisneyPlusTV);
+
         let recentDisneyPlusTV = actualDisneyPlusTV.results;
 
         const actualDisneyTVNode = recentDisneyPlusTV.map(disneyPlusTV => {
