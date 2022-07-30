@@ -1,0 +1,33 @@
+.item {
+    margin-bottom: 30px;
+    width: 300px;
+    height: 450px;
+
+    margin-left: 50px;
+}
+
+.profile {
+    width: 100%;
+
+}
+
+.biography {
+    width: 100%;
+
+}
+
+.info_profile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.profile h2 {
+    text-align: center;
+}
+
+.overlay-content li {
+    display: flex;
+    flex-direction: column;
+
+}

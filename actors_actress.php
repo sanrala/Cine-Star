@@ -70,11 +70,11 @@ $id = $_GET['id'] ?? null;
 
                 <!-- <div class="mySlides fade">
 
-                    <img src="image/Film3.jpg" style="width: 200px">
+                    <img src="" style="width: 200px">
                     <div class="text">Caption Text</div>
-                </div>
+                </div> -->
 
-                <div class="mySlides fade">
+                <!-- <div class="mySlides fade">
 
                     <img src="image/Film2.jpg" style="width:200px">
                     <div class="text">Caption Two</div>
@@ -99,55 +99,60 @@ $id = $_GET['id'] ?? null;
             </div>
 
 
-
         </div>
-        <script src="JS/actors_actress.js"></script>
-        <script>
-            //Menu Burger
-            function openNav() {
-                document.getElementById("myNav").style.width = "100%";
+    </div>
+    <div class="footer">
+        <div id="scroll_to_top">
+            <a href="#"><i class='bx bxs-chevrons-up'></i></a>
+        </div>Copyright ©
+    </div>
+    <script src="JS/actors_actress.js"></script>
+    <script>
+        //Menu Burger
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+
+
+
+
+        // -------------DIAPOS--------------------------------
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
             }
-
-            function closeNav() {
-                document.getElementById("myNav").style.width = "0%";
+            if (n < 1) {
+                slideIndex = slides.length
             }
-
-
-
-
-            // -------------DIAPOS--------------------------------
-            let slideIndex = 1;
-            showSlides(slideIndex);
-
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
             }
-
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active");
             }
-
-            function showSlides(n) {
-                let i;
-                let slides = document.getElementsByClassName("mySlides");
-                let dots = document.getElementsByClassName("dot");
-                if (n > slides.length) {
-                    slideIndex = 1
-                }
-                if (n < 1) {
-                    slideIndex = slides.length
-                }
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-            }
-            // -------------FIN DE DIAPOS--------------------------------
-        </script>
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+        // -------------FIN DE DIAPOS--------------------------------
+    </script>
 </body>
 
 </html>

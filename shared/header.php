@@ -43,7 +43,7 @@
   <div class="menu">
     <form id="form">
       <input type="text" placeholder="Search" id="search" class="search">
-      <div id="suggestions"></div>
+
 
     </form>
 

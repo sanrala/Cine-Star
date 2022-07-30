@@ -165,6 +165,7 @@ window.onload = () => {
           try {
             let personMovie = await response.json();
             let newPersonMovie = personMovie.cast;
+            console.log(personMovie);
             const newCarouselCast = document.querySelector('#contentCast')
             const personNode = newPersonMovie.map(personMovie => {
               return createPerson(personMovie)
@@ -219,9 +220,17 @@ window.onload = () => {
           spanPerson.style.fontSize = '0.7rem'
           spanPerson.innerText = personMovie.character
 
+          const spanPro = document.querySelector('#pro')
+          const nameScenario = document.createElement('a')
+          nameScenario.classList.add('nameReal')
+          if (personMovie.department === 'writing') {
 
+            nameScenario.innerHTML = personMovie.name
+          } else {
+            nameScenario.innerHTML = ""
+          }
 
-
+          spanPerson.append(nameScenario)
 
           overlay.append(a);
           slide.append(imgScreen1, overlay)
@@ -519,7 +528,7 @@ window.onload = () => {
 
 
             let videoMovie = genreVideo.results;
-            console.log(genreVideo);
+
 
             for (i = 0; i < (genreVideo.results).length; i++) {
               const videoPlay = document.querySelector('.overlayVideo-content')
@@ -554,7 +563,7 @@ window.onload = () => {
           try {
             let videosMovie = await response.json();
             let newVideosMovie = videosMovie.results;
-            console.log(newVideosMovie);
+
 
             const videosNode = newVideosMovie.map(videosMovie => {
               return createVideos(videosMovie)
@@ -689,6 +698,27 @@ window.onload = () => {
           return li;
 
         }
+        // let watchProviders = fetch(' https://api.themoviedb.org/3/tv/' + paramsTV.id + '/watch/providers?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR');
+        // watchProviders.then(async response => {
+        //   try {
+        //     let ProvidersTV = await response.json();
+        //     let newProvidersTV = ProvidersTV.results;
+        //     console.log(newProvidersTV);
+
+        //     const watchProvider = document.querySelector('.watchProvider')
+
+        //     const img = document.createElement('img')
+        //     img.src = "https://image.tmdb.org/t/p/w500/" + newProvidersTV.logo_path
+        //     img.alt = newProvidersTV.provider_name
+        //     img.style.width = "50px"
+
+        //     watchProvider.append(img)
+
+        //   } catch (error) {
+        //     console.log(error);
+        //   }
+        // })
+
 
 
 

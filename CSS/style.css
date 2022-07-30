@@ -7,14 +7,11 @@ li {
     list-style-type: none;
 }
 
-#suggestions {
-    font-size: 22px;
-    width: 60%;
-}
-
-#suggestions:hover {
-    background-color: #00FFCB;
-
+#fetch {
+    position: absolute;
+    text-align: center;
+    left: 450px;
+    top: 10px;
 }
 
 .fas {
@@ -31,6 +28,7 @@ li {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    width: 100%;
     background-color: lightgray;
 }
 
@@ -79,13 +77,7 @@ i {
 }
 
 /* ----------------CAROUSEL AFFICHE---------------- */
-.mainBody {
-    width: 88%;
-    height: auto;
-    display: flex;
 
-
-}
 
 #prevAffiche {
     position: absolute;
@@ -431,7 +423,7 @@ button.dropbtn:focus::before {
 
     align-content: flex-start;
     flex-direction: column;
-    width: 90%;
+    width: 87%;
 
 
 }
@@ -882,11 +874,47 @@ button.dropbtn:focus::before {
 .footer {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     background-color: rgb(20, 20, 24);
     color: #00FFCB;
 
-    width: 100%;
+    /* width: 100%; */
     height: 12vh;
 
+}
+
+html {
+    width: 100%;
+}
+
+.bxs-chevrons-up {
+
+    border-radius: 50%;
+    color: orange;
+    z-index: 50px;
+    font-size: 3rem;
+    background-color: rgb(99, 101, 101);
+}
+
+#scroll_to_top {
+
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    bottom: 70px;
+    right: 50%;
+    text-align: center;
+}
+
+#scroll_to_top a {
+    color: orange;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.bxs-chevrons-up:hover {
+    background-color: white;
+    transition: 0.3s all linear;
+    transform: scale(1.3);
 }

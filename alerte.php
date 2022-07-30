@@ -12,9 +12,14 @@ $id = $_GET['id'] ?? null;
     <div class="container">
         <?php require_once './shared/header.php' ?>
         <div class="mainContent">
-
         </div>
-        <script src="JS/favoris.js"></script>
+    </div>
+    <div class="footer">
+        <div id="scroll_to_top">
+            <a href="#"><i class='bx bxs-chevrons-up'></i></a>
+        </div>Copyright ©
+    </div>
+    <script src="JS/favoris.js"></script>
 
 </body>
 

@@ -1,33 +1,25 @@
 
-const searchInput = document.querySelector('#search');
-let search = fetch('https://api.themoviedb.org/3/search/multi?api_key=e0e252f245f519ae01af7682ea83a642&language=en-US&page=1&include_adult=false&query=' + searchInput);
-search.then(async response => {
-    try {
-        let searchAPI = await response.json();
-        console.log(searchAPI);
-        searchInput.addEventListener('keyup', function (event) {
+// const searchInput = document.querySelector('#search');
+// let search = fetch('https://api.themoviedb.org/3/search/multi?api_key=e0e252f245f519ae01af7682ea83a642&language=en-US&page=1&include_adult=false&query=' + film);
+// search.then(async response => {
+//     try {
+//         let searchAPI = await response.json();
+//         console.log(searchAPI);
 
-            const input = searchInput.value
-            const result = search.filter(item => item.title.toLocalLowerCase().includes(input.toLocalLowerCase()))
+//         function showdata() {
+//             let film = document.querySelector('#search').value;
+//             console.log(film);
 
-            let suggestions = '';
-            const a = document.createElement('a')
-            a.classList.add('seeMore')
+//             let str = "<img src='http://image.tmdb.org/t/p/w500" + searchAPI.results[0].poster_path + " '/>";
+//             document.write(str)
+//         }
+
+//     } catch (error) {
+//         console.log(error);
+//     }
+// })
 
 
-            a.style.textDecoration = "none";
-            if (input != '') {
-                result.forEach(search =>
-                    a.innerText += search.title
-                )
-            }
-            a.href = `./cine1_resume.php?id=${search.id}&with_genres=${search.genre_ids}&type=movie&person=${search.person_id}`
-        })
-
-    } catch (error) {
-        console.log(error);
-    }
-})
 
 
 
@@ -906,14 +898,14 @@ const createTopRated = (netflixMovie) => {
 
 const newCarousel4 = document.querySelector('#content4')
 
-let upComing = fetch('https://api.themoviedb.org/3/discover/movie?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&release_date.gte=2022-07-22&release_date.lte=2023-01-30&region=FR https://api.themoviedb.org/3/discover/movie?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&primary_release_date.gte=2022-07-22&primary_release_date.lte=2023-01-30&region=FR');
+let upComing = fetch('https://api.themoviedb.org/3/discover/movie?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&release_date.gte=2022-08-04&release_date.lte=2025-05-30&region=FR https://api.themoviedb.org/3/discover/movie?api_key=e0e252f245f519ae01af7682ea83a642&language=fr-FR&primary_release_date.gte=2022-08-04&primary_release_date.lte=2025-05-30&region=FR');
 upComing.then(async response => {
     try {
         let upComingMovie = await response.json();
 
         let recentupComingMovie = upComingMovie.results;
 
-
+        console.log(recentupComingMovie);
         const upComingNode = recentupComingMovie.map(upComing => {
             return createupComing(upComing)
         })

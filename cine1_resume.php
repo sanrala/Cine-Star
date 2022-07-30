@@ -93,6 +93,7 @@ $id = $_GET['id'] ?? null;
 
 
         <div id="resume">
+
           <h3 id="sypnosis">SYPNOSIS</h3>
 
         </div>
@@ -108,6 +109,8 @@ $id = $_GET['id'] ?? null;
           <span id="star5" class="fa fa-star"></span>
         </span>
 
+
+        <div class="watchProvider"></div>
 
         <div class="row" id="slider-text">
           <div class="swiper">
@@ -131,7 +134,21 @@ $id = $_GET['id'] ?? null;
             </div>
           </div>
         </div>
+        <div class="production">
+          <div id="real">
+            <span id="pro">Réalisation : </span>
 
+          </div>
+          <div id="scenario">
+            <span id="pro">Scénarios : <a id="nameScenar" href=""></a></span>
+
+          </div>
+          <div id="castPrincipal">
+            <span id="pro">Casting Principal: <a id="nameCast" href=""></a></span>
+
+          </div>
+
+        </div>
 
         <div class="row" id="slider-text">
           <div class="swiper">
@@ -279,8 +296,10 @@ $id = $_GET['id'] ?? null;
 
 
     </div>
+
+
   </div>
-  <div class="footer">Copyright ©</div>
+
 
   <!-- 
     <div class="container">
@@ -617,6 +636,14 @@ $id = $_GET['id'] ?? null;
   </div>
   </div>
   <div class="footer"></div> -->
+
+  <div class="footer">
+    <div id="scroll_to_top">
+      <a href="#"><i class='bx bxs-chevrons-up'></i></a>
+    </div>Copyright ©
+  </div>
+
+
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 

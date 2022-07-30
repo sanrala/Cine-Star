@@ -65,6 +65,7 @@ window.onload = () => {
             h2Name.style.color = 'orange';
 
             const p = document.createElement('p');
+            p.classList.add('contentP')
             if (personMovie.biography === "") {
                 p.innerText = "Biographie inconnu pour le moment";
                 p.style.color = 'red';
@@ -107,6 +108,7 @@ window.onload = () => {
                 console.log(age);
                 return age;
             }
+
 
 
 
@@ -354,12 +356,10 @@ window.onload = () => {
                 imgPhotos.src = "https://image.tmdb.org/t/p/w500/" + photos.file_path
                 imgPhotos.style.width = '200px';
 
-                const text = document.createElement('div');
-                text.classList.add('text');
-                text.innerText = "Vote : " + photos.vote_average
+
 
                 slide.append(mySlides)
-                mySlides.append(imgPhotos, text);
+                mySlides.append(imgPhotos);
 
                 return mySlides
             }

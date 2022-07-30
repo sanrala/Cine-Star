@@ -272,7 +272,7 @@ button.dropbtn:focus::after {
 
 .sidebar ul {
     position: fixed;
-    margin-top: 250px;
+    margin-top: 12%;
 }
 
 
@@ -381,11 +381,47 @@ button {
 .footer {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     background-color: rgb(20, 20, 24);
     color: #00FFCB;
 
-    width: 100%;
+    /* width: 100%; */
     height: 12vh;
-    z-index: 2000;
+
+}
+
+html {
+    width: 100%;
+}
+
+.bxs-chevrons-up {
+
+    border-radius: 50%;
+    color: orange;
+    z-index: 50px;
+    font-size: 3rem;
+    background-color: rgb(99, 101, 101);
+}
+
+#scroll_to_top {
+
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    bottom: 70px;
+    right: 50%;
+    text-align: center;
+}
+
+#scroll_to_top a {
+    color: orange;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.bxs-chevrons-up:hover {
+    background-color: white;
+    transition: 0.3s all linear;
+    transform: scale(1.3);
 }

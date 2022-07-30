@@ -318,9 +318,17 @@ $id = $_GET['id'] ?? null;
           </div>
         </div>
       </div>
+
+
     </div>
+
   </div>
-  <div class="footer">Copyright ©</div>
+
+  <div class="footer">
+    <div id="scroll_to_top">
+      <a href="#"><i class='bx bxs-chevrons-up'></i></a>
+    </div>Copyright ©
+  </div>
   <script src="JS/index.js" type="module"> </script>
 
 

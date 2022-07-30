@@ -3,7 +3,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CSS/actors_actress.css">
-  <link rel="stylesheet" media="(max-width: 500px)" href="CSS/style.css">
+  <link rel="stylesheet" media="(max-width: 500px)" href="CSS/actors_actress_mobile.css">
   <link rel="stylesheet" media="(max-width: 1225px)" href="CSS/tablet.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
