@@ -1,0 +1,55 @@
+.avatars {
+    width: auto;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(20, 20, 24);
+    color: #00FFCB;
+    width: 100%;
+
+    z-index: 2000;
+    flex-direction: column;
+    height: 50vh;
+
+    /* border-top: 1px solid rgb(182, 181, 181); */
+}
+
+#logo_footer {
+    width: 200px;
+    height: 50px;
+}
+
+.header_footer {
+    display: flex;
+    margin: 10px;
+    align-content: stretch;
+    align-items: flex-start;
+}
+
+#menu li a {
+
+    padding: 10px;
+}
+
+.mainContent {
+    margin: 0;
+}
+
+.select_avatar {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+#idAvatar {
+
+    /* right: 200px; */
+    bottom: 560px;
+}
+
+#imgAvatar {
+    position: absolute;
+    /* right: 200px; */
+    top: 180px;
+}

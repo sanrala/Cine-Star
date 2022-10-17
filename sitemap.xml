@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <url>
+
+      <loc>https://www.cinestars.fr/</loc>
+
+      <lastmod>2022-05-09</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://cinestars.fr/cine1_resume.php?id=84773&type=tv</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://cinestars.fr/cine1_resume.php?id=76600&type=movie</loc>
+
+      <lastmod>2022-05-09</lastmod>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://cinestars.fr/actors_actress.php?id=8691&type=movie</loc>
+
+      <lastmod>2022-05-09T18:00:15+00:00</lastmod>
+
+      <priority>0.3</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://cinestars.fr/cine1_resume.php?id=94997&type=tv</loc>
+
+      <lastmod>2022-05-09</lastmod>
+
+   </url>
+
+</urlset>

@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 .menu {
@@ -16,7 +15,6 @@
   position: fixed;
   z-index: 100;
   height: auto;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,31 +34,44 @@ i {
 
 #btnCompte {
   display: block;
-
 }
 
 .main {
-
   margin-left: 0;
   margin-right: 0;
   margin-top: 20px;
   width: 100%;
 }
 
-/* .sidebar {
-    display: none;
-   } */
+.searchBar {
+  position: relative;
+  top: 20px;
+}
 
+.searchBar:focus {
+  outline: 0;
+}
 
+.searchBar::placeholder {
+  color: #adafd1;
+}
+
+.btnSearch {
+  left: 190px;
+  top: -15px;
+  width: 10px;
+}
+
+.btnSearch .fas {
+  width: 10px;
+}
 
 .burger .fas {
   color: orange;
-
 }
 
 .burger i {
   color: white;
-
 }
 
 .overlay i {
@@ -72,7 +83,7 @@ i {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
 }
 
@@ -87,8 +98,7 @@ i {
 }
 
 .burger {
-
-  display: block;
+  display: none;
 }
 
 #burg img {
@@ -101,7 +111,6 @@ i {
 
 i {
   margin: 5px auto;
-
 }
 
 .overlay {
@@ -111,7 +120,7 @@ i {
   z-index: 1;
   left: 0;
   top: 0;
-  background-color: rgba(90, 122, 140, 0.9);
+  background-color: rgb(0 0 0 / 90%);
   overflow-x: hidden;
   transition: 0.5s;
 }
@@ -122,13 +131,10 @@ i {
   width: 100%;
   text-align: center;
   display: block;
-
 }
 
 #slider-text h2 {
-
   width: 100%;
-
 }
 
 .overlay a {
@@ -164,10 +170,8 @@ li {
 
 /* // fin du menu burger */
 .carousel .carousel-inner .carousel-item img {
-
   width: 100%;
   height: 100%;
-
 }
 
 .mainBody {
@@ -175,10 +179,7 @@ li {
 }
 
 #carouselAffiche {
-
   margin-top: 30px;
-
-
 }
 
 #prevAffiche {
@@ -202,20 +203,15 @@ li {
 #wrapper6,
 #wrapper7 {
   width: 100%;
-  /* max-width: 1364px; */
   position: relative;
-
 }
 
 #carousel {
   overflow: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  /* margin-left: 25px; */
   width: 100%;
 }
-
-
 
 .fa-angle-right,
 .fa-angle-left {
@@ -227,6 +223,21 @@ li {
 }
 
 .mainContent {
-
   width: 100%;
+  margin-top: 0;
+}
+
+#idAvatar {
+  position: relative;
+  /* right: 200px; */
+  top: 170px;
+}
+
+#menu li {
+  left: 0;
+}
+
+.nav_sidebar {
+  left: -10px;
+  top: 20px;
 }

@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+.menu {
+  display: none;
+}
+
+.genreP,
+.celebre,
+.naissance,
+.homepage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.birth {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  display: none;
+}
+
+#logo {
+  display: none;
+}
+
+i {
+  color: black;
+}
+
+#btnCompte {
+  display: block;
+}
+
+.main {
+  margin-left: 0;
+  margin-right: 0;
+
+  width: 100%;
+}
+
+.searchBar {
+  position: relative;
+  top: 20px;
+}
+
+.searchBar:focus {
+  outline: 0;
+}
+
+.searchBar::placeholder {
+  color: #adafd1;
+}
+
+.btnSearch {
+  left: 190px;
+  top: -15px;
+  width: 10px;
+}
+
+.btnSearch .fas {
+  width: 10px;
+}
+
+.burger .fas {
+  color: orange;
+}
+
+.burger i {
+  color: white;
+}
+
+.overlay i {
+  color: white;
+  margin: 0 auto;
+}
+
+#burg {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+#compte {
+  display: block;
+}
+
+#compte img {
+  margin: 5px auto;
+  margin-right: 15px;
+}
+
+.biography {
+  margin-top: 50px;
+}
+
+.biography h2 {
+  display: none;
+}
+
+.burger {
+  display: none;
+}
+
+#burg img {
+  display: block;
+}
+
+#burg input {
+  display: block;
+}
+
+i {
+  margin: 5px auto;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgb(0 0 0 / 90%);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+#slider-text h2 {
+  width: 100%;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #100202;
+  display: block;
+  transition: 0.3s;
+  color: white;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 45px;
+  font-size: 60px;
+  color: white;
+}
+
+.overlay {
+  display: block;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* // fin du menu burger */
+.carousel .carousel-inner .carousel-item img {
+  width: 100%;
+  height: 100%;
+}
+
+.mainBody {
+  width: 100%;
+}
+
+#carouselAffiche {
+  margin-top: 30px;
+}
+
+#prevAffiche {
+  display: none;
+}
+
+#nextAffiche {
+  display: none;
+}
+
+.titleSwiperAffiche {
+  display: none;
+}
+
+#wrapperAffiche,
+#wrapper,
+#wrapper2,
+#wrapper3,
+#wrapper4,
+#wrapper5,
+#wrapper6,
+#wrapper7 {
+  width: 100%;
+  position: relative;
+}
+
+#carousel {
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  width: 100%;
+}
+
+.fa-angle-right,
+.fa-angle-left {
+  color: white;
+}
+
+.sidebar {
+  display: none;
+}
+
+.mainContent {
+  width: 100%;
+}
+
+.profile {
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.infoPerso {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#menu li {
+  left: 0;
+}
+
+.nav_sidebar {
+  left: -10px;
+  top: 20px;
+}

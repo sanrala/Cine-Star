@@ -2,17 +2,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 .menu {
   display: none;
 }
 
-.bx-play-circle {
+.video i {
   position: relative;
   left: 15px;
-  bottom: 5px;
+  bottom: -15px;
+}
+
+.searchBar {
+  position: relative;
+  top: 20px;
 }
 
 .header_main {
@@ -22,7 +26,6 @@
   position: fixed;
   z-index: 100;
   height: auto;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,34 +45,31 @@ i {
 
 #btnCompte {
   display: block;
-
 }
 
 .main {
-
   margin-left: 0;
   margin-right: 0;
   margin-top: 20px;
   width: 100%;
 }
 
-/* .sidebar {
-    display: none;
-   } */
-
 .box {
   width: 100%;
+}
 
+.btnSearch {
+  left: 190px;
+  top: -15px;
+  width: 10px;
 }
 
 .burger .fas {
   color: orange;
-
 }
 
 .burger i {
   color: white;
-
 }
 
 .overlay i {
@@ -81,8 +81,10 @@ i {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
+  flex-direction: row;
+  align-content: flex-end;
+  justify-content: flex-end;
 }
 
 
@@ -97,7 +99,7 @@ i {
 
 .burger {
 
-  display: block;
+  display: none;
 }
 
 #burg img {
@@ -110,7 +112,6 @@ i {
 
 i {
   margin: 5px auto;
-
 }
 
 .overlay {
@@ -121,7 +122,7 @@ i {
   z-index: 1;
   left: 0;
   top: 0;
-  background-color: rgba(90, 122, 140, 0.9);
+  background-color: rgb(0 0 0 / 90%);
   overflow-x: hidden;
   transition: 0.5s;
 }
@@ -132,13 +133,6 @@ i {
   width: 100%;
   text-align: center;
   display: block;
-
-}
-
-#slider-text h2 {
-
-  width: 100%;
-
 }
 
 .overlay a {
@@ -165,19 +159,17 @@ i {
 }
 
 .overlayVideo-content {
-
   margin-left: 0;
-  margin-top: 90px;
-
+  margin-top: 60px;
 }
 
 #video-content {
-  align-items: flex-start;
+  align-items: center;
 }
 
 .overlayVideo .closebtnVideo {
   position: absolute;
-  top: 20px;
+  top: 280px;
   left: 5px;
   font-size: 60px;
   color: white;
@@ -186,8 +178,7 @@ i {
 
 iframe {
   width: 1235px;
-  height: 550px;
-
+  height: 350px;
   box-shadow: 0 0 280px 280px #000000;
 }
 
@@ -196,20 +187,13 @@ li {
 }
 
 /* // fin du menu burger */
-
-
 .mainBody {
   width: 100%;
 }
 
-
-
-
-
 .titleSwiperAffiche {
   display: none;
 }
-
 
 #wrapper,
 #wrapper2,
@@ -219,20 +203,15 @@ li {
 #wrapper6,
 #wrapper7 {
   width: 100%;
-  /* max-width: 1364px; */
   position: relative;
-
 }
 
 #carousel {
   overflow: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  /* margin-left: 25px; */
   width: 100%;
 }
-
-
 
 #prev,
 #next,
@@ -248,25 +227,28 @@ li {
 #next6,
 #prev7,
 #next7 {
-
   display: none;
-
 }
 
 .sidebar {
   display: none;
 }
 
-.mainContent {
-
-  width: 100%;
+#menu li {
+  left: 0;
 }
 
-/* infos film */
+.nav_sidebar {
+  left: -10px;
+  top: 20px;
+}
 
+.mainContent {
+  margin-top: 0;
+}
 
+.boxPoster {
 
+  bottom: 988px;
 
-
-
-/* FIN INFOS FILM */
+}

@@ -7,11 +7,9 @@ li {
     list-style-type: none;
 }
 
-#fetch {
-    position: absolute;
-    text-align: center;
-    left: 450px;
-    top: 10px;
+
+a {
+    text-decoration: none;
 }
 
 .fas {
@@ -33,6 +31,8 @@ li {
 }
 
 #logo {
+    position: relative;
+    right: 17%;
     width: 200px;
     height: 40px;
 }
@@ -43,129 +43,105 @@ li {
 }
 
 .header_main {
-
     background-color: rgb(34, 34, 37);
     width: 100%;
     position: fixed;
     height: 10vh;
     z-index: 10000;
-    flex-basis: 70px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.header {
-
-
-    width: 90%;
-    position: fixed;
-    height: 10vh;
-    z-index: 100;
-    flex-basis: 70px;
-
+    flex-basis: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 }
 
-i {
-    color: white;
-    width: 50px;
-    text-align: center;
+
+
+#avatar {
+    width: 40px;
+    border-radius: 50%;
+    background-color: beige;
+    position: relative;
+    top: 8px;
 }
 
 /* ----------------CAROUSEL AFFICHE---------------- */
-
+.nameMovies {
+    text-align: center;
+}
 
 #prevAffiche {
     position: absolute;
     top: 400px;
+    /* right: 1205px; */
     z-index: 2;
     transform: translate(50%, -50%);
     font-size: 5rem;
     cursor: pointer;
+    color: white;
+
 }
 
 #nextAffiche {
     position: absolute;
     top: 400px;
-    right: 130px;
+    right: 200px;
     transform: translate(50%, -50%);
     z-index: 2;
     font-size: 5rem;
     cursor: pointer;
+    color: white;
 }
 
-#wrapperAffiche {
-    width: 90%;
-    /* max-width: 64px; */
+#wrapperAffiche,
+#wrapperPersonTendance {
+    width: 100%;
     position: relative;
+    /* max-width: 1400px; */
 
 }
 
-
-
-#carouselAffiche {
+#carouselAffiche,
+#carouselPersonTendance {
     overflow: auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
-    margin-top: 90px;
     width: 100%;
-
 }
 
-
-#carouselAffiche::-webkit-scrollbar {
+#carouselAffiche::-webkit-scrollbar,
+#carouselPersonTendance::-webkit-scrollbar {
     height: 0;
 }
 
-
-
-
-
-#contentAffiche {
+#contentAffiche,
+#contentPersonTendance {
     display: flex;
     align-items: center;
-    /* display: grid; */
     grid-gap: 5px;
     grid-auto-flow: column;
-    /* margin: auto; */
     box-sizing: border-box;
     width: 90%;
     height: 100%;
-
 }
-
 
 .boxAffiche {
     width: 450px;
     border-radius: 10px;
     overflow: hidden;
-
-
 }
 
 #autoWidth.cs-hidden {
     display: flex;
     width: 100%;
-    /* display: grid;
-    
-    grid-gap: 5px;
-    grid-auto-flow: column; */
     margin: auto;
     box-sizing: border-box;
-
     height: 100%;
-
-
 }
 
 .slideAffiche-img {
-    height: 550px;
+    height: 600px;
     position: relative;
-
 }
 
 .slideAffiche-img img {
@@ -176,16 +152,9 @@ i {
 
 }
 
-
-
-
 /* ----------------FIN CAROUSEL AFFICHE---------------- */
 
-
-
 /*  menu burger  */
-
-
 
 .overlay {
     display: none;
@@ -197,12 +166,7 @@ i {
 
 .burger {
     display: none;
-    /* margin-right: 38px;
-    cursor: pointer; */
-
 }
-
-
 
 .overlay-content {
     display: none;
@@ -220,25 +184,23 @@ i {
     display: none;
 }
 
-
-/* Fin menu burger  */
-/* #logo {
-    margin-left: 50px;
-} */
-
 .menu {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     height: 50px;
     width: 400px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+    right: 180px;
 
-    /* margin-left: 250px; */
 }
 
 
-.search {
+/* SEARCH BAR */
+
+.searchBar {
     background-color: rgb(57, 57, 60);
     border: 2px solid var(--primary-color);
     padding: 0.5rem 1rem;
@@ -249,16 +211,25 @@ i {
     margin-right: 20px;
 }
 
-.search:focus {
+.searchBar:focus {
     outline: 0;
-    /* background-color: var(--primary-color); */
-
 }
 
-.search::placeholder {
-    color: #adafd1;
-
+.btnSearch {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    right: 60px;
+    top: 5px;
+    width: 10px;
 }
+
+.btnSearch .fas {
+    width: 10px;
+}
+
+/* FIN SEARCH BAR */
 
 /* BOUTON COMPTE */
 .dropbtn {
@@ -301,13 +272,17 @@ i {
     outline: none;
     position: relative;
     padding: 10px;
+    bottom: 10px;
 }
 
-/* .dropdown button {
- 
-    margin-bottom: 22px;
-    
-} */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown a {
+    margin: 20px;
+}
 
 button.dropbtn::before {
     content: '';
@@ -339,8 +314,6 @@ button.dropbtnDeconnecting::before {
     transition: all .3s ease-in-out 0s;
 }
 
-
-
 button.dropbtnDeconnecting:hover::before,
 button.dropbtnDeconnecting:focus::before {
     opacity: 1;
@@ -351,35 +324,28 @@ button.dropbtn:focus::before {
     opacity: 1;
 }
 
-
-
-
 /* FIN BOUTON COMPTE */
 
 .main {
     flex: auto;
     display: flex;
     flex-flow: row nowrap;
-
 }
 
 .sidebar {
     min-width: 13%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     background-color: rgb(34, 34, 37);
-
 }
 
-.sidebar li {
+/* .sidebar li {
     margin: 50px;
     display: flex;
     flex-direction: column;
     color: orange;
-
 }
 
 .sidebar li:hover {
@@ -390,10 +356,8 @@ button.dropbtn:focus::before {
 
 .sidebar ul {
     position: fixed;
-    margin-top: 12%;
-}
-
-
+    margin-top: 120px;
+} */
 
 .sidebar a {
     text-decoration: none;
@@ -401,41 +365,29 @@ button.dropbtn:focus::before {
 
 .sidebar .fas {
     font-size: 1.6rem;
-
 }
 
 .sidebar .bx {
     font-size: 1.6rem;
-
 }
-
-.sidebar i {
-    margin-left: 22px;
-}
-
 
 
 
 .mainContent {
     background-color: rgb(34, 34, 37);
-
     display: flex;
-
     align-content: flex-start;
     flex-direction: column;
     width: 87%;
-
+    margin-top: 70px;
+    z-index: 95;
 
 }
-
-
 
 /* CAROUSEL */
 .photos {
     display: flex;
     flex-direction: column;
-
-
 }
 
 #wrapper,
@@ -451,15 +403,13 @@ button.dropbtn:focus::before {
 #wrapperAPTV,
 #wrapperCanalMovie,
 #wrapperCanalTV,
-#wrapperCanalSTV {
-    width: 90%;
+#wrapperCanalSTV,
+#wrapperManga {
+
+    width: 100%;
     /* max-width: 1364px; */
     position: relative;
-
-
 }
-
-
 
 #carousel,
 #carousel2,
@@ -474,15 +424,13 @@ button.dropbtn:focus::before {
 #carouselAPTV,
 #carouselCanalMovie,
 #carouselCanalTV,
-#carouselCanalSTV {
+#carouselCanalSTV,
+#carouselManga {
     overflow: auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
-    /* margin-left: 100px; */
     width: 100%;
-
 }
-
 
 #carousel::-webkit-scrollbar,
 #carousel2::-webkit-scrollbar,
@@ -497,13 +445,10 @@ button.dropbtn:focus::before {
 #carouselAPTV::-webkit-scrollbar,
 #carouselCanalTV::-webkit-scrollbar,
 #carouselCanalMovie::-webkit-scrollbar,
-#carouselCanalSTV::-webkit-scrollbar {
+#carouselCanalSTV::-webkit-scrollbar,
+#carouselManga::-webkit-scrollbar {
     height: 0;
 }
-
-
-
-
 
 #content,
 #content2,
@@ -518,19 +463,16 @@ button.dropbtn:focus::before {
 #contentAPTV,
 #contentCanalTV,
 #contentCanalMovie,
-#contentCanalSTV {
+#contentCanalSTV,
+#contentManga {
     display: flex;
     align-items: center;
-    /* display: grid; */
     grid-gap: 5px;
     grid-auto-flow: column;
-    /* margin: auto; */
     box-sizing: border-box;
     width: 90%;
     height: 100%;
-
 }
-
 
 .item {
     width: 300px;
@@ -540,30 +482,15 @@ button.dropbtn:focus::before {
     border-radius: 10px;
 }
 
-/* TOP 10 */
-
-
-/* #slider-text {
-  display: flex;
-  flex-wrap: wrap;
-} */
-
-/* #slider-text .col-md-6 {
-    overflow: hidden;
-} */
-
-#slider-text h2 {
+#slider-text h1 {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
     font-size: 30px;
     letter-spacing: 3px;
     margin-top: 20px;
     padding-left: 10px;
-
-
     color: orange;
     width: 88.5%;
-
 }
 
 .titleSwiper {
@@ -571,147 +498,96 @@ button.dropbtn:focus::before {
     justify-content: space-between;
 }
 
-#slider-text i {
-    /* position: static !important;
-    margin: 0 0 0 10px !important; */
-}
-
-
-/* #slider-text h2::after {
-    border-top: 2px solid #c7c7c7;
-    content: "";
-    position: absolute;
-    bottom:630px;
-    width: 20%;
-} */
-
-
 .box {
     width: 250px;
-
-
     border-radius: 10px;
     overflow: hidden;
-
     margin: 10px;
-
 }
 
 .boxDisneyMovie {
     width: 550px;
-
-
     border-radius: 10px;
     overflow: hidden;
-
     margin: 10px;
-
 }
 
 .boxTopRatedTV {
     width: 550px;
-
-
     border-radius: 10px;
     overflow: hidden;
-
     margin: 10px;
-
 }
 
 .boxAPTV {
     width: 550px;
-
-
     border-radius: 10px;
     overflow: hidden;
-
     margin: 10px;
-
 }
 
 .boxCanalSTV {
     width: 550px;
-
-
     border-radius: 10px;
     overflow: hidden;
-
     margin: 10px;
-
 }
 
 
 #autoWidth.cs-hidden {
     display: flex;
     width: 100%;
-    /* display: grid;
-    
-    grid-gap: 5px;
-    grid-auto-flow: column; */
     margin: auto;
     box-sizing: border-box;
-    /* width: 100%; */
     height: 100%;
-
-
 }
 
 .slide-img {
     height: 350px;
     position: relative;
-
 }
-
-/* div {
-    background-image: url("https://image.tmdb.org/t/p/w500/odJ4hx6g6vBt4lBWKFD1tI8WS4x.jpg");
-    width: 400px;
-    height: 200px;
-    background-size: contain;
-    box-shadow: inset 30px 0 100px 50px #000000;
-} */
 
 .slide-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     box-sizing: border-box;
-
-
 }
-
-/* div {
-    background-image: url("https://www.dailydot.com/wp-content/uploads/2018/04/pattern-2048x1024.jpg");
-    width: 400px;
-    height: 200px;
-    background-size: contain;
-    box-shadow: inset 30px 30px 100px 10px #000000;
-} */
-
 
 .detail-box {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
     box-sizing: border-box;
-
-
-
-
+    text-align: center;
 }
 
 .type {
-
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: transparent;
 }
 
-
-
+#contentCanalSTV .detail-box,
+#contentManga .detail-box,
+#contentCanalMovie .detail-box,
+#contentCanalTV .detail-box,
+#contentAPTV .detail-box,
+#contentAPM .detail-box,
+#content5 .detail-box,
+#content2 .detail-box,
+#content3 .detail-box,
+#contentDisneyPlusTV .detail-box,
+#contentDisneyMovie .detail-box,
+#content4 .detail-box,
+#content .detail-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+}
 
 .type a {
     color: white;
@@ -719,22 +595,11 @@ button.dropbtn:focus::before {
     font-weight: 700;
     letter-spacing: 0.5px;
     padding-right: 8px;
-
-
 }
-
-
 
 .type span {
     color: rgba(26, 26, 26, 0.5);
 }
-
-/* .price {
-    color: #333333;
-    font-weight: 600;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-} */
 
 .overlaySlider {
     position: absolute;
@@ -763,8 +628,6 @@ button.dropbtn:focus::before {
     align-items: center;
     flex-flow: column;
 }
-
-
 
 .seeMore {
     width: 160px;
@@ -786,26 +649,6 @@ button.dropbtn:focus::before {
     transition: all ease 0.3s;
 }
 
-/* .loveAffiche-btn {
-    width: 160px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: whitesmoke;
-    color: #252525;
-    font-weight: 700;
-    letter-spacing: 1px;
-    border-radius: 20px;
-    box-shadow: 2px 2px 30px rgba(0, 0, 0, .2);
-}
-
-.loveAffiche-btn:hover {
-    color: white;
-    background-color: palevioletred;
-    transition: all ease 0.3s;
-} */
-
 .overlaySlider {
     visibility: hidden;
 }
@@ -826,7 +669,6 @@ button.dropbtn:focus::before {
 
 .swiper {
     display: flex;
-
 }
 
 .swiper-next,
@@ -841,14 +683,6 @@ button.dropbtn:focus::before {
     font-size: 18 px !important;
     font-weight: 700;
 }
-
-.swipeButton {
-    /* display: none; */
-}
-
-
-
-
 
 @keyframes fade {
     0% {
@@ -869,48 +703,80 @@ button.dropbtn:focus::before {
     }
 }
 
-
-
-.footer {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(20, 20, 24);
-    color: #00FFCB;
-
-    /* width: 100%; */
-    height: 12vh;
-
-}
-
 html {
     width: 100%;
 }
 
-.bxs-chevrons-up {
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(34, 34, 37);
+    color: #00FFCB;
+    height: 35vh;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    /* border-top: 1px solid rgb(182, 181, 181); */
+}
 
+.header_footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px;
+}
+
+.header_footer a {
+
+    margin: 2px;
+}
+
+.menu_footer {
+    display: flex;
+
+}
+
+.menu_footer ul li {
+    margin: 5px;
+}
+
+
+.footer a:hover {
+    color: white;
+    transition: 0.3s all linear;
+    transform: scale(1.1);
+}
+
+.menu_footer li:hover {
+    color: white;
+    transition: 0.3s all linear;
+    transform: scale(1.1);
+}
+
+.bxs-chevrons-up {
     border-radius: 50%;
     color: orange;
-    z-index: 50px;
     font-size: 3rem;
     background-color: rgb(99, 101, 101);
 }
 
 #scroll_to_top {
-
     position: fixed;
     width: 25px;
     height: 25px;
-    bottom: 70px;
+    bottom: 100px;
     right: 50%;
-    text-align: center;
 }
 
-#scroll_to_top a {
+#scroll_to_top a,
+.footer a {
     color: orange;
     text-decoration: none;
     font-size: 1rem;
+    text-decoration: none;
 }
 
 .bxs-chevrons-up:hover {
@@ -918,3 +784,150 @@ html {
     transition: 0.3s all linear;
     transform: scale(1.3);
 }
+
+
+/* menu burger */
+
+#menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    /* right: 150px;
+    top: -20px; */
+}
+
+
+
+.nav_sidebar {
+    position: absolute;
+    overflow: hidden;
+    top: 50px;
+}
+
+#menu ul {
+    list-style: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+
+    transform: translateX(-180px);
+    border-radius: 0 5px 5px 0;
+    transition: 0.5s;
+    opacity: 0;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#menu li {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background-color: rgb(34, 34, 37);
+    color: #000;
+    left: 90px;
+    opacity: 0.9;
+    padding: 20%
+}
+
+#menu i:hover {
+    color: orange;
+    transition: 0.3s all linear;
+    transform: scale(1.1);
+}
+
+
+
+#menu li a {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    text-decoration: none;
+    color: #fff;
+    padding: 50px;
+    width: 100%;
+}
+
+#menu input[type="checkbox"] {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+#menu input {
+    /* display: block; */
+    width: 35px;
+    height: 30px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+
+    z-index: 2;
+
+    top: 2px;
+    -webkit-touch-callout: none;
+}
+
+#button-burger {
+    display: block;
+    width: 33px;
+    height: 4px;
+    position: absolute;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 1;
+    /* top: 20px; */
+    transition: width 0.3s, background-color 0.3s;
+}
+
+#button-burger::before {
+    content: "";
+    display: block;
+    width: 33px;
+    height: 4px;
+    position: relative;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 1;
+    top: -11px;
+    transition: 0.3s;
+}
+
+#button-burger::after {
+    content: "";
+    display: block;
+    width: 33px;
+    height: 4px;
+    position: relative;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 1;
+    top: 7px;
+    transition: 0.3s;
+}
+
+#menu input:checked+#button-burger {
+    background-color: #fff;
+    width: 0;
+    transition: width 0.3s 0.1s, background-color 0.3s;
+}
+
+#menu input:checked+#button-burger:before {
+    transform: translatey(11px) rotate(45deg);
+}
+
+#menu input:checked+#button-burger:after {
+    transform: translatey(-11px) rotate(-45deg);
+}
+
+#menu input:checked~nav ul {
+    transform: none;
+    opacity: 1;
+    transition: transform 0.5s;
+}
+
+/* FIN MENU BURGER */

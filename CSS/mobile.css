@@ -35,7 +35,6 @@ a {
 
 .mainBody img {
   width: 100%;
-
 }
 
 /* HEADER */
@@ -47,7 +46,6 @@ a {
   position: fixed;
   z-index: 100;
   height: auto;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,7 +56,6 @@ a {
 }
 
 .header img {
-
   display: none;
 }
 
@@ -66,11 +63,9 @@ a {
   display: none;
 }
 
-
 /* menu burger  */
 .burger .fas {
   color: orange;
-
 }
 
 .overlay i {
@@ -88,7 +83,6 @@ a {
 
 #compte {
   display: block;
-
 }
 
 #compte img {
@@ -98,13 +92,10 @@ a {
 
 .burger {
   display: block;
-
 }
-
 
 #burg img {
   display: block;
-
 }
 
 #btnCompte {
@@ -120,7 +111,7 @@ i {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 5;
   left: 0;
   top: 0;
   background-color: rgba(90, 122, 140, 0.9);
@@ -134,16 +125,12 @@ i {
   width: 100%;
   text-align: center;
   display: block;
-
 }
 
 .overlay-content li {
   display: flex;
   flex-direction: column;
-
 }
-
-
 
 .overlay a {
   padding: 8px;
@@ -200,30 +187,22 @@ li {
 .love-btn {
   width: 80px;
   height: 40px;
-
 }
 
 .loveAffiche-btn {
   width: 80px;
   height: 40px;
-
 }
 
 .swiperAffiche {
   display: none;
 }
 
-
 .mainContent {
   margin-left: 0;
   margin-right: 0;
-  /* margin-bottom: 20px; */
   width: 100%;
 }
-
-
-
-
 
 .footer {
   display: flex;
@@ -236,7 +215,6 @@ li {
   height: 12vh;
   z-index: 2000;
 }
-
 
 @keyframes bandesAnnonces {
   0% {
@@ -265,49 +243,39 @@ li {
   width: 100%;
   height: auto;
   display: flex;
-
-
 }
 
-#carouselAffiche {
-
+#carouselAffiche,
+#carouselPersonTendance {
   margin-top: 20px;
-
-
 }
 
-#prevAffiche {
+#prevAffiche,
+#prevPersonTendance {
   display: none;
 }
 
-#nextAffiche {
+#nextAffiche,
+#nextPersonTendance {
   display: none;
 }
 
-#wrapperAffiche {
+#wrapperAffiche,
+#wrapperPersonTendance {
   width: 100%;
-  /* max-width: 844px; */
   position: relative;
-
 }
 
-
-.boxAffiche {
-
+.boxAffiche,
+.boxPersonTendance {
   width: 250px;
-
-
   box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   overflow: hidden;
-
-
-
 }
 
 .boxDisneyMovie {
   width: 400px;
-
 }
 
 .boxTopRatedTV {
@@ -316,19 +284,15 @@ li {
 
 .boxAPTV {
   width: 400px;
-
 }
 
 .boxCanalSTV {
   width: 400px;
-
 }
-
 
 .slideAffiche-img {
   height: 350px;
   position: relative;
-
 }
 
 .slideAffiche-img img {
@@ -336,11 +300,7 @@ li {
   height: 100%;
   object-fit: cover;
   box-sizing: border-box;
-
 }
-
-
-
 
 #wrapper,
 #wrapper2,
@@ -356,10 +316,8 @@ li {
 #wrapperCanalMovie,
 #wrapperCanalTV {
   width: 100%;
-  /* max-width: 280px; */
   position: relative;
 }
-
 
 #carousel,
 #carousel2,
@@ -373,8 +331,6 @@ li {
   overflow: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  /* margin-left: 25%; */
-
   width: 100%;
 }
 
@@ -387,25 +343,33 @@ li {
 #content7,
 #contentCanalTV,
 #contentCanalMovie {
-
   width: 100%;
-
-
 }
 
 .nameMovies {
   display: none;
 }
 
-#slider-text h2 {
-  font-size: 1.2rem;
-
+#slider-text h1 {
+  font-size: 0.9rem;
+  text-align: center;
   width: 100%;
 }
 
 .titleSwiper {
   display: inline;
+}
 
+#contentCanalSTV .type a {
+  display: block;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+#contentCanalSTV .type .dateDeSortie {
+  display: none;
 }
 
 h2 {
@@ -439,27 +403,24 @@ h2 {
 #nextCanalMovie,
 #prevCanalMovie,
 #nextCanalSTV,
-#prevCanalSTV {
+#prevCanalSTV,
+#nextManga,
+#prevManga {
   display: none;
 }
 
 .box {
   width: 150px;
-
 }
-
-
 
 .slide-img {
   height: 250px;
   position: relative;
-
 }
 
 .dateDeSortie {
   display: none;
 }
-
 
 #slider-text h2::after {
   display: none;
@@ -467,12 +428,41 @@ h2 {
 
 .footer {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
   background-color: rgb(20, 20, 24);
   color: #00FFCB;
-
   width: 100%;
-  height: 12vh;
+
   z-index: 2000;
+  flex-direction: column;
+  height: 50vh;
+
+  /* border-top: 1px solid rgb(182, 181, 181); */
+}
+
+#logo_footer {
+  width: 200px;
+  height: 50px;
+}
+
+.header_footer {
+  display: flex;
+  margin: 10px;
+  align-content: stretch;
+  align-items: flex-start;
+}
+
+#menu li {
+  left: 0;
+  padding: 20px;
+}
+
+#menu li a {
+
+  padding: 10px;
+}
+
+.nav_sidebar {
+  left: -10px;
+  top: 20px;
 }

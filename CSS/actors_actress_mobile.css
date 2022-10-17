@@ -1,25 +1,56 @@
 .item {
-    margin-bottom: 30px;
-    width: 300px;
-    height: 450px;
-
-    margin-left: 50px;
+    margin: 0 auto;
 }
 
 .profile {
+    flex-wrap: wrap;
     width: 100%;
+}
 
+.btnSearch {
+    left: 190px;
+    top: -15px;
+    width: 10px;
 }
 
 .biography {
     width: 100%;
-
 }
 
-.info_profile {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+
+
+.name_bis {
+    margin-top: 50px;
+}
+
+.biography h2 {
+    display: none;
+}
+
+.infoPerso {
+    margin-left: 0;
+}
+
+.info_profile h4 {
+    margin: 0 auto;
+}
+
+.info_profile span {
+    font-size: 0.8rem;
+    margin: 15px;
+}
+
+.info_profile h5 {
+    font-size: 1rem;
+    color: #00FFCB;
+    margin: 10px;
+}
+
+.info_profile i {
+    font-size: 1.5rem;
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
 .profile h2 {
@@ -29,5 +60,45 @@
 .overlay-content li {
     display: flex;
     flex-direction: column;
+}
 
+#wrapper {
+    width: 100%;
+    max-width: 395px;
+    position: relative;
+}
+
+.resSociaux {
+    margin: 0 auto;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(20, 20, 24);
+    color: #00FFCB;
+    width: 100%;
+
+    z-index: 2000;
+    flex-direction: column;
+    height: 50vh;
+
+    /* border-top: 1px solid rgb(182, 181, 181); */
+}
+
+#logo_footer {
+    width: 200px;
+    height: 50px;
+}
+
+.header_footer {
+    display: flex;
+    margin: 10px;
+    align-content: stretch;
+    align-items: flex-start;
+}
+
+#menu li a {
+
+    padding: 10px;
 }

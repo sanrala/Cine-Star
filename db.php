@@ -1,8 +1,16 @@
 <?php
 
+// $password = 'Troufion59!';
+// $dns = 'mysql:host=db5009974391.hosting-data.io;dbname=dbs8456013';
+// $user = 'dbu607552';
+
 $password = '';
-$dns = 'mysql:host=localhost;dbname=CineStars';
+$dns = 'mysql:host=localhost;dbname=cinestars';
 $user = 'root';
+
+// $password = 'Troufion59!?';
+// $dns = 'mysql:host=localhost;dbname=id19532559_cinestars';
+// $user = 'id19532559_horn';
 
 
 try {
